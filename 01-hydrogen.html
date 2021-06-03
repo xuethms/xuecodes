@@ -1,0 +1,1008 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<!-------------------------------------------------
+
+H Y D R O G E N
+theme 01 by xuethms.tumblr.com
+
+1. Do not repost code anywhere.
+2. Do not claim theme as your own.
+3. Do not remove credit.
+
+version 1.00 - 04.06.21 @ 01:07
+
+-------------------------------------------------->
+
+
+<!-- TUMBLR META OPTIONS ------------------------->
+
+<!-- colour options -->
+
+<meta name="color:Background" content="#ffffff">
+<meta name="color:Accent" content="#6e8aeb">
+
+<meta name="color:Text Highlight" content="#000000">
+<meta name="color:Scrollbar Background" content="#ffffff">
+<meta name="color:Scrollbar" content="#6e8aeb">
+
+<meta name="color:Window Background" content="#ffffff">
+<meta name="color:Window Controls" content="#ffffff">
+<meta name="color:Window Title" content="#ffffff">
+<meta name="color:Window Subtitle" content="#">
+
+<meta name="color:Sidebar Image Decor" content="#bcbcbc">
+<meta name="color:Description Body" content="#333333">
+<meta name="color:Description Bold" content="#8ab5e6">
+<meta name="color:Description Italic" content="#aaaaaa">
+<meta name="color:Description Links" content="#6e8aeb">
+<meta name="color:Description Links Hover" content="#aaaaaa">
+
+<meta name="color:Body Text" content="#333333">
+<meta name="color:Body Bold" content="#8ab5e6">
+<meta name="color:Body Italic" content="#aaaaaa">
+<meta name="color:Body Links" content="#6e8aeb">
+<meta name="color:Body Links Hover" content="#aaaaaa">
+
+<meta name="color:Answer post Question Background" content="#d9e6ff">
+<meta name="color:Answer post Question Text" content="#000000">
+
+<meta name="color:Chat post Odd Background" content="#d8d8d8">
+<meta name="color:Chat post Odd Text" content="#333333">
+<meta name="color:Chat post Even Background" content="#6e8aeb">
+<meta name="color:Chat post Even Text" content="#ffffff">
+
+<meta name="color:Tooltips background" content="#000000">
+<meta name="color:Tooltips text" content="#ffffff">
+
+
+<!-- image options -->
+
+<meta name="image:Sidebar" content="https://static.tumblr.com/wfsxfoo/HTCqu46zx/default.png">
+
+
+<!-- text options -->
+
+<meta name="text:Sidebar Quote" content="Advancement cannot occur without both thesis and antithesis.">
+<meta name="text:Pinned Post Title" content="README.txt">
+<meta name="text:Pinned Post Text" content="This is a pinned post. It is not actually a post, but a space for you to write something that will always appear at the top of your posts when someone visits your blog. You can use it like a second blog description.">
+<meta name="text:Grayscale Percentage" content="100">
+
+
+<!-- toggle options -->
+
+<meta name="if:File Name Permalink" content="1">
+<meta name="if:Pinned Post" content="0">
+<meta name="if:Grayscale Posts" content="0">
+
+
+
+<!-- SCRIPTS & STUFF ----------------------------->
+
+<title>{title}{block:PostSummary} + {PostSummary}{/block:PostSummary}</title>
+{block:Description}<meta name="description" content="{MetaDescription}" />{/block:Description}
+<link rel="shortcut icon" href="{Favicon}" />
+
+
+<!-- tooltips -->
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+<script src="https://static.tumblr.com/iuw14ew/VSQma1786/jquery.style-my-tooltips.js"></script>
+<script>
+(function($){
+$(document).ready(function(){
+$("a[title]").style_my_tooltips({
+tip_follows_cursor:true,
+tip_delay_time:0,
+tip_fade_speed:300,
+attribute:"title"
+});
+});
+})(jQuery);
+</script>
+
+
+<style type="text/css">
+
+::-webkit-scrollbar { width: 7px; }
+::-webkit-scrollbar-track-piece { 
+    background-color: {color:Scrollbar Background};
+}  
+::-webkit-scrollbar-thumb:vertical {
+    width: 1px;
+    background-color: {color:Scrollbar}; 
+    border-top: 4px solid {color:Scrollbar Background};
+    border-right: 3px solid {color:Scrollbar Background};
+    border-bottom: 4px solid {color:Scrollbar Background};
+    border-left: 3px solid {color:Scrollbar Background};
+}
+
+::selection {
+    color: #ffffff;
+    background-color: {color:Text Highlight};
+}
+
+::-moz-selection {
+    color: #ffffff;
+    background-color: {color:Text Highlight};
+}
+
+::-webkit-selection {
+    color: #ffffff;
+    background-color: {color:Text Highlight};
+}
+
+
+#s-m-t-tooltip {
+    z-index: 10000000;
+    max-width: 200px;
+    background-color: rgba({RGBcolor:Tooltips background},0.6);
+    color: {color:Tooltips text};
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-family: consolas;
+    font-size: 9px;
+    padding: 3px 4px;
+    border-radius: 3px;
+    margin: 15px 0 0 10px;
+}
+
+body {
+    background-color: {color:Background};
+    background-attachment: fixed;
+    margin: 0;
+    word-wrap: break-word;
+}
+
+a { text-decoration:none; }
+
+
+/** decorative elements **/
+/** ie. the screen "corners" and the grid elements decor **/
+
+#str01 {
+    position: fixed;
+    top: 60px; left: 60px;
+    width: 241px;
+    height: 151px;
+    background-color: {color:Background};
+    opacity: 0.8;
+    background-image:  linear-gradient({color:Accent} 1px, transparent 1px), linear-gradient(to right, {color:Accent} 1px, {color:Background} 1px);
+    background-size: 10px 10px;
+    z-index: -1;
+}
+
+#str02 {
+    position: fixed;
+    bottom: 0; left: 900px;
+    width: 221px;
+    height: 141px;
+    background-color: #ffffff;
+    opacity: 0.8;
+    background-image:  linear-gradient({color:Accent} 1px, transparent 1px), linear-gradient(to right, {color:Accent} 1px, {color:Background} 1px);
+    background-size: 10px 10px;
+    z-index: -1;
+}
+
+#kona01 {
+    position: fixed;
+    background-color: {color:Accent};
+    width: 100px;
+    height: 600px;
+    bottom: -40px;
+    left: -70px;
+    transform: rotate(-10deg);
+}
+
+#kona02 {
+    position: fixed;
+    background-color: {color:Accent};
+    width: 100px;
+    height: 600px;
+    top: -40px;
+    right: -70px;
+    transform: rotate(-10deg);
+}
+
+
+/** ============ SIDEBAR STYLING ============ **/
+
+#sidebar {
+    position: fixed;
+    width: 200px;
+    height: auto;
+    top: 60px;
+    left: 100px;
+    border-radius: 4px;
+    padding: 20px;
+}
+
+.sbimg {
+    width: 300px;
+    border-radius: 4px;
+}
+
+/** blog navigation links + user icon **/
+
+.lnxicon {
+    padding: 4px;
+    background-color: {color:Window Background};
+    border: 1px solid {color:Accent};
+    border-radius: 10px;
+}
+
+.lnx {
+    position: fixed;
+    top: 100px; left: 50px;
+    z-index: 10;
+    font-family: consolas;
+    font-size: 13px;
+    letter-spacing: 1px;
+    line-height: 24px;
+    text-align: right;
+    width: 100px;
+    
+}
+
+.lnx a {
+    color: {color:Accent};
+    border: 1px solid {color:Accent};
+    background-color: {color:Window Background};
+    border-radius: 300px;
+    padding: 1px 5px 2px 5px;
+    transition: 0.1s;
+}
+
+.lnx a:hover {
+    background-color: {color:Accent};
+    color: {color:Window Background};
+    border: 1px solid {color:Window Background};
+}
+
+.sbimgkona { /** that thing at the bottom right corner of the sidebar image **/
+    width: 80px;
+    height: 10px;
+    background-color: {color:Sidebar image decor};
+    transform: rotate(-45deg);
+    position: absolute;
+    margin: -28px 240px;
+}
+
+/** the smaller window with description **/
+
+#sb2 {
+    width: 180px;
+    padding: 10px;
+    border: 1px solid {color:Accent};
+    border-radius: 4px;
+    margin: 20px -20px;
+    background-color: {color:Window Background};
+}
+
+.sb2tit {
+    width: 151px;
+    font-style: italic;
+    background-color: {color:Accent};
+    margin: -10px 0 0 -10px;
+    color: {color:Window title};
+    font-family: consolas;
+    font-size: 11px;
+    border-radius: 3px 3px 0 0;
+    padding: 5px 5px 5px 45px;
+}
+
+.sb2desc {
+    font-family: consolas;
+    font-size: 11px;
+    color: {color:Description body};
+    padding: 10px 0 0 0;
+}
+
+.sb2desc b,strong {color: {color:Description bold};font-weight:100;}
+.sb2desc i,em {color: {color:Description italic};}
+.sb2desc a {color: {color:Description links};transition: 0.2s;}
+.sb2desc a:hover {color: {color:Description links hover};}
+
+.sb2titb {
+    width: 30px;
+    height: 1px;
+    background-color: {color:Window controls};
+    margin-right: 10px;
+    position: absolute;
+    margin: 7px -40px;
+}
+
+.sb2x {
+    font-family: consolas;
+    font-size: 11px;
+    color: {color:Window controls};
+    position: absolute;
+    margin: -6px 172px;
+    width: 12px;
+    height: 12px;
+    border: 1px solid {color:Window controls};
+    text-align: center;
+    line-height: 12px;
+    border-radius: 2px;
+    cursor: default;
+}
+
+/** custom links **/
+
+.cstlnx {
+    width: 190px;
+    {block:HasPages}
+    margin: 10px 0 0 -3px;
+    {/block:HasPages}
+}
+
+.clinx {
+    background-color: {color:Window background};
+    border-radius: 100px;
+    font-family: consolas;
+    color: {color:Accent};
+    font-size: 10px;
+    width: 75px;
+    padding: 4px 5px;
+    display: inline-block;
+    margin: 0 3px 2px 0;
+    border: 1px solid {color:Accent};
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.clinx:hover {
+    background-color: {color:Accent};
+    color: {color:Window background};
+    transition: 0.2s;
+}
+
+/** fancy circles styling **/
+
+.circ01, .circ02 {
+    position: absolute;
+    z-index: -1;
+    margin: -70px 140px;
+    border: 1px solid {color:Accent};
+    width: 80px;
+    height: 80px;
+    border-radius: 100px;
+    
+}
+
+.circ02 {
+    width: 120px;
+    height: 120px;
+    z-index: -2;
+    margin: -130px 160px;
+}
+
+/** floating quote text to the right of the smaller sidebar window **/
+
+.sb2quote {
+    position: absolute;
+    color: {color:Window title};
+    width: 120px;
+    font-family: consolas;
+    font-size: 10px;
+    font-style: italic;
+    line-height: 20px;
+    text-transform: uppercase;
+    padding: 1px;
+    letter-spacing: 1px;
+    margin: 15px 205px;
+}
+
+.sb2q {
+    background-color: {color:Accent};
+    box-shadow: 3px 0 0 {color:Accent}, -2px 0 0 {color:Accent};
+}
+
+/** ============ POSTS CONTENT ============ **/
+
+#content {
+    width: 522px;
+    margin: 30px 0 60px 550px;
+}
+
+/** styling a single post entry **/
+
+.entry {
+    padding: 10px;
+    width: 500px;
+    margin-bottom: 40px;
+    background-color: #fff;
+    border: 1px solid {color:Accent};
+    font-family: consolas;
+    font-size: 11px;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.entrytit {
+    height: 13px;
+    font-family: consolas;
+    font-size: 11px;
+    background-color: {color:Accent};
+    color: #fff;
+    border-radius: 3px 3px 0 0 ;
+    margin: -11px 0 10px -10px;
+    padding: 5px;
+    width: 511px;
+}
+
+.entrytit a {color: {color:Window title};}
+
+.etitx, .psrcx, .pinfx {
+    margin: -1px 497px;
+    cursor: pointer;
+}
+
+.etitex { color: {color:Window subtitle}; }
+
+/** pinned post **/
+
+.pinnedpostwrapper { display: none; }
+.page-1 { display: block; }
+
+
+/** styling the individual posts **/
+
+.entry-title { /** entry post titles **/
+    font-weight: 1000;
+    font-size: 14px;
+    padding-left: 38px;
+    margin-bottom: 10px;
+}
+
+.entry-titlex {
+    width: 30px;
+    height: 1px;
+    background-color: {color:Accent};
+    position: absolute;
+    margin: 8px -38px;
+}
+
+.entry-body { /** entry body text **/
+    font-family: consolas;
+    font-size: 11px;
+    line-height: 16px;
+    color: {color:Body text};
+}
+
+.entry-body ol {
+    list-style-type: lower-roman;
+}
+
+.entry-body ul { 
+    list-style-type: square;
+    margin-left: -10px;
+}
+
+.entry-body b,strong {
+    color: {color:Body bold};
+}
+
+.entry-body i,em {
+    color: {color:Body italic};
+}
+
+blockquote, .applepie blockquote {
+    border-left: 1px solid {color:Accent};
+    padding: 0 0 0 10px;
+    margin-left: 10px;
+}
+
+.entry-body a, .applepie a, .permainfo a {
+    color: {color:Body links};
+    transition: 0.2s;
+}
+
+.entry-body a:hover, .applepie a:hover, .permainfo a:hover {
+    color: {color:Body links hover};
+}
+
+.entry-captionx {
+    width: 520px;
+    height: 1px;
+    background-color: {color:Accent};
+    margin: 10px 0 0 -10px;
+}
+
+.entry-body img {
+    border-radius: 4px;
+    display: block;
+    margin-left: 0;
+}
+
+/** quote posts **/
+
+.entry-quote {
+    font-family: consolas;
+    font-size: 18px;
+    text-align: center;
+    font-style: italic;
+    padding: 20px;
+}
+
+.entry-quotesrc {
+    text-align: center;
+    padding: 10px;
+    font-style: italic;
+}
+
+/** photos and photoset posts **/
+
+.entry-photo {
+    display: block;
+    border-radius: 4px;
+}
+
+.entry-gray, .entry-body img {
+    {block:ifGrayscalePosts}
+    filter: grayscale({text:Grayscale Percentage}%);
+    {/block:ifGrayscalePosts}
+    transition: 0.4s;
+}
+
+.entry:hover .entry-gray, .entry:hover .entry-body img {
+    filter: grayscale(0%);
+}
+
+.entry-body blockquote img {
+    max-width: 100%;
+}
+
+/** answer posts **/
+
+.entry-askericontri {
+    width: 15px;
+    height: 15px;
+    background-color: {color:Accent};
+    position: absolute;
+    z-index: 0;
+    transform: rotate(45deg);
+    margin: 23px 42px;
+}
+
+.entry-askericon {
+    margin: 10px;
+    width: 30px;
+    height: 30px;
+    border: 1px solid {color:Accent};
+    padding: 5px;
+    background-color: {color:Accent};
+    border-radius: 5px;
+    position: absolute;
+}
+
+.entry-askerqn {
+    background-color: {color:Answer post Question Background};
+    border: 1px solid {color:Accent};
+    color: {color:Answer post Question text};
+    width: 405px;
+    margin: 20px 0 20px 65px;
+    padding: 10px 10px;
+    border-radius: 4px;
+}
+
+.entry-askersender {
+    border-bottom: 1px solid {color:Accent};
+    padding: 0 0 10px;
+}
+
+.entry-askersender a { color: {color:Accent}; }
+.entry-askersenderemail { color: {color:Accent}; }
+
+/** chat posts **/
+
+.entry-chatline {
+    width: 390px;
+    padding: 15px;
+    background-color: {color:Chat post Odd Background};
+    color: {color:Chat post Odd Text};
+    margin: 20px 0 0px 10px;
+}
+
+.even .entry-chatline {
+    margin: 20px 0 0 70px;
+    background-color: {color:Chat post Even Background};
+    color: {color:Chat post Even Text};
+}
+
+.entry-chatlinetri {
+    width: 15px;
+    height: 15px;
+    background-color: {color:Chat post Odd Background};
+    transform: rotate(45deg);
+    position: absolute;
+    margin: -2px -22px;
+}
+
+.even .entry-chatlinetri {
+    margin: -2px 397px;
+    background-color: {color:Chat post Even Background};
+}
+
+/** link posts **/
+
+.entry-link {
+    font-size: 13px;
+    border: 1px solid {color:Accent};
+    background-color: {color:Accent};
+    color: {color:Window background};
+    border-radius: 1000px;
+    padding: 3px 8px;
+    z-index: 1;
+    position: relative;
+    transition: 0.6s;
+}
+
+.entry-link:hover {
+    margin-left: 20px;
+    background-color: {color:Window background};
+    color: {color:Accent};
+}
+
+.entry-linkcont {
+    margin: 20px 10px 20px 10px;
+}
+
+.entry-linkline {
+    width: 500px;
+    height: 1px;
+    background-color: {color:Accent};
+    position: absolute;
+    margin: 8px -10px;
+    z-index: 0;
+}
+
+/** styling tags at the bottom of each post **/
+
+.entry-tags {
+    text-align: center;
+    border-top: 1px solid {color:Accent};
+    margin: 20px 0 5px 0;
+    padding-top: 15px;
+    line-height: 20px;
+}
+
+.entry-tags-tag {
+    font-family: consolas;
+    font-size: 11px;
+    text-transform: lowercase;
+    font-style: italic;
+    border: 1px solid {color:Accent};
+    color: {color:Accent};
+    background-color: {color:Window background};
+    margin: 0 3px;
+    border-radius: 100px;
+    padding: 0px 6px;
+    height: 20px;
+    transition: 0.2s;
+    display: inline-block;
+    max-width: 140px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.entry-tags-tag:hover {
+    background-color: {color:Accent};
+    color: {color:Window background};
+}
+
+/** blog pagination (bottom right of posts) **/
+
+#blogpagination {
+    width: 100px;
+    line-height: 30px;
+    position: fixed;
+    bottom: 10px;
+    left: 1100px;
+    font-family: consolas;
+    font-size: 11px;
+}
+
+#blogpagination a {
+    background-color: {color:Accent};
+    color: {color:Window background};
+    border: 1px solid {color:Accent};
+    border-radius: 100px;
+    padding: 3px 6px;
+    line-height: 16px;
+    transition: 0.2s;
+}
+
+#blogpagination a:hover {
+    background-color: {color:Window background};
+    color: {color:Accent};
+    border-radius: 100px;
+    padding: 3px 6px;
+}
+
+/** ============ PERMALINK PAGE STYLING ============ **/
+
+.permasrc {
+    width: 120px;
+    position: absolute;
+}
+
+.permainfo {
+    width: 340px;
+    margin-left: 160px;
+}
+
+.psrcx { margin: -1px 117px; }
+.pinfx { margin: -1px 337px; }
+
+.psrcicon {
+    border-radius: 4px;
+    width: 56px;
+    height: 56px;
+}
+
+.psrcicon-nil {
+    border-radius: 4px;
+    width: 56px;
+    height: 56px;
+    background-color: #dedede;
+    color: #aaa;
+    float: left;
+    cursor: default;
+    margin-right: 5px;
+    line-height: 56px;
+    text-align: center;
+    font-size: 10px;
+    font-style: italic;
+    letter-spacing: 2px;
+}
+
+.pinfdiv {
+    border-top: 1px solid {color:Accent};
+    border-bottom: 1px solid {color:Accent};
+    padding: 4px 0;
+    margin: 5px 0;
+}
+
+/** note container **/
+
+.applepie {
+    line-height: 15px;
+    width: 500px;
+    font-family: consolas;
+    font-size: 11px;
+    text-align: left;
+    color: {color:Body text};
+}
+ 
+.notes li {
+    width: 500px;
+    font-family: consolas;
+    font-size: 11px;
+    padding: 10px 0 10px 0;
+    margin-bottom: 2px;
+    border-top: 1px solid #bcbcbc;
+    margin-left: -40px;
+}
+ 
+.notes img {
+    margin-right: 10px;
+    float: left;
+    width: 16px;
+    height: 16px;
+    border-radius: 2px;
+    padding-left: 10px;
+}
+ 
+ol.notes {
+    width: 500px;
+    list-style-type: none;
+}
+
+.applepiecrust {
+    margin-top: -10px;
+}
+
+/** a secret **/
+
+#ringo {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    z-index: 1000;
+    background-color: {color:Window background};
+    color: {color:Accent};
+    font-family: consolas;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-style: italic;
+    border-radius: 1000px;
+    padding: 3px 6px;
+    border: 1px solid {color:Accent};
+}
+
+{CustomCSS}    
+
+</style>
+</head>
+<body>
+
+<!-- ================== DECOR ELEMENTS ================== -->
+
+<div id="kona01"></div><div id="kona02"></div>
+<div id="str01"></div><div id="str02"></div>
+
+<!-- ===================== SIDEBAR ====================== -->
+
+<div class="lnx">
+    <img class="lnxicon" src="{PortraitURL-30}"><br>
+    <a href="/">index</a><br>
+    {block:AskEnabled}<a title="{AskLabel}" href="/ask">message</a><br>{/block:AskEnabled}
+    <a href="/archive">past</a>
+</div><!-- end lnx -->
+
+<div id="sidebar">
+    <img class="sbimg" src="{image:Sidebar}">
+    <div class="sbimgkona"></div>
+    
+    <div id="sb2">
+        <div class="sb2x">x</div>
+        <div class="sb2tit"><div class="sb2titb"></div>{Title}</div>
+        <div class="sb2quote"><span class="sb2q">{text:Sidebar Quote}</span></div>
+        <div class="sb2desc">{Description}</div>
+        <div class="cstlnx">
+        <center>
+        {block:HasPages}{block:Pages}<a href="{URL}"><div class="clinx">{Label}</div></a>{/block:Pages}{/block:HasPages}
+        </center>
+        </div><!--cstlnx end-->
+    
+    </div><!--sb2 end-->
+    
+    <div class="circ01"></div>
+    <div class="circ02"></div>
+    
+</div><!--sidebar end-->
+
+<!-- ================== PAGINATION ================== -->
+
+{block:Pagination}
+<div id="blogpagination">
+{block:NextPage}
+<a href="{NextPage}">forward →</a>
+{/block:NextPage}
+{block:PreviousPage}
+<a href="{PreviousPage}">back ←</a>
+{/block:PreviousPage}
+</div><!--blognav end-->
+{/block:Pagination}
+
+<!-- ================== POSTS CONTENT ================== -->
+
+<div id="content">
+
+{block:ifPinnedPost}
+{block:HomePage}
+<div class="pinnedpostwrapper page-{CurrentPage}">
+<div class="entry"> <!--pinned post-->
+<div class="entrytit">
+<div class="sb2x etitx">x</div></a>{text:Pinned Post Title}</div><!--entrytitend-->
+<div class="entry-body">{text:Pinned Post Text}</div>
+</div><!--entry-->
+</div><!--pinnedpostwrapper-->
+{/block:HomePage}
+{/block:ifPinnedPost}
+
+{block:Posts}
+
+<div class="entry">
+
+<div class="entrytit"><!--post file header thingy-->
+{block:date}<a title="Reblog" href="{ReblogURL}">{/block:date}<div class="sb2x etitx">x</div>{block:date}</a>{/block:date}
+{block:Date}
+{block:ifnotFileNamePermalink}<a title="See post details" href="{Permalink}">{DayOfMonthWithZero} {ShortMonth} {Year} @ {24Hour}:{Minutes}{CapitalAmPm}, with {NoteCountWithLabel}</a>{/block:ifnotFileNamePermalink}
+
+{block:ifFileNamePermalink}<a title="See post details" href="{Permalink}">
+{block:RebloggedFrom}{ReblogRootName}{/block:RebloggedFrom}{block:NotReblog}org{/block:NotReblog}_{NoteCount}{block:text}.txt{/block:text}{block:photo}.jpeg{/block:photo}{block:photoset}.png{/block:photoset}{block:quote}.txt{/block:quote}{block:link}.url{/block:link}{block:chat}.log{/block:chat}{block:audio}.mp3{/block:audio}{block:video}.mp4{/block:video}{block:answer}.mail{/block:answer}
+<span class="etitex">({DayOfMonthWithZero} {ShortMonth} {ShortYear} @ {24Hour}:{Minutes}{CapitalAmPm})</span>
+</a>{/block:ifFileNamePermalink}
+
+{/block:Date}
+</div>
+
+{block:text}
+{block:Title}<div class="entry-title"><div class="entry-titlex"></div>{Title}</div>{/block:Title}
+<div class="entry-body">{Body}</div>
+{/block:text}
+
+{block:Photo}
+<img class="entry-photo entry-gray" src="{PhotoURL-500}">
+{block:Caption}<div class="entry-body">{Caption}</div>{/block:Caption}
+{/block:Photo}
+
+{block:Photoset}
+<div class="entry-gray">{Photoset-500}</div>
+{block:Caption}<div class="entry-body">{Caption}</div>{/block:Caption}
+{/block:Photoset}
+
+{block:Quote}
+<div class="entry-quote">{Quote}</div>
+{block:Source}<div class="entry-body entry-quotesrc">{Source}</div>{/block:Source}
+{/block:Quote}
+
+{block:Link}
+<div class="entry-linkcont">
+<div class="entry-linkline"></div>
+{block:Thumbnail}<img class="entry-linkthumb" src="{Thumbnail}">{/block:Thumbnail}
+<a href="{URL}"><span class="entry-link">{Name} →</span></a>
+</div>
+{block:Description}<div class="entry-body">{Description}</div>{/block:Description}
+{/block:Link}
+
+{block:Chat}
+{block:Title}<div class="entry-title"><div class="entry-titlex"></div>{Title}</div>{/block:Title}
+{block:Lines}<div class="{Alt}">
+<div class="entry-chatline"><div class="entry-chatlinetri"></div>{block:Label}<span class="entry-chatname">{Label}</span>{/block:Label} {Line}<br /></div></div>
+{/block:Lines}
+{/block:Chat}
+
+{block:Audio}
+{block:AudioEmbed}{AudioEmbed}{/block:AudioEmbed}
+{block:Caption}<div class="entry-body">{Caption}</div>{/block:Caption}
+{/block:Audio}
+
+{block:Video}
+{Video-500}
+{block:Caption}<div class="entry-body">{Caption}</div>{/block:Caption}
+{/block:Video}
+
+{block:Answer}
+<div class="entry-askericontri"></div>
+<img class="entry-askericon" src="{AskerPortraitURL-30}">
+<div class="entry-askerqn">
+<div class="entry-askersender">{Asker}<span class="entry-askersenderemail">@xmail.com</span> sent an email:</div>
+{Question}</div>
+<div class="entry-body">{Answer}</div>
+{/block:Answer}
+
+{block:IndexPage}
+{block:HasTags}<div class="entry-tags">{block:Tags}<a title="#{Tag}" href="{TagURL}"><div class="entry-tags-tag">{Tag}</div></a>{/block:Tags}</div>{/block:HasTags}
+{/block:IndexPage}
+
+</div><!--entry-->
+
+{Block:Date}{block:PermalinkPage}
+<div class="entry permasrc">
+    <div class="entrytit"><div class="sb2x psrcx">x</div></a>post_source.url</div>
+    {block:RebloggedFrom}
+    <a title="Reblogged from {ReblogParentName}" href="{ReblogParentURL}"><img class="psrcicon" src="{ReblogParentPortraitURL-64}"></a>
+    <a title="Posted by {ReblogRootName}" href="{ReblogRootURL}"><img class="psrcicon" src="{ReblogRootPortraitURL-64}"></a>
+    {/block:RebloggedFrom}
+    {block:NotReblog}<a href="/" title="Original Post"><img class="psrcicon" src="{PortraitURL-64}"></a><div class="psrcicon-nil">nil</div>{/block:NotReblog}
+</div>
+
+<div class="entry permainfo">
+    <div class="entrytit"><div class="sb2x pinfx">x</div></a>post_info.txt</div>
+    Posted on {DayOfMonth}{DayOfMonthSuffix} {Month} {Year} at {24Hour}:{Minutes}{AmPm}.
+    <div class="pinfdiv">This post has {NoteCountWithLabel}.</div>
+    Tagged as: {block:HasTags}{block:Tags}<a href="{TagURL}">#{Tag}</a> {/block:Tags}{/block:HasTags}
+</div>
+
+<div class="entry applepie">
+<div class="entrytit applepiecrust"><div class="sb2x etitx">x</div></a>post_history.txt</div>
+{PostNotes-16}
+</div>
+
+{/block:PermalinkPage}{/block:Date}
+
+{/block:Posts}
+
+</div><!--content-->
+
+<a title="Hydrogen Theme by xuethms" href="https://xuethms.tumblr.com"><div id="ringo">xuethms</div></a>
+
+</body>
+</html>
