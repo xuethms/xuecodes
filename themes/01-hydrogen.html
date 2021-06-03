@@ -11,7 +11,7 @@ theme 01 by xuethms.tumblr.com
 2. Do not claim theme as your own.
 3. Do not remove credit.
 
-version 1.00 - 04.06.21 @ 01:07
+version 1.00 - 04.06.21 @ 02:42
 
 -------------------------------------------------->
 
@@ -65,7 +65,8 @@ version 1.00 - 04.06.21 @ 01:07
 <!-- text options -->
 
 <meta name="text:Sidebar Quote" content="Advancement cannot occur without both thesis and antithesis.">
-<meta name="text:Pinned Post Title" content="README.txt">
+<meta name="text:Pinned Post File Name" content="README.txt">
+<meta name="text:Pinned Post Title" content="Hello world.">
 <meta name="text:Pinned Post Text" content="This is a pinned post. It is not actually a post, but a space for you to write something that will always appear at the top of your posts when someone visits your blog. You can use it like a second blog description.">
 <meta name="text:Grayscale Percentage" content="100">
 
@@ -193,6 +194,7 @@ a { text-decoration:none; }
     bottom: -40px;
     left: -70px;
     transform: rotate(-10deg);
+    z-index: -100;
 }
 
 #kona02 {
@@ -203,6 +205,7 @@ a { text-decoration:none; }
     top: -40px;
     right: -70px;
     transform: rotate(-10deg);
+    z-index: -100;
 }
 
 
@@ -555,8 +558,6 @@ blockquote, .applepie blockquote {
     max-width: 100%;
 }
 
-.entry-body img { max-width: 100%; }
-
 /** answer posts **/
 
 .entry-askericontri {
@@ -891,8 +892,15 @@ ol.notes {
 <div class="pinnedpostwrapper page-{CurrentPage}">
 <div class="entry"> <!--pinned post-->
 <div class="entrytit">
-<div class="sb2x etitx">x</div></a>{text:Pinned Post Title}</div><!--entrytitend-->
+<div class="sb2x etitx">x</div></a>{text:Pinned Post File Name}</div><!--entrytit-->
+
+<!-- EDIT PINNED POST CONTENT MANUALLY HERE -->
+
+<div class="entry-title"><div class="entry-titlex"></div>{text:Pinned Post Title}</div>
 <div class="entry-body">{text:Pinned Post Text}</div>
+
+<!-- STOP EDITING PINNED POST CONTENT HERE -->
+
 </div><!--entry-->
 </div><!--pinnedpostwrapper-->
 {/block:HomePage}
