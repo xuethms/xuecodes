@@ -11,7 +11,10 @@ theme 02 by xuethms.tumblr.com
 2. Do not claim theme as your own.
 3. Do not remove credit.
 
-version 1.01 - 12.06.21 @ 15:54
+version 1.02 - 20.06.21 @ 12:46
+> custom fonts fix
+> 700px photo posts support
+> npf posts support
 
 -------------------------------------------------->
 
@@ -222,6 +225,13 @@ $(function(){  $('.entry').unnest({
   }); });
 </script>
 
+<!--
+       NPF IMAGES READJUSTMENT | @glenthemes
+       v2.0 [last updated: 2021-06-03]
+-->
+<link href="//dl.dropbox.com/s/bnoj86mka0bkplb/npf-override.css" rel="stylesheet">
+<script src="//dl.dropbox.com/s/vwrm94pcg4c9e71/npf-evenize.js"></script>
+
 <!--JAVA-->
 <script src="//code.jquery.com/jquery-2.2.4.min.js"></script>
 <script src="https://static.tumblr.com/wgg6svp/OoTofxa0c/unnest.min.js"></script>
@@ -289,6 +299,8 @@ $(".btn-tags-hide").click(function(){
 :root {
     --post-width: {select:Post Size};
     --tmblr-ctrl: {select:Tumblr Controls};
+    --NPF-Image-Spacing: 10px;
+    --NPF-Bottom-Gap-From-Captions: 1em;
 }
 
 /** general stuff **/
@@ -779,7 +791,7 @@ a.tumblr_blog:hover {
     margin: 5px!important;
 }
 
-.entry-body blockquote blockquote {
+.entry-body blockquote blockquote, .applepie blockquote {
     border-left: 2px solid {color:Post Blockquote};
     padding-left: 15px;
     margin: 5px 0 5px 13px;
@@ -1469,7 +1481,26 @@ ol.notes {
     cursor: pointer;
 }
 
+/** thank you egg for the fix! :) **/
 
+.npf_row .tmblr-full {
+    width: calc(100% + 0px);
+    margin: 10px 0;
+    transform: translateX(0px);
+}
+
+.npf_row figure {
+    margin-top: 20px!important;
+}
+
+.npf_row img {
+    border-radius: 0!important;
+}
+
+.npf_row .post_media_photo_anchor {
+    position: relative;
+    display: contents;
+}
 
 {CustomCSS}    
 
@@ -1591,7 +1622,7 @@ ol.notes {
 
 {block:Posts}
 
-<div class="entry">
+<div class="entry" post-type="{PostType}">
 
 {block:Quote}
 <center><div class="entry-quo"><div class="quo1"></div><div class="quoquo">quote</div><div class="quo2"></div></div></center>
@@ -1635,7 +1666,7 @@ ol.notes {
 {block:Photo}
 <div class="entry-photo-kona"></div>
 <div class="entry-photo-kona kona2"></div>
-<img class="entry-photo entry-efx" src="{PhotoURL-500}">
+<img class="entry-photo entry-efx" src="{PhotoURL-HighRes}">
 {block:Caption}<div class="entry-body">{Caption}</div>{/block:Caption}
 {/block:Photo}
 
