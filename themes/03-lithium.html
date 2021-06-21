@@ -11,12 +11,12 @@ theme 03 by xuethms.tumblr.com
 2. Do not claim theme as your own.
 3. Do not remove credit.
 
-version 1.00 - 21.06.21 @ 21:00
+version 1.00 - 21.06.21 @ 23:00
 
 -------------------------------------------------->
 
 <!-- image options -->
-<meta name="image:Favicon" content="https://static.tumblr.com/wfsxfoo/BMjqv1r2m/morepic.png">
+<meta name="image:Favicon" content="https://static.tumblr.com/wfsxfoo/42oqv1t2a/favi.png">
 <meta name="image:Sidebar 1" content="https://static.tumblr.com/wfsxfoo/9lkqv1qs1/sbimg1.png">
 <meta name="image:Sidebar 2" content="https://static.tumblr.com/wfsxfoo/5o8qv1qs8/sbimg2.png">
 <meta name="image:Sidebar 3" content="https://static.tumblr.com/wfsxfoo/Zmmqv1qsl/sbimg3.png">
@@ -60,6 +60,8 @@ version 1.00 - 21.06.21 @ 21:00
 <meta name="if:Toggle Tags" content="1">
 <meta name="if:Light Tooltips" content="0">
 <meta name="if:Show Header" content="1">
+<meta name="if:Custom Username" content="0">
+<meta name="if:Custom Favicon" content="0">
 
 <!-- select post size -->
 <meta name="select:Post Size" title="500px" content="500px">
@@ -87,6 +89,7 @@ version 1.00 - 21.06.21 @ 21:00
 <meta name="text:Searchbar Placeholder Text" content="Search...">
 <meta name="text:Popup Title" content="About">
 <meta name="text:Popup Content" content="Type something here about yourself. Or you could turn this into an Updates pop-up, or share about a project you're working on.">
+<meta name="text:Custom Username Text" content="">
 
 <!-- custom links -->
 <meta name="text:Link 1 Title" content="">
@@ -119,8 +122,8 @@ version 1.00 - 21.06.21 @ 21:00
 
 
 <title>{Title}{block:PostSummary} - {PostSummary}{/block:PostSummary}</title>
-<link rel="shortcut icon" href="{image:Favicon}" />
 {block:Description}<meta name="description" content="{MetaDescription}" />{/block:Description}
+
 {block:ifCustomFavicon}
 <link rel="shortcut icon" href="{image:Favicon}" />
 {/block:ifCustomFavicon}
@@ -251,7 +254,6 @@ function lightbox(elem) {
 
 <style type="text/css">
 
-@font-face { font-family: "atami"; src: url('https://static.tumblr.com/wfsxfoo/RcIqukv19/atami-regular.otf'); }
 @font-face { font-family: "consola"; src: url('https://static.tumblr.com/wfsxfoo/2B4qukv6a/consolas.ttf'); }
 
 body {
@@ -717,7 +719,6 @@ iframe#tumblr_controls, .iframe-controls--desktop {
 
 .entry-body b,strong, .entry-quotesrc b,strong {
     color: {color:body bold};
-    font-weight: 500;
 }
 
 .entry-body i,em, .entry-quotesrc i,em {
@@ -740,12 +741,14 @@ iframe#tumblr_controls, .iframe-controls--desktop {
     margin-left: 10px;
     padding-left: 15px;
     border-left: 2px solid {color:Accent 2};
+    padding-right: 0;
+    margin-right: 0;
 }
 
 .entry-body h2 {
-    font-size: 16px;
-    color: {color:Accent 1};
-    margin: 20px 0 0 0;
+    font-size: 18px;
+    color: {color:Accent 2};
+    margin: 30px 0 0 0;
 }
 
 .entry-body ul { 
@@ -758,6 +761,8 @@ iframe#tumblr_controls, .iframe-controls--desktop {
     margin-left: -10px;
 }
 
+.entry-body li { margin: 5px 0; }
+
 pre {
     padding: 10px 20px;
     word-wrap: break-word;
@@ -768,6 +773,11 @@ pre {
     border: 1px solid #d3d3d3;
     font-family: consolas, consola, sans-serif;
     font-size: 11px;
+}
+
+.entry-body img {
+    height: auto!important;
+    max-width: 100%;
 }
 
 .entry-title {
@@ -1518,7 +1528,12 @@ ol.notes {
     </div><!--sbimgtoggles-->
     
     <img class="sbpfp" src="{PortraitURL-64}">
+    {block:ifNotCustomUsername}
     <div class="sbusername"><a href="/">{Name}</a></div>
+    {/block:ifNotCustomUsername}
+    {block:ifCustomUsername}
+    <div class="sbusername"><a href="/">{text:Custom Username Text}</a></div>
+    {/block:ifCustomUsername}
     <div class="sbdesc">
     <div class="sbdesc-userinfo">{text:User Info}</div>
     </div>
@@ -1637,7 +1652,7 @@ ol.notes {
 
 {block:Link}
 <div class="entry-linkicon"><i class="pe-7s-paperclip"></i></div>
-<a title="Click to visit link" target="_blank" href="{URL}"><div class="entry-link">{Name}
+<a title="Click to visit link" href="{URL}"><div class="entry-link">{Name}
 <br><span class="entry-linkhost"><i class="pe pe-7s-link"></i> go to {block:host}{host}{/block:host}</span>
 </div></a>
 {block:Thumbnail}<img class="entry-linkthumbnail" src="{Thumbnail}">{/block:Thumbnail}
@@ -1702,8 +1717,8 @@ ol.notes {
     {block:RebloggedFrom}<a title="posted by {ReblogRootName}" href="{ReblogRootURL}"><div class="permarighticon"><i class="pe-7s-share"></i></div></a>{/block:RebloggedFrom}
 </div><!--permaright-->
 
-<a href="{Permalink}" target="_blank"><div class="entry-permacrumb crumblei"><div class="entry-permacookie"><i class="pe-7s-like"></i>{NoteCount}n</div></div></a>
-<a href="{Permalink}" target="_blank"><div class="entry-permacrumb crumbleii"><div class="entry-permacookie"><i class="pe-7s-clock"></i>{DayOfMonth} {ShortMonth} {Year}</div></div></a>
+<a title="{DayOfWeek}, {24Hour}:{Minutes}" href="{Permalink}"><div class="entry-permacrumb crumblei"><div class="entry-permacookie"><i class="pe-7s-like"></i>{NoteCount}n</div></div></a>
+<a title="{DayOfWeek}, {24Hour}:{Minutes}" href="{Permalink}"><div class="entry-permacrumb crumbleii"><div class="entry-permacookie"><i class="pe-7s-clock"></i>{DayOfMonth} {ShortMonth} {Year}</div></div></a>
 
 {/block:IndexPage}{/block:Date}
 
