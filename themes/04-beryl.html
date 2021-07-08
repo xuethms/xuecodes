@@ -1378,6 +1378,12 @@ blockquote, .applepie blockquote {
 .entry-audinfo {
     margin: 5px 20px -5px 20px;
     font-size: 9px;
+    {block:ifLightPermalinkOverlay}
+    color: #000; 
+    {/block:ifLightPermalinkOverlay}
+    {block:ifnotLightPermalinkOverlay}
+    color: #fff; 
+    {/block:ifnotLightPermalinkOverlay}
 }
 
 .audinfoh {
