@@ -11,7 +11,7 @@ theme 04 by xuethms.tumblr.com
 2. Do not claim theme as your own.
 3. Do not remove credit.
 
-version 1.00 - 08.07.21 18:00
+version 1.00 - 08.07.21 18:25
 - official release
 
 -------------------------------------------------->
@@ -55,7 +55,7 @@ version 1.00 - 08.07.21 18:00
 
 <!-- image options -->
 <meta name="image:Favicon" content="">
-<meta name="image:Header Portrait" content="">
+<meta name="image:Header Portrait" content="https://static.tumblr.com/wfsxfoo/hpcqvx8x7/headerpic.png">
 
 <!-- text options -->
 <meta name="text:Topbar Title" content="Header Title">
@@ -431,6 +431,12 @@ iframe#tumblr_controls, .iframe-controls--desktop {
     background-color: var(--accent1);
     color: {color:Text on Accent 1};
     margin-right: 6px;
+    transition: 0.4s;
+}
+
+.naki a:hover {
+    color: var(--accent1);
+    background-color: {color:Text on Accent 1};
 }
 
 .nki { display: inline; }
@@ -439,6 +445,12 @@ iframe#tumblr_controls, .iframe-controls--desktop {
     color: {color:Text on Accent 2};
     background-color: {color:Accent 2};
 }
+
+.nki a:hover {
+    background-color: var(--accent1);
+    color: {color:Text on Accent 1};
+}
+
 
 /** footer **/
 
@@ -1092,8 +1104,8 @@ blockquote, .applepie blockquote {
 .entry-body h2 {
     font-family: var(--font);
     color: {color:Accent 1};
-    font-size: 16px;
-    font-weight: 400;
+    font-size: 18px;
+    font-weight: 1000;
 }
 
 .entry-body pre {
