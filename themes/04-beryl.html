@@ -11,8 +11,8 @@ theme 04 by xuethms.tumblr.com
 2. Do not claim theme as your own.
 3. Do not remove credit.
 
-version 1.00 - 08.07.21 19:54
-- official release
+version 1.01 - 09.07.21 12:04
+- fixed tags on permalink page + images in answer posts
 
 -------------------------------------------------->
 
@@ -1445,8 +1445,12 @@ blockquote, .applepie blockquote {
 
 .entry-ans img {
     border: 0;
-    margin: 0 20px;
+    margin: 0 0px;
     max-width: 310px!important;
+}
+
+.entry-ans .tmblr-full {
+    margin: 0!important;
 }
 
 /** permalink page styling **/
@@ -1527,7 +1531,7 @@ blockquote, .applepie blockquote {
 
 .ponetag {
     background-color: var(--accent2);
-    color: #cc455c;
+    color: {color:Text on Accent 2};
     padding: 0 5px;
     border-radius: 5px;
     margin: 0 2px;
