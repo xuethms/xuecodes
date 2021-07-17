@@ -11,8 +11,9 @@ theme 03 by xuethms.tumblr.com
 2. Do not claim theme as your own.
 3. Do not remove credit.
 
-version 1.02 - 23.06.21 @ 21:06
-- fixed npf video posts
+version 1.03 - 17.08.21 @ 19:34
+- update to in-line media
+- popup title colour option
 
 -------------------------------------------------->
 
@@ -41,6 +42,7 @@ version 1.02 - 23.06.21 @ 21:06
 <meta name="color:Topbar Text" content="#dad4d4">
 <meta name="color:Topbar BG" content="#4f4646">
 <meta name="color:Topbar Icon" content="#eada8d">
+<meta name="color:Popup Title" content="#000000">
 
 <meta name="color:Post BG" content="#ffffff">
 <meta name="color:Body" content="#5a5a5a">
@@ -1076,10 +1078,25 @@ pre {
     border-bottom: 0px solid transparent!important;
 }
 
-.tmblr-embed, .tmblr-full {
-    width: var(--post-width)!important;
+.tmblr-full, .tmrblr-embed {
+    object-fit: cover;
+}
+
+.tmblr-full video {
+    width: calc( var(--post-width) - 50px );
+    height: auto!important;
     overflow: hidden!important;
-    margin-left: -30px;
+    object-fit: cover;
+}
+
+.reblog-block figure {
+    margin: 0!important;
+}
+
+.tmblr-full img {
+    max-width: 100%!important;
+    height: auto!important;
+    text-align: left;
 }
 
 /** permalink **/
@@ -1386,6 +1403,7 @@ ol.notes {
     font-weight: 1000;
     letter-spacing: 3px;
     width: 340px;
+    color: {color:Popup Title};
 }
 
 .moretitlebg {
