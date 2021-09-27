@@ -12,7 +12,7 @@ theme 05 by xuethms.tumblr.com
 2. Do not claim theme as your own.
 3. Do not remove credit.
 
-version 1.00 - 28.09.21 @ 01:45
+version 1.00 - 28.09.21 @ 02:04
 - official release
 
 -------------------------------------------------->
@@ -849,16 +849,6 @@ pre {
     color: {color:Link Text};
 }
 
-.entry-linkexc {
-    font-family: consolas,consola,sans-serif;
-    font-size: 10px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-top: 6px;
-    color: {color:Link Excerpt};
-    transition: 0.6s;
-}
-
 .entry-linkblock:hover .entry-linkhost {
     margin-left: 10px;
 }
@@ -1637,7 +1627,6 @@ pre {
 <div class="entry-linkicon"><i class="cp cp-link"></i></div>
 <a href="{URL}" {block:host}title="hosted on {Host}"{/block:host}><div class="entry-linkblock">
     <div class="entry-linkname">{Name}</div>
-    {block:Excerpt}<div class="entry-linkexc">{Excerpt}</div>{/block:Excerpt}
 </div></a>
 <div class="entry-captioncon">
 {block:NotReblog}{block:Description}<div class="entry-body">{Description}</div>{/block:Description}{/block:NotReblog}
