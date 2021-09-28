@@ -12,8 +12,8 @@ theme 05 by xuethms.tumblr.com
 2. Do not claim theme as your own.
 3. Do not remove credit.
 
-version 1.00 - 28.09.21 @ 02:04
-- official release
+version 1.01 - 28.09.21 @ 18:23
+- font & colour option fixes
 
 -------------------------------------------------->
 
@@ -330,7 +330,7 @@ iframe#tumblr_controls, .iframe-controls--desktop {
     color: {color:Tooltips Text};
     text-transform: uppercase;
     letter-spacing: 1px;
-    font-family: anaheim;
+    font-family: consolas,consola;
     font-size: 8px;
     padding: 4px 6px;
     margin: 20px 0 0 10px;
@@ -976,7 +976,7 @@ pre {
 }
 
 .entry-audtext-extra {
-    font-family: consolas;
+    font-family: consolas,consola;
     font-size: 11px;
     text-transform: uppercase;
 }
@@ -1165,7 +1165,7 @@ pre {
     min-height: 16px;
     padding: 10px 15px;
     margin: -16px 0 0 -16px;
-    border: 1px solid #bbb;
+    border: 1px solid {color:Borders};
     font-size: 11px;
     letter-spacing: 1px;
     font-family: nunito;
@@ -1382,7 +1382,10 @@ pre {
     transform: translateY(-50%);
 }
 
-.biotxt {margin: 0 15px;}
+.biotxt {
+    margin: 0 15px;
+    color: {color:Description Text}; }
+}
 
 .biotxt blockquote {
     border-left: 2px solid var(--a1);
