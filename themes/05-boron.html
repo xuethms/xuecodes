@@ -1659,7 +1659,7 @@ pre {
 {block:Link}
 {block:Thumbnail}<img class="entry-linkthumb" src="{Thumbnail}">{/block:Thumbnail}
 <div class="entry-linkicon"><i class="cp cp-link"></i></div>
-<a href="{URL}" {block:host}title="hosted on {Host}"{/block:host}><div class="entry-linkblock">
+<a title="{block:Host}hosted on {Host}{/block:Host}" href="{URL}" {block:host}title="hosted on {Host}"{/block:host}><div class="entry-linkblock">
     <div class="entry-linkname">{Name}</div>
 </div></a>
 <div class="entry-captioncon">
@@ -1708,7 +1708,6 @@ pre {
 </div><!--reblog-block-->
 {/block:Reblogs}{/block:RebloggedFrom}
 {/block:Answerer}
-
 </div><!--text-->
 {/block:Answer}
 
