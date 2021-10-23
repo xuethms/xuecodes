@@ -11,7 +11,9 @@ theme 01 by xuethms.tumblr.com
 2. Do not claim theme as your own.
 3. Do not remove credit.
 
-version 1.00 - 04.06.21 @ 18:30
+version 1.01 - 23.10.21 @ 17:52
+- added pop-up single photos
+- fixed photoset lightboxes
 
 -------------------------------------------------->
 
@@ -106,8 +108,33 @@ attribute:"title"
 
 
 <!-- photosets -->
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <link href="https://static.tumblr.com/0podkko/oDSpg7y88/photosets.css" rel="stylesheet">
+<script>
+function gatherData(images, arr) {
+  for (let i = 0; i < images.length; i++) {
+    let currentData = {
+      "width": images[i].getAttribute('data-width'),
+      "height": images[i].getAttribute('data-height'),
+      "low_res": images[i].getAttribute('data-lowres'),
+      "high_res": images[i].getAttribute('data-highres')
+    };
+    arr.push(currentData);
+  }
+}
+function getIndex(elem) {
+  let i = 0;
+  while( (elem = elem.previousElementSibling) != null ) i++;
+  return i;
+}
+function lightbox(elem) {
+  let currentPhotoset = elem.parentNode;
+  let photosetPhotos = currentPhotoset.getElementsByTagName('div');
+  let data = [];
+  gatherData(photosetPhotos, data);
+  Tumblr.Lightbox.init(data, getIndex(elem) + 1);
+}
+</script>
 
 
 <style type="text/css">
@@ -551,9 +578,10 @@ blockquote, .applepie blockquote {
 }
 
 [photoset-layout] {
-  border-radius: 4px;
-  grid-gap: 5px;
-  overflow: hidden;
+    border-radius: 4px;
+    grid-gap: 5px;
+    overflow: hidden;
+    cursor: pointer;
 }
 
 .entry-gray, .entry-body img {
@@ -569,6 +597,19 @@ blockquote, .applepie blockquote {
 
 .entry-body blockquote img {
     max-width: 100%;
+}
+
+.vignette, #vignette {
+    opacity:0;
+}
+.lightbox-image, #tumblr_lightbox img {
+    box-shadow: none !important;
+    border-radius: 0 !important;
+    max-width: none;
+}
+.tmblr-lightbox, #tumblr_lightbox {
+    background-color:rgba(245,245,245,.7) !important;
+    backdrop-filter: blur(5px);
 }
 
 /** answer posts **/
@@ -942,12 +983,16 @@ ol.notes {
 {/block:text}
 
 {block:Photo}
-<img class="entry-photo entry-gray" src="{PhotoURL-500}">
+<a href="#" onclick="Tumblr.Lightbox.init([{ width: {PhotoWidth-HighRes}, height: {PhotoHeight-HighRes}, low_res: '{PhotoURL-500}', high_res: '{PhotoURL-HighRes}' }]); $('body').toggleClass('tumblr_lightbox_active'); return false">
+    <img class="entry-photo entry-gray" src="{PhotoURL-500}">
+</a>
 {block:Caption}<div class="entry-body">{Caption}</div>{/block:Caption}
 {/block:Photo}
 
 {block:Photoset}
-<div class="entry-gray"><div class="photoset-grid" photoset-layout="{PhotosetLayout}">{block:Photos}<div><img src="{PhotoURL-HighRes}" /></div>{/block:Photos}</div></div>
+<div class="entry-gray">
+<div class="photoset-grid" photoset-layout="{PhotosetLayout}">{block:Photos}<div data-width="{PhotoWidth-HighRes}" data-height="{PhotoHeight-HighRes}" data-lowres="{PhotoURL-500}" data-highres="{PhotoURL-HighRes}" onclick="lightbox(this)"><img src="{PhotoURL-HighRes}" /></div>{/block:Photos}</div>
+</div><!--gray effect-->
 {block:Caption}<div class="entry-body">{Caption}</div>{/block:Caption}
 {/block:Photoset}
 
