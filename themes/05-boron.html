@@ -12,9 +12,8 @@ theme 05 by xuethms.tumblr.com
 2. Do not claim theme as your own.
 3. Do not remove credit.
 
-version 1.02 - 30.09.21 @ 21:30
-- fixed pinned posts label
-- added option for truncated tags
+version 1.04 - 23.10.21 @ 18:19
+> photoset lightboxes
 
 -------------------------------------------------->
 
@@ -172,6 +171,10 @@ version 1.02 - 30.09.21 @ 21:30
 <meta name="select:List Style" title="Hiragana" content="hiragana">
 <meta name="select:List Style" title="Numbers" content="decimal">
 <meta name="select:List Style" title="Alphabets" content="lower-alpha">
+
+<!-- photoset lightbox -->
+<meta name="select:Photoset Lightbox" title="Light" content="245,245,245">
+<meta name="select:Photoset Lightbox" title="Dark" content="5,5,5">
 
 <title>{text:Browser Tab Title}{block:PostSummary} - {PostSummary}{/block:PostSummary}</title>
 {block:Description}<meta name="description" content="{MetaDescription}" />{/block:Description}
@@ -683,12 +686,7 @@ a { text-decoration: none; }
 /** photoset lightbox - thanks @shythemes! **/
 
 .tmblr-lightbox, #tumblr_lightbox {
-    {block:ifLightPermalinkOverlay}
-    background: rgba(255,255,255,0.5)!important;
-    {/block:ifLightPermalinkOverlay}
-    {block:ifnotLightPermalinkOverlay}
-    background: rgba(0,0,0,0.5)!important;
-    {/block:ifnotLightPermalinkOverlay}
+    background: rgba({select:Photoset Lightbox},0.5)!important;
     backdrop-filter: blur(3px)!important;
     z-index: 10000!important;
 }
@@ -1739,7 +1737,9 @@ pre {
 {/block:Quote}
 
 {block:photo}
-<img class="entry-photo" src="{PhotoURL-500}" alt="{PhotoAlt}"/>{LinkCloseTag}
+<a href="#" onclick="Tumblr.Lightbox.init([{ width: {PhotoWidth-HighRes}, height: {PhotoHeight-HighRes}, low_res: '{PhotoURL-500}', high_res: '{PhotoURL-HighRes}' }]); $('body').toggleClass('tumblr_lightbox_active'); return false">
+    <img class="entry-photo" src="{PhotoURL-500}" alt="{PhotoAlt}"/>
+</a>
 {block:HighRes}<a target="_blank" title="View photo in high-res" href="{PhotoURL-HighRes}"><div class="highresbtn"><i data-feather="zoom-in" stroke-width="1" width="18px" height="18px" color="{color:Body Text}"></i></div></a>{/block:HighRes}
 {/block:photo}
 
