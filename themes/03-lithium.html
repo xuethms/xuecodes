@@ -11,9 +11,8 @@ theme 03 by xuethms.tumblr.com
 2. Do not claim theme as your own.
 3. Do not remove credit.
 
-version 1.03 - 17.08.21 @ 19:34
-- update to in-line media
-- popup title colour option
+version 1.04 - 23.10.21 @ 18:07
+> added photo post single photo lightboxes
 
 -------------------------------------------------->
 
@@ -1622,7 +1621,9 @@ ol.notes {
 {/block:Quote}
 
 {block:photo}
-<img class="entry-photo" src="{PhotoURL-500}" alt="{PhotoAlt}"/>{LinkCloseTag}
+<a href="#" onclick="Tumblr.Lightbox.init([{ width: {PhotoWidth-HighRes}, height: {PhotoHeight-HighRes}, low_res: '{PhotoURL-500}', high_res: '{PhotoURL-HighRes}' }]); $('body').toggleClass('tumblr_lightbox_active'); return false">
+    <img class="entry-photo" src="{PhotoURL-500}" alt="{PhotoAlt}"/>
+</a>
 {block:HighRes}<a target="_blank" title="View photo in high-res" href="{PhotoURL-HighRes}"><div class="highresbtn"><i class="pe-7s-photo"></i></div></a>{/block:HighRes}
 {/block:photo}
 
