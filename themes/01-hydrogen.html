@@ -14,6 +14,7 @@ theme 01 by xuethms.tumblr.com
 version 1.01 - 23.10.21 @ 17:52
 - added pop-up single photos
 - fixed photoset lightboxes
+- added option to select lightbox colour
 
 -------------------------------------------------->
 
@@ -80,6 +81,11 @@ version 1.01 - 23.10.21 @ 17:52
 <meta name="if:Pinned Post" content="0">
 <meta name="if:Grayscale Posts" content="0">
 
+
+<!-- select options -->
+
+<meta name="select:Photoset Lightbox" title="Light" content="245,245,245">
+<meta name="select:Photoset Lightbox" title="Dark" content="5,5,5">
 
 
 <!-- SCRIPTS & STUFF ----------------------------->
@@ -608,7 +614,7 @@ blockquote, .applepie blockquote {
     max-width: none;
 }
 .tmblr-lightbox, #tumblr_lightbox {
-    background-color:rgba(245,245,245,.7) !important;
+    background-color: rgba({Select:Photoset Lightbox},.7) !important;
     backdrop-filter: blur(5px);
 }
 
