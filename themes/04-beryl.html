@@ -11,8 +11,8 @@ theme 04 by xuethms.tumblr.com
 2. Do not claim theme as your own.
 3. Do not remove credit.
 
-version 1.01 - 09.07.21 12:04
-- fixed tags on permalink page + images in answer posts
+version 1.01 - 23.10.21 @ 18:12
+> single photos in photo posts can now be enlarged in permalink page
 
 -------------------------------------------------->
 
@@ -1445,12 +1445,8 @@ blockquote, .applepie blockquote {
 
 .entry-ans img {
     border: 0;
-    margin: 0 0px;
+    margin: 0 20px;
     max-width: 310px!important;
-}
-
-.entry-ans .tmblr-full {
-    margin: 0!important;
 }
 
 /** permalink page styling **/
@@ -1531,7 +1527,7 @@ blockquote, .applepie blockquote {
 
 .ponetag {
     background-color: var(--accent2);
-    color: {color:Text on Accent 2};
+    color: #cc455c;
     padding: 0 5px;
     border-radius: 5px;
     margin: 0 2px;
@@ -1866,7 +1862,9 @@ blockquote, .applepie blockquote {
 {/block:quote}
 
 {block:photo}
-<img class="entry-photo" src="{PhotoURL-500}" alt="{PhotoAlt}"/>{LinkCloseTag}
+{block:permalinkpage}<a href="#" onclick="Tumblr.Lightbox.init([{ width: {PhotoWidth-HighRes}, height: {PhotoHeight-HighRes}, low_res: '{PhotoURL-500}', high_res: '{PhotoURL-HighRes}' }]); $('body').toggleClass('tumblr_lightbox_active'); return false">{/block:permalinkpage}
+    <img class="entry-photo" src="{PhotoURL-500}" alt="{PhotoAlt}"/>{LinkCloseTag}
+{block:permalinkpage}</a>{/block:permalinkpage}
 {/block:photo}
 
 {block:Photoset}
