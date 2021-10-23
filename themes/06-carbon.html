@@ -2524,7 +2524,9 @@ STEP 5: Wanna add fancy formatting? Surround your text with the following HTML t
 {/block:Text}
 
 {block:Photo}
-<center>{LinkOpenTag}<img class="entry-photo" src="{PhotoURL-500}" alt="{PhotoAlt}"/>{LinkCloseTag}</center>
+<a href="#" onclick="Tumblr.Lightbox.init([{ width: {PhotoWidth-HighRes}, height: {PhotoHeight-HighRes}, low_res: '{PhotoURL-500}', high_res: '{PhotoURL-HighRes}' }]); $('body').toggleClass('tumblr_lightbox_active'); return false">
+    <center><img class="entry-photo" src="{PhotoURL-500}" alt="{PhotoAlt}"/></center>
+</a>
 {block:HighRes}<a target="_blank" title="View photo in high-res" href="{PhotoURL-HighRes}"><div class="highresbtn"><i class="cp cp-search"></i></div></a>{/block:HighRes}
 {/block:Photo}
 
