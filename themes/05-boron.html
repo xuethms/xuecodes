@@ -12,8 +12,9 @@ theme 05 by xuethms.tumblr.com
 2. Do not claim theme as your own.
 3. Do not remove credit.
 
-version 1.04 - 23.10.21 @ 18:19
-> photoset lightboxes
+version 1.05 - 03.11.21 @ 20:13
+> entry audio info bg, text, track name colours fix
+> entry quote colour fix
 
 -------------------------------------------------->
 
@@ -66,6 +67,10 @@ version 1.04 - 23.10.21 @ 18:19
 <meta name="color:Chat Bubble 2" content="#dcdcdc">
 <meta name="color:Chat Bubble 3" content="#ecc28a">
 <meta name="color:Chat Bubble 4" content="#b8cc9e">
+
+<meta name="Audio Info BG" content="#f1f1f1">
+<meta name="Audio Info Text" content="#000000">
+<meta name="Audio Info Track Name" content="#000000">
 
 <meta name="color:Description Text" content="#424242">
 <meta name="color:Description Bold" content="#eeab92">
@@ -710,7 +715,7 @@ a { text-decoration: none; }
     line-height: 24px;
 }
 
-.entry-body {
+.entry-body, .entry-quotesrc {
     color: {color:Body Text};
     font-size: 12px;
     line-height: 24px;
@@ -800,6 +805,7 @@ pre {
     margin: 10px 20px 20px 20px;
     padding: 10px 0 10px 30px;
     border-left: 4px solid {color:Quote Border};
+    color: {color:Body Text};
 }
 
 .entry-quote .cp {
@@ -970,7 +976,8 @@ pre {
     width: 310px;
     height: 120px;
     padding: 0 20px;
-    background-color: {color:Post Media Background};
+    background-color: {color:Audio Info BG};
+    color: {color:Audio Info Text};
     position: absolute;
     margin: 0 120px;
 }
@@ -985,7 +992,7 @@ pre {
 
 .entry-audtext-track {
     font-size: 18px;
-    color: {color:Body Text};
+    color: {color:Audio Info Track Name};
     margin-top: -6px;
 }
 
