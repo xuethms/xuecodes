@@ -12,8 +12,9 @@ theme 07 by xuethms.tumblr.com
 2. Do not claim theme as your own.
 3. Do not remove credit.
 
-version 1.00 - 25.10.21 @ 03:17
-- official release
+version 1.01 - 28.11.21 @ 00:11
+- added 'show tags' option
+- support for tumblr text colours
 
 --------------------------------------------------->
 
@@ -31,6 +32,7 @@ version 1.00 - 25.10.21 @ 03:17
 <meta name="if:Right Sidebar" content="0">
 <meta name="if:Wallpaper Background" content="0">
 <meta name="if:Custom Favicon" content="0">
+<meta name="if:Show Tags" content="0">
 <meta name="if:Show Album Info in Audio Posts" content="0">
 
 
@@ -62,6 +64,8 @@ version 1.00 - 25.10.21 @ 03:17
 <meta name="color:Blockquote" content="#67b6c4">
 <meta name="color:pre Background" content="#f0f0f0">
 <meta name="color:pre Text" content="#a6a6a6">
+<meta name="color:Tags" content="#444444">
+<meta name="color:Tags Hover" content="#67b6c4">
 
 <meta name="color:Reblogger Username" content="#000000">
 
@@ -760,6 +764,18 @@ pre {
     max-width: 100%;
 }
 
+/** npf text colours **/
+/** credit to @unwrapping: https://unwrapping.tumblr.com/post/177292830752/fun-with-text-colors-from-tumblrs-web-dashboard **/
+.npf_color_joey {color:#ff492f;}
+.npf_color_monica {color:#ff8a00;}
+.npf_color_chandler {color:#973ff4;}
+.npf_color_phoebe {color:#fcf01d;}
+.npf_color_rachel {color:#00b8ff;}
+.npf_color_ross { color:#00cf35; }
+.npf_color_niles { color:#ff62ce; }
+.npf_color_frasier { color:#001935; }
+.npf_color_mr_big { color:#000c1a; }
+
 /** reblog chains **/
 
 .entry-reblogblk {
@@ -1266,6 +1282,26 @@ pre {
     position: absolute;
     margin-left: -24px;
     color: var(--a1);
+}
+
+.entry-btags {
+    margin-top: 12px;
+    text-align: center;
+    width: 500px;
+    line-height: 20px;
+    font-size: 9px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.entry-btags a {
+    margin: 0 8px;
+    color: {color:Tags};
+    transition: 0.6s;
+}
+
+.entry-btags a:hover {
+    color: {color:Tags Hover};
 }
 
 /** permalink page **/
@@ -1847,16 +1883,17 @@ pre {
     
     <!-- post info -->
     <div class="ea-t2-info">
-    {block:hastags}<div class="ea-t2-tags">
-        <div class="ea-t2-tagicon"><i data-feather="tag" stroke-width="2" width="14px"></i></div>
-        {block:tags}<a href="{TagURL}" title="{Tag}">#{Tag}</a>{/block:tags}
-    </div><!--tags-->{/block:hastags}
-    
         Posted <span class="dateform df-t1-{select:Permalink Date Format}">{TimeAgo}</span><span class="dateform df-t2-{select:Permalink Date Format}">on {DayOfMonth} {Month} @ {24Hour}:{minutes}{ampm} </span> with {NoteCountWithLabel}.
     </div><!--ea-t2-info-->
     
 </div><!--ea-t2-t2-->
 {/block:indexpage}
+
+{block:ifShowTags}{block:hastags}
+<div class="entry-btags">
+    {block:tags}<a href="{TagURL}">#{Tag}</a>{/block:tags}
+</div>
+{/block:hastags}{/block:ifShowTags}
 
 {block:permalinkpage}{block:date}
 
