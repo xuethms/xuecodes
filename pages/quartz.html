@@ -1,0 +1,1073 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<!-------------------------------------------------
+
+Q U A R T Z
+
+about page 02 by xuethms.tumblr.com
+
+1. Do not edit/remove my visual & in-code credits.
+2. Do not reupload/reuse my codes & designs on
+   other websites and platforms.
+3. Do not claim theme as your own.
+4. Do not share paid releases with others.
+
+version 1.00 - 07.01.22
+- official release
+
+----------------------------------------------------
+
+To edit this page, you will have to edit:
+
+    1. CSS - the styling (colours mainly)
+       > Use ctrl+F to search for [HERON]
+         to jump to the section you need to edit.
+    
+    2. HTML - the content
+       > Use ctrl+F to search for [EGRET].
+         to jump to the section you need to edit.
+
+Look out for my comments (greyed out text) like this.
+
+VERY IMPORTANT; for your ask box to work, make sure
+you have added your username where instructed. Use
+ctrl+F to search for [BITTERN] to jump there.
+
+--------------------------------------------------->
+
+<!-- edit [about] below to change the text on the browser tab -->
+<title>about</title>
+
+<!-- replace [{Favicon}] below with an image URL to have a custom favicon 
+     favicon = the small icon on browser tabs; by default it's your pfp. -->
+<link rel="shortcut icon" href="{Favicon}" />
+
+<style type="text/css">
+
+:root {
+    
+/** [HERON] CSS STYLING
+    With the use of CSS variables, you don't need to scroll through the whole code to edit the appearance of the page; you can do so in this single block!
+
+    
+****************************************** GLOBAL APPEARANCE OPTIONS **/
+    --mainfont: nunito;
+    --scrollbar: #edc291;
+    --text-highlight: #edc291;
+    
+    --BGcolour: #eaeaea; /** only shows up if no bg img below **/
+    --BGimageURL: url("https://images.unsplash.com/photo-1608914981498-5b8431aa92b0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80");
+    /** replace the word [XUE] with your own background image URL **/
+    
+    --BGwallpaper: cover; 
+    /**  auto = repeated bg
+         cover = stretched as a wallpaper **/
+
+
+/******************************************************* THE BASICS **/
+    
+    /** tooltips = the small pop-up next to your mouse
+        when you hover over links **/
+    --tooltipBG: 0,0,0; /** RGB colour values **/
+    --tooltipColour: #ffffff;
+    
+    
+/******************************************************* MAIN CONTENT **/
+    --windowBG: #eaeaea; /** grey area **/
+    --contentBG: #ffffff;
+    --txtcolour: #444444; /** default font colour **/
+    --translucent-border: 255,255,255; /** RGB values **/
+    
+    /** header icon **/
+    --header-iconBG: #66a9ba; /* deep blue by default */
+    --header-icon: #ffffff;
+    --header-icon-code: '\ed12'; /** default: wheat **/
+    /** 1. go to https://cappuccicons.com/
+        2. scroll down & choose the icon you like
+        3. copy the icon code and replace the one above **/
+        
+    /** navigation buttons -- i.e, intro, tags, following, contact **/
+    --nav-colour: #aaaaaa; /** default text colour **/
+    
+    /** colour when hovered **/
+    --nav-hover-BG: #e6e6e6;
+    --nav-hover-colour: #333333;
+    
+    /** colour when panel is active (panel is showing) **/
+    --nav-active-BG: #f0e3ad; 
+    --nav-active-colour: #c27d3c;
+
+
+/********************************************************* INTRO PAGE **/
+    /** left photo **/ 
+    --abt-photoURL: url("https://images.unsplash.com/photo-1608914981193-a6bc79e8a909?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80");
+    
+    /** basic info intro (below photo) **/
+    --abt-label: #edc291; /** "name", "location", etc **/
+    
+    /** biography **/
+    --abt-header: #abcadb; /** 1st letter and h2 blocks **/
+    --abt-bold: #6a7d99; /** bolded text **/
+    --abt-italic: #aaaaaa; /** italic text **/
+    --abt-link-BG: #f1f1f1; /** links **/
+    --abt-link-txt: #444444;
+    --abt-blockquote-BG: #f1f1f1;
+    --abt-blockquote-border: #dddddd;
+    --abt-blockquote-quotationmarks: #cacaca; /** quotation mark icon **/
+    
+
+/********************************************************** TAGS LIST **/
+    /** left photo **/
+    --tag-photoURL: url("https://images.unsplash.com/photo-1608914998172-587b1b25f247?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80");
+    
+    /** tag block categories
+        There are three colour ways that are alternated. **/
+    --tag-category-A-BG: #66a9ba;
+    --tag-category-A-txt: #ffffff;
+    
+    --tag-category-B-BG: #d9ab5b;
+    --tag-category-B-txt: #ffffff;
+    
+    --tag-category-C-BG: #f0e3ad;
+    --tag-category-C-txt: #9c6527;
+
+    /** tag link buttons **/
+    --tag-link-BG: #f6f6f6;
+    --tag-link-txt: #444444;
+    --tag-link-border: #dadada;
+    --tag-link-BG-hovered: #f8f8f8; /** when hovered **/
+    --tag-link-txt-hovered: #000000;
+
+
+/*********************************************************** BLOGROLL **/
+    /** left photo **/
+    --fol-photoURL: url("https://images.unsplash.com/photo-1608914970686-59282a504703?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80");
+    
+    /** visit blog icon link **/
+    --fol-visit-icon-BG: #eaeaea;
+    --fol-visit-icon: #aaaaaa;
+    
+    /** follow blog icon link **/
+    --fol-follow-icon-BG: #66a9ba;
+    --fol-follow-icon: #ffffff;
+    
+    --fol-info-username: #444444;
+    --fol-info-blogtitle: #aaaaaa;
+    
+
+/*********************************************************** CONTACT **/
+    /** left photo **/
+    --qna-photoURL: url("https://images.unsplash.com/photo-1608914997960-84426bb5b313?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80");
+    
+    /** the small QNA before each question **/
+    --qna-label-BG: #f0e3ad;
+    --qna-label-txt: #9c6527;
+    
+    /** active qna question bg & text **/
+    --qna-active-qn-BG: #f0e3ad;
+    --qna-active-qn-txt: #9c6527;
+}
+
+/** ======================================================== THE BASICS **/
+
+body {
+    background-color: var(--BGcolour);
+    background-image: var(--BGimageURL);
+    background-size: var(--BGwallpaper);
+    background-attachment: fixed;
+    font-family: var(--mainfont),sans-serif;
+}
+
+a { text-decoration: none; }
+p:first-child { margin-top: 0; }
+p:last-child { margin-bottom: 0; }
+
+/** tool tips **/
+
+#s-m-t-tooltip {
+    z-index: 1000000000000000000000000000000000000;
+    max-width: 300px;
+    letter-spacing: 1px;
+    font-family: nunito;
+    font-size: 10px;
+    padding: 4px 8px;
+    margin: 20px 0 0 10px;
+    border-radius: 7px;
+    background-color: rgba(var(--tooltipBG),0.8);
+    color: var(--tooltipColour);
+}
+
+/** scrollbar **/
+
+::-webkit-scrollbar { width: 14px; }
+::-webkit-scrollbar-track-piece { 
+    background-color: var(--contentBG);
+}  
+
+::-webkit-scrollbar-thumb:vertical {
+    width: 6px;
+    border: 4px solid var(--contentBG);
+    background: var(--scrollbar);
+    border-radius: 100px;
+}
+
+
+/** text selection **/
+
+::selection {
+    color: #ffffff;
+    background-color: var(--text-highlight);
+}
+
+::-moz-selection {
+    color: #ffffff;
+    background-color: var(--text-highlight);
+}
+
+::-webkit-selection {
+    color: #ffffff;
+    background-color: var(--text-highlight);
+}
+
+/** ============================================== MAIN CONTENT WINDOW **/
+
+.maincon {
+    width: 100%;
+    height: 100%;
+}
+
+#main {
+    padding: 30px;
+    width: 540px;
+    background: #888;
+    position: fixed;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    right: calc(50% - 300px); /** half of the width **/
+    
+    background-color: rgba(var(--translucent-border),0.3);
+    backdrop-filter: blur(2px);
+    border: 1px solid rgba(var(--translucent-border),0.6);
+}
+
+
+/** ========================================= HEADER / NAVIGATION BAR **/
+
+.header {
+    width: 540px;
+    height: 60px;
+    background-color: var(--contentBG);
+    overflow: hidden;
+}
+
+.header-left {
+    background-color: var(--header-iconBG);
+    width: 90px;
+    height: 60px;
+    float: left;
+}
+
+.header-left-cov {
+    background-color: var(--contentBG);
+    width: 70px;
+    height: 70px;
+    margin: -5px 60px;
+    border-radius: 100px;
+}
+
+.header-icon {
+    position: absolute;
+    width: 20px;
+    margin: 20px;
+    line-height: 20px;
+    text-align: center;
+    font-size: 20px;
+    color: var(--header-icon);
+}
+
+.header-icon:before {
+    content: var(--header-icon-code);
+    font-family:'cappuccicons';
+}
+
+.header-nav {
+    display: flex;
+}
+
+/** navigation buttons **/
+
+.hbtn {
+    font-size: 12px;
+    cursor: pointer;
+    margin: 20px 10px 20px 0;
+    line-height: 20px;
+    padding: 0 6px;
+    border-radius: 4px;
+    transition: 0.6s;
+    color: var(--nav-colour);
+}
+
+.hbtn:hover {
+    color: var(--nav-hover-colour);
+    background-color: var(--nav-hover-BG);
+}
+
+.hbtn-active {
+    color: var(--nav-active-colour);
+    background-color: var(--nav-active-BG);
+}
+
+.hbtn-active:hover {
+    color: var(--nav-active-colour);
+    background-color: var(--nav-active-BG);
+}
+
+.hpfp {
+    position: absolute;
+    margin: 15px 405px;
+    border-radius: 6px;
+}
+
+/** ===================================================== CAROUSEL PANELS **/
+
+.content {
+    border: 20px solid var(--windowBG);
+    background-color: var(--windowBG);
+    height: 300px;
+    overflow: hidden;
+}
+
+.allviews {
+    transition: 0.6s ease-in-out;
+    width: 2000px;
+    overflow-y: auto;
+    overflow: hidden;
+}
+
+.view {
+    float: left;
+    width: 500px;
+    height: 300px;
+    overflow: hidden;
+}
+
+/** ============================================================== ABOUT **/
+
+.abt-layout {height: 300px;}
+
+.abt-basic {
+    width: 150px;
+    height: 100%;
+    float: left;
+    margin-right: 20px;
+}
+
+.abt-photo {
+    background-image: var(--abt-photoURL);
+    background-size: cover;
+    background-position: center;
+    width: 150px;
+    height: 220px;
+    border-radius: 10px 10px 0 0;
+    display: block;
+}
+
+.abt-pts {
+    background-color: var(--contentBG);
+    border-radius: 0 0 10px 10px;
+}
+
+.abt-ptline {
+    padding: 5px 10px;
+    text-align: right;
+    font-size: 12px;
+    border-bottom: 1px solid var(--windowBG);
+    color: var(--txtcolour);
+}
+
+.abt-pttitle {
+    position: relative;
+    height: 0;
+    text-align: left;
+    line-height: 17px;
+    font-family: nunito;
+    font-size: 8px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 1000;
+    color: var(--abt-label);
+}
+
+.abt-bio {
+    width: 300px;
+    height: 260px;
+    overflow: hidden;
+    padding: 20px 10px 20px 20px;
+    background-color: var(--contentBG);
+    border-radius: 10px;
+}
+
+.bio-graphy {
+    font-size: 12px;
+    line-height: 20px;
+    height: 260px;
+    overflow-y: auto;
+    padding-right: 10px;
+    text-align: justify;
+    color: var(--txtcolour);
+}
+
+.bio-graphy:first-letter {
+    font-size: 40px;
+    float: left;
+    font-family: fredoka one;
+    color: var(--abt-header);
+    margin: 10px 6px 0 0;
+    text-transform: uppercase;
+}
+
+.bio-graphy blockquote {
+    background-color: var(--abt-blockquote-BG);
+    border: 1px solid var(--abt-blockquote-border);
+    border-radius: 10px;
+    margin: 0;
+    font-size: 10px;
+    line-height: 18px;
+    padding: 10px 15px;
+}
+
+.bio-graphy blockquote:before {
+    content: "\ec2b";
+    font-family: "cappuccicons";
+    width: 0;
+    height: 0;
+    position: relative;
+    color: var(--abt-blockquote-quotationmarks);
+    margin: 0 8px 0 0;
+    font-size: 10px;
+}
+
+.bio-graphy blockquote a { 
+    padding: 0;
+    background: transparent;
+}
+
+.bio-graphy b,strong, .qna-block b,strong {
+    color: var(--abt-bold);
+}
+
+.bio-graphy a, .qna-block a {
+    font-size: 8px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 1000;
+    padding: 3px 5px;
+    border-radius: 4px;
+    margin: 0 2px 0 2px;
+    color: var(--abt-link-txt);
+    background-color: var(--abt-link-BG);
+}
+
+.bio-graphy i,em, .qna-block i,em {
+    color: var(--abt-italic);
+    font-style: normal;
+}
+
+.bio-graphy h2 {
+    font-size: 14px;
+    font-family: fredoka one;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: var(--abt-header);
+    margin: 20px 0 -5px 0;
+}
+
+ul {
+    margin-left: -10px;
+    list-style-type: square;
+}
+
+/** =========================================================== TAGSLIST **/
+
+.view-photo {
+    width: 150px;
+    height: 300px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    float: left;
+    margin-right: 10px;
+}
+
+.tag-photo {
+    background-image: var(--tag-photoURL);
+}
+
+.tag-con {
+    width: 340px;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.tag-con::-webkit-scrollbar-track-piece{background-color: var(--windowBG);}
+.tag-con::-webkit-scrollbar-thumb:vertical{border: 4px solid var(--windowBG);}
+
+.tag-block {
+    display: inline-block;
+    float: left;
+    margin: 0 0 10px 10px;
+    width: 150px;
+    font-size: 10px;
+    border-radius: 10px;
+}
+
+.tag-category {
+    padding: 6px 8px;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 1000;
+    position: sticky;
+    top: 0;
+}
+
+.tag-block:nth-child(3n+0) .tag-category {
+    background-color: var(--tag-category-A-BG);
+    color: var(--tag-category-A-txt);
+}
+
+.tag-block:nth-child(3n+1) .tag-category {
+    background-color: var(--tag-category-B-BG);
+    color: var(--tag-category-B-txt);
+}
+
+.tag-block:nth-child(3n+2) .tag-category {
+    background-color: var(--tag-category-C-BG);
+    color: var(--tag-category-C-txt);
+}
+
+.tag-btn {
+    margin-top: 2px;
+    padding: 2px 6px;
+    transition: 0.3s ease-in-out;
+    border-left: 4px solid var(--tag-link-border);
+    background-color: var(--tag-link-BG);
+    color: var(--tag-link-txt);
+}
+
+.tag-btn:hover {
+    background-color: var(--tag-link-BG-hovered);
+    color: var(--tag-link-txt-hovered);
+}
+
+.tag-block:nth-child(3n+0) .tag-btn:hover {
+    border-left: 4px solid var(--tag-category-A-BG);
+}
+
+.tag-block:nth-child(3n+1) .tag-btn:hover {
+    border-left: 4px solid var(--tag-category-B-BG);
+}
+
+.tag-block:nth-child(3n+2) .tag-btn:hover {
+    border-left: 4px solid var(--tag-category-C-BG);
+}
+
+/** ========================================================== BLOGROLL **/
+
+.fol-photo {
+    background-image: var(--fol-photoURL);
+    margin-right: 20px;
+}
+
+.fol-content::-webkit-scrollbar-track-piece { 
+    background-color: var(--windowBG);
+}
+
+.fol-content::-webkit-scrollbar-thumb:vertical { 
+    border: 4px solid var(--windowBG);
+}
+
+.fol-content {
+    padding-right: 10px;
+    float: left;
+    width: 320px;
+    max-height: 300px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.fol-block {
+    border-radius: 10px;
+    padding: 15px 0 15px 15px;
+    height: 40px;
+    background-color: var(--contentBG);
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+.fol-block:last-child { margin-bottom: 0; }
+
+.fol-actions {
+    width: 80px;
+    float: left;
+    margin: 8px 0;
+}
+
+.fol-acticon {
+    float: left;
+    width: 25px;
+    height: 25px;
+    text-align: center;
+    line-height: 28px;
+    border-radius: 7px;
+    margin-right: 10px;
+    font-size: 10px;
+}
+
+.acticon1 { 
+    background-color: var(--fol-visit-icon-BG);
+    color: var(--fol-visit-icon);
+}
+
+.acticon2 {
+    background-color: var(--fol-follow-icon-BG);
+    color: var(--fol-follow-icon);
+}
+
+.fol-pfp {
+    border-radius: 10px;
+    float: left;
+    margin-right: 15px;
+}
+
+.fol-info {
+    width: 140px;
+    float: left;
+    position: relative;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    margin-right: 10px;
+}
+
+.fol-info-un {
+    font-size: 14px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    color: var(--fol-info-username);
+}
+
+.fol-info-ti {
+    font-size: 7px;
+    text-transform: uppercase;
+    letter-spacing: .5px;
+    font-weight: 1000;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    padding-bottom: 4px;
+    color: var(--fol-info-blogtitle);
+}
+
+/** ============================================================ CONTACT **/
+
+.qna-photo {
+    background-image: var(--qna-photoURL);
+    margin-right: 20px;
+}
+
+.qna-content {
+    float: left;
+    width: 310px;
+    height: 300px;
+    overflow-y: auto;
+    padding-right: 20px;
+    font-size: 12px;
+}
+
+.qna-content::-webkit-scrollbar-track-piece { 
+    background-color: var(--windowBG); 
+}  
+
+.qna-content::-webkit-scrollbar-thumb:vertical { 
+    border: 4px solid var(--windowBG); 
+}
+
+.qna-block {
+    margin-bottom: 10px;
+}
+
+.qna-block:last-child { margin-bottom: 0; }
+
+.qna-qn {
+    font-size: 13px;
+    background-color: var(--contentBG);
+    border-radius: 10px;
+    padding: 10px 10px;
+    width: 280px;
+    cursor: pointer;
+    transition: 0.6s ease-in-out;
+}
+
+.qna-qn:before {
+    content: "QNA";
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 1000;
+    padding: 3px 5px;
+    margin: 0 8px 0 0;
+    border-radius: 6px;
+    background-color: var(--qna-label-BG);
+    color: var(--qna-label-txt);
+}
+
+.qna-ans {
+    background-color: var(--contentBG);
+    padding: 10px 15px;
+    width: 270px;
+    border-radius: 0 0 10px 10px;
+    font-size: 11px;
+    display: none;
+}
+
+.qna-qn-active {
+    border-radius: 10px 10px 0 0;
+    background-color: var(--qna-active-qn-BG);
+    color: var(--qna-active-qn-txt);
+}
+
+.qna-notice {
+    margin-bottom: 20px;
+    background-color: var(--contentBG);
+    padding: 20px;
+    width: 260px;
+    border-radius: 10px;
+}
+
+.qna-notice-title {
+    font-size: 14px;
+    font-family: fredoka one;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: var(--abt-header);
+    margin: 0 0 10px 0;
+}
+
+</style>
+</head>
+<body>
+
+<!-- [EGRET] HTML CONTENT EDITING 
+     You will need to edit certain text from this point on to personalise this page as your own. -->
+
+<div id="main">
+<div class="header">
+    <!-- profile pic; can replace {PortraitURL-30} with another image URL if you want to use a different icon -->
+    <img class="hpfp" src="{PortraitURL-30}">
+    
+    <!-- header icon -->
+    <!-- ie. the "return to blog" icon -->
+    <a title="return to blog" href="/"><div class="header-icon"></div></a>
+    <div class="header-left"><div class="header-left-cov"></div></div>
+    
+    <div class="header-nav">
+    <!-- header navigation buttons -->
+    <!-- you can edit the titles of the sections below -->
+    <div class="hbtn hbtn-one hbtn-active">   about         </div>
+    <div class="hbtn hbtn-two">               tags          </div>
+    <div class="hbtn hbtn-three">             following     </div>
+    <div class="hbtn hbtn-four">              contact       </div>
+    </div>
+    
+</div><!--header-->
+
+
+<div class="content"><div class="allviews">
+    
+<div class="view"><!-- about me intro panel -------------------------------->
+<div class="abt-layout">
+
+    <div class="abt-basic">
+        <div class="abt-photo"></div>
+        <div class="abt-pts">
+            
+            <!-- the simple intro points below the photo
+                 You can change the labels and what's shared about too. -->
+            
+            <!-- 1: name -->
+            <div class="abt-ptline">
+                <div class="abt-pttitle">name</div>
+                someone
+            </div>
+            
+            <!-- 2: location -->
+            <div class="abt-ptline">
+                <div class="abt-pttitle">location</div>
+                somewhere
+            </div>
+            
+            <!-- 3: status -->
+            <div class="abt-ptline">
+                <div class="abt-pttitle">status</div>
+                unknown
+            </div>
+            
+        </div><!--abt-pts-->
+    </div><!--abt-basic-->
+    
+    <div class="abt-bio">
+        <div class="bio-graphy">
+        
+<!-- Replace this text with your own bio --------------------------------->
+        
+<p>The first letter in your bio is capitalised. Do not start the bio with a header or a blockquote block. This is how you <b>bold</b> text. Add in some <i>italics</i> for some pizazz. And of course, a <a href="URL" title="hover title">link</a> to your favourite pages. A scrollbar automatically appears if your bio gets too long.</p>
+
+<blockquote>This is a blockquote. Great for putting in quotes!</blockquote>
+
+<h2>Heading</h2>
+
+<p>Use headers to space out your text if you've got a lot of things to say. You can also use lists!</p>
+
+<p>Here is a <b>numbered</b> list:</p>
+
+<ol>
+    <li>Item 1</li>
+    <li>Item number two</li>
+</ol>
+
+<p>Or instead, you can have an <b>unordered</b> list:</p>
+
+<ul>
+    <li>Great for listing stuff out</li>
+    <li>that has no order</li>
+    <li>like a wishlist or to-do list</li>
+</ul>
+        
+<!-- end of biography space ----------------------------------------------->
+        
+        </div><!--bio-graphy-->
+        
+    </div><!--abt-bio-->
+</div><!--abt-layout-->
+</div><!-- view; intro -->
+    
+
+<div class="view"><!-- tags list panel ------------------------------------->
+    <div class="view-photo tag-photo"></div>
+    <div class="tag-con">
+
+<!--
+
+Each tag blog consists of a CATEGORY and the TAGS. Copy and paste the block below out of the comments for as many tag blocks you would like to add.
+        
+        <div class="tag-block">
+            <div class="tag-category"></div>
+            <a href="/tagged/"><div class="tag-btn">tag</div></a>
+            <a href="/tagged/"><div class="tag-btn">tag</div></a>
+            <a href="/tagged/"><div class="tag-btn">tag</div></a>
+            <a href="/tagged/"><div class="tag-btn">tag</div></a>
+        </div>
+        
+-->
+        
+        <div class="tag-block">
+            <div class="tag-category">Category Title</div>
+            <a href="/tagged/"><div class="tag-btn">tag</div></a>
+            <a href="/tagged/"><div class="tag-btn">tag</div></a>
+            <a href="/tagged/"><div class="tag-btn">tag</div></a>
+            <a href="/tagged/"><div class="tag-btn">tag</div></a>
+        </div>
+        
+        <div class="tag-block">
+            <div class="tag-category">Category Title</div>
+            <a href="/tagged/"><div class="tag-btn">tag</div></a>
+            <a href="/tagged/"><div class="tag-btn">tag</div></a>
+            <a href="/tagged/"><div class="tag-btn">tag</div></a>
+            <a href="/tagged/"><div class="tag-btn">tag</div></a>
+        </div>
+        
+        <div class="tag-block">
+            <div class="tag-category">Category Title</div>
+            <a href="/tagged/"><div class="tag-btn">tag</div></a>
+            <a href="/tagged/"><div class="tag-btn">tag</div></a>
+            <a href="/tagged/"><div class="tag-btn">tag</div></a>
+            <a href="/tagged/"><div class="tag-btn">tag</div></a>
+        </div>
+        
+    </div><!--tag-con-->
+</div><!-- view; tags -->
+
+
+<div class="view"><!-- blogroll intro panel -------------------------------->
+    <div class="view-photo fol-photo"></div>
+    
+    <!-- no need to edit anything in the blogroll section -->
+{block:Following}<div class="fol-content">
+    {block:Followed}<div class="fol-block">
+        <img class="fol-pfp" src="{FollowedPortraitURL-40}">
+        <div class="fol-info">
+            <div class="fol-info-un">{FollowedName}</div>
+            <div class="fol-info-ti">{FollowedTitle}</div>
+        </div><!--info-->
+        <div class="fol-actions">
+            <a href="{FollowedURL}" title="visit blog"><div class="fol-acticon acticon1"><i class="cp cp-exit-top-right"></i></div></a>
+            <a href="https://tumblr.com/follow/{FollowedName}" title="follow"><div class="fol-acticon acticon2"><i class="cp cp-user"></i></div></a>
+        </div><!--actions-->
+    </div><!--fol-block-->{/block:Followed}
+</div><!--fol-content-->{/block:Following}
+    
+</div><!-- view; blogroll -->
+
+
+<div class="view"><!-- contact panel --------------------------------------->
+    
+    <div class="view-photo qna-photo"></div>
+    <div class="qna-content">
+    
+    <!-- QNA SECTION ----------------------------------------------------->
+    <!-- You can add as many QNA blocks as you would like. Basic template:
+    
+    <div class="qna-block">
+        <div class="qna-qn">The question?</div>
+        <div class="qna-ans">The answer.</div>
+    </div>
+    
+    -->
+    
+    <div class="qna-block">
+        <div class="qna-qn">The question?</div>
+        <div class="qna-ans">The answer.</div>
+    </div>
+    
+    
+    
+    <!-- ASKING GUIDELINES -----------------------------------------------
+         You can delete this entire block if you do not want to have
+         asking guidelines. -->
+    <div class="qna-notice">
+        <div class="qna-notice-title">Asking Guidelines</div>
+        Before you message, please take note of the following:
+        <ul>
+            <li>Notice item one</li>
+            <li>Notice item two</li>
+        </ul>
+    </div><!--end of qna notice-->
+    
+    
+    <!-- [BITTERN] VERY IMPT: Getting the ask box to work!
+         REPLACE =====URL===== BELOW WITH YOUR USERNAME.
+         e.g, I'd replace it with "xuethms" -->
+    <iframe frameborder="0" scrolling="no" width="100%" height="190" src="https://www.tumblr.com/ask_form/=====URL=====.tumblr.com" style="background-color:transparent; overflow:hidden;" id="ask_form"></iframe>
+    
+    </div><!--qna-content-->
+    
+</div><!-- view ; contact -->
+
+
+<!-- ============================ T H E   E N D ============================
+
+                          Thank you for using my page!
+                            
+======================================================================== -->
+
+</div><!--contentview--></div><!--content-->
+</div><!--main-->
+
+<a title="quartz page by xuethms" href="https://xuethms.tumblr.com"><div style="position:fixed;bottom:12px;right:12px;font-size:9px;letter-spacing:1px;background-color:#fff;color:#000;padding: 4px 7px;border-radius:5px;cursor:pointer;font-weight:1000">xue</div></a>
+
+</body>
+
+<!-- scripts and stuff ---------------------------->
+
+<!-- cappuccicons by suiomi -->
+<!-- https://cappuccicons.com/ -->
+<script src="//pull.cappuccicons.com/cpf.js"></script>
+
+<!-- google fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Fredoka+One&family=Nunito&family=Yeseva+One&display=swap" rel="stylesheet">
+
+<!--tooltips-->
+<!--https://manos.malihu.gr/style-my-tooltips-jquery-plugin/-->
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+<script src="https://static.tumblr.com/iuw14ew/VSQma1786/jquery.style-my-tooltips.js"></script>
+<script>
+(function($){
+$(document).ready(function(){
+$("a[title]").style_my_tooltips({
+tip_follows_cursor:true,
+tip_delay_time:0,
+tip_fade_speed:300,
+attribute:"title"
+});
+});
+})(jQuery);
+</script>
+
+<script src="//code.jquery.com/jquery-2.2.4.min.js"></script>
+<script>
+$(document).ready(function(){
+    
+$(".hbtn-one").click(function(){
+    $(".hbtn-one").addClass("hbtn-active");
+    $(".hbtn-two").removeClass("hbtn-active");
+    $(".hbtn-three").removeClass("hbtn-active");
+    $(".hbtn-four").removeClass("hbtn-active");
+    $(".allviews").css("margin-left", "0");
+});
+    
+$(".hbtn-two").click(function(){
+    $(".hbtn-one").removeClass("hbtn-active");
+    $(".hbtn-two").addClass("hbtn-active");
+    $(".hbtn-three").removeClass("hbtn-active");
+    $(".hbtn-four").removeClass("hbtn-active");
+    $(".allviews").css("margin-left", "-500px");
+});
+    
+$(".hbtn-three").click(function(){
+    $(".hbtn-one").removeClass("hbtn-active");
+    $(".hbtn-two").removeClass("hbtn-active");
+    $(".hbtn-three").addClass("hbtn-active");
+    $(".hbtn-four").removeClass("hbtn-active");
+    $(".allviews").css("margin-left", "-1000px");
+});
+    
+$(".hbtn-four").click(function(){
+    $(".hbtn-one").removeClass("hbtn-active");
+    $(".hbtn-two").removeClass("hbtn-active");
+    $(".hbtn-three").removeClass("hbtn-active");
+    $(".hbtn-four").addClass("hbtn-active");
+    $(".allviews").css("margin-left", "-1500px");
+});
+    
+$(".qna-qn").click(function(){
+    var locationA = $(this).parent();
+    $(".qna-qn",locationA).toggleClass("qna-qn-active");
+    $(".qna-ans",locationA).slideToggle();
+});
+
+}); /** jquery the end **/
+</script>
+
+<!-- masonry -->
+<!-- https://masonry.desandro.com/ -->
+<script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+<script src="/path/to/masonry.pkgd.min.js"></script>
+<script type="text/javascript">
+$(window).load(function () {
+$('.tag-con').masonry({
+  // options
+  itemSelector: '.tag-block'
+});
+});
+</script>
+
+</html>
