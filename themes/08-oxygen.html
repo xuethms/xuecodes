@@ -14,8 +14,8 @@ theme 08 by xuethms.tumblr.com
 3. Do not claim theme as your own.
 4. Do not share paid releases with others.
 
-version 1.00 - 20.01.22 @ 18:00
-- official release
+version 1.01 - 23.01.22 @ 18:53
+- fixed in-line media sizing
 
 --------------------------------------------------->
 
@@ -71,11 +71,10 @@ version 1.00 - 20.01.22 @ 18:00
 <meta name="color:Sidebar Deco Bottom Vertical Bar" content="#fadb93">
 
 <meta name="color:&#x2218;&#x25E6; &#x2702; &#x2014;&#x2014; Profile &#x2014;&#x2014; &#x2702; &#x25E6;&#x2218;" content="#ffffff">
-<meta name="color:User Profile Tab BG Active" content="#ececec">
 <meta name="color:User Profile Tab Text Active" content="#333333">
-<meta name="color:User Profile Tab BG Inactive" content="#cacaca">
+<meta name="color:User Profile Tab BG Active" content="#ececec">
 <meta name="color:User Profile Tab Text Inactive" content="#555555">
-
+<meta name="color:User Profile Tab BG Inactive" content="#cacaca">
 <meta name="color:User Profile Tab Title" content="#848484">
 <meta name="color:User Profile Tab Title Underline" content="#dbdbdb">
 <meta name="color:User Profile Scrollbar" content="#bfbfbf">
@@ -104,29 +103,29 @@ version 1.00 - 20.01.22 @ 18:00
 <meta name="color:Body Italic" content="#aaaaaa">
 <meta name="color:Body Links" content="#944562">
 <meta name="color:Body Links Hover" content="#aaaaaa">
-<meta name="color:Body Header" content="#a88088">
+<meta name="color:Body Header" content="#897277">
 <meta name="color:Blockquote" content="#bbb9b4">
 <meta name="color:pre Background" content="#f0f0f0">
 <meta name="color:pre Text" content="#a6a6a6">
 
-<meta name="color:Post Bottom Permalink BG" content="#c7b7ba">
-<meta name="color:Pinned Post BG" content="#9f9194">
-<meta name="color:Pinned Post Text" content="#ffffff">
 <meta name="color:Post Info BG" content="#8d8184">
 <meta name="color:Post Info Text" content="#e7e0e0">
+<meta name="color:Pinned Post BG" content="#9f9194">
+<meta name="color:Pinned Post Text" content="#ffffff">
 <meta name="color:Post Actions Icon" content="#625151">
 <meta name="color:Post Actions Icon Hover" content="#625151">
+
+<meta name="color:Post Bottom Permalink BG" content="#c7b7ba">
 <meta name="color:Post Tags" content="#333333">
 <meta name="color:Post Tags BG" content="#d6c7cc">
 <meta name="color:Post Tags Hover" content="#6e6767">
 <meta name="color:Post Tags BG Hover" content="#f6efef">
-
 <meta name="color:Permalink Tags" content="#6e6767">
 <meta name="color:Permalink Tags BG" content="#f6efef">
 <meta name="color:Permalink Tags Hover" content="#333333">
 <meta name="color:Permalink Tags BG Hover" content="#d6c7cc">
 
-<meta name="color:&#x2218;&#x25E6; &#x2702; &#x2014; Posts Types &#x2014; &#x2702; &#x25E6;&#x2218;" content="#ffffff">
+<meta name="color:&#x2218;&#x25E6; &#x2702; &#x2014;&#x2014; Posts &#x2014;&#x2014; &#x2702; &#x25E6;&#x2218;" content="#ffffff">
 <meta name="color:Post Title" content="#5d5457">
 <meta name="color:Post Title BG" content="#ece4e7">
 <meta name="color:Reblog Chain Border" content="#ebe4e4">
@@ -1798,7 +1797,6 @@ p:last-child { margin-bottom: 0; }
 
 .entry-body a, .applepie a, .entry-quotesrc a {
     color: {color:body links};
-    text-decoration: underline;
     padding-bottom: 1px;
     transition: 0.6s;
 }
@@ -1816,10 +1814,8 @@ p:last-child { margin-bottom: 0; }
 }
 
 .entry-body h2 {
-    font-size: 20px;
-    font-weight: normal;
+    font-size: 16px;
     color: {color:Body Header};
-    font-family: vt323;
     margin: 20px 0 0 0;
     padding-bottom: 4px;
     margin-bottom: 10px;
@@ -1952,6 +1948,9 @@ pre {
     max-width: 100%!important;
     height: auto!important;
 }
+
+.entry-body-orig .tmblr-full { max-width: 460px; }
+.entry-body-orig .tmblr-full video { width: 460px!important; }
 
 /** link post **/
 
@@ -2495,7 +2494,7 @@ pre {
 
 {block:Text}<div class="entry-content-wrap">
 {block:Title}<div class="entry-title">{Title}</div>{/block:Title}
-{block:NotReblog}<div class="entry-body">{Body}</div>{/block:NotReblog}
+{block:NotReblog}<div class="entry-body entry-body-orig">{Body}</div>{/block:NotReblog}
 {block:RebloggedFrom}<div class="reblog-block">{block:Reblogs}
 <div class="reblogger">
     <img class="reblogger-icon" src="{PortraitURL-64}">
