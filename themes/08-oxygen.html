@@ -14,8 +14,8 @@ theme 08 by xuethms.tumblr.com
 3. Do not claim theme as your own.
 4. Do not share paid releases with others.
 
-version 1.01 - 23.01.22 @ 18:53
-- fixed in-line media sizing
+version 1.02 - 22.02.22 @ 11:03
+- added options to customise console X button links
 
 --------------------------------------------------->
 
@@ -181,6 +181,8 @@ version 1.01 - 23.01.22 @ 18:53
 <meta name="text:Sidebar Image Height" content="180">
 <meta name="text:Sidebar Profile HP Percent" content="80">
 <meta name="text:Sidebar Profile SP Percent" content="30">
+<meta name="text:Console X Button Link" content="/random">
+<meta name="text:Console X Button Link Title" content="surprise me">
 <meta name="text:User Profile Title" content="user_profile.exe">
 <meta name="text:User Profile Name" content="Your Name">
 <meta name="text:User Profile Name Subtitle" content="Lvl 01 Fighter">
@@ -2890,7 +2892,7 @@ pre {
 </div><!--ps-in--></div><!--psbtn--></a>
 
 
-<a href="/random" title="surprise me"><div class="psbtn psbtn-x"><div class="ps-in">
+<a href="{text:Console X Button Link}" title="{text:Console X Button Link Title}"><div class="psbtn psbtn-x"><div class="ps-in">
     <div class="ps-symbol ps-sym{select:Navigation Icon Style}">
         <div class="ps-x1"></div>
         <div class="ps-x2"></div>
