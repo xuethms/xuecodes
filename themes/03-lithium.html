@@ -11,7 +11,7 @@ theme 03 by xuethms.tumblr.com
 2. Do not claim theme as your own.
 3. Do not remove credit.
 
-version 1.06 - 29.03.22 @ 16:44
+version 1.06 - 29.03.22 @ 17:22
 > changed from stroke icons to feather icons
 > icon options for default navigation links
 
@@ -99,18 +99,24 @@ version 1.06 - 29.03.22 @ 16:44
 <meta name="select:Nav More Icon" title="plus" content="plus">
 <meta name="select:Nav More Icon" title="plus circle" content="plus-circle">
 
-<!-- select list style type -->
-<meta name="select:List Style" title="Roman Numerals" content="lower-roman">
-<meta name="select:List Style" title="Hiragana" content="hiragana">
-<meta name="select:List Style" title="Numbers" content="decimal">
-<meta name="select:List Style" title="Alphabets" content="lower-alpha">
+<!-- select Tumblr controls Icon -->
+<meta name="select:Tumblr Controls Icon" title="cog" content="settings">
+<meta name="select:Tumblr Controls Icon" title="user" content="user">
+<meta name="select:Tumblr Controls Icon" title="user plus" content="user-plus">
+<meta name="select:Tumblr Controls Icon" title="wrench" content="tool">
 
 <!-- select tumblr controls colour -->
 <meta name="select:Tumblr Controls" title="White" content="0%">
 <meta name="select:Tumblr Controls" title="Grey" content="50%">
 <meta name="select:Tumblr Controls" title="Black" content="100%">
 
-<!-- select tumblr controls colour -->
+<!-- select list style type -->
+<meta name="select:List Style" title="Roman Numerals" content="lower-roman">
+<meta name="select:List Style" title="Hiragana" content="hiragana">
+<meta name="select:List Style" title="Numbers" content="decimal">
+<meta name="select:List Style" title="Alphabets" content="lower-alpha">
+
+<!-- select header blur -->
 <meta name="select:Header Blur" title="None" content="0">
 <meta name="select:Header Blur" title="Slight blur" content="2">
 <meta name="select:Header Blur" title="Blur" content="5">
@@ -126,31 +132,31 @@ version 1.06 - 29.03.22 @ 16:44
 <!-- custom links -->
 <meta name="text:Link 1 Title" content="">
 <meta name="text:Link 1 URL" content="">
-<meta name="text:Link 1 Icon" content="pe-7s-pin">
+<meta name="text:Link 1 Icon" content="link">
 <meta name="text:Link 2 Title" content="">
 <meta name="text:Link 2 URL" content="">
-<meta name="text:Link 2 Icon" content="pe-7s-pin">
+<meta name="text:Link 2 Icon" content="link">
 <meta name="text:Link 3 Title" content="">
 <meta name="text:Link 3 URL" content="">
-<meta name="text:Link 3 Icon" content="pe-7s-pin">
+<meta name="text:Link 3 Icon" content="link">
 <meta name="text:Link 4 Title" content="">
 <meta name="text:Link 4 URL" content="">
-<meta name="text:Link 4 Icon" content="pe-7s-pin">
+<meta name="text:Link 4 Icon" content="link">
 <meta name="text:Link 5 Title" content="">
 <meta name="text:Link 5 URL" content="">
-<meta name="text:Link 5 Icon" content="pe-7s-pin">
+<meta name="text:Link 5 Icon" content="link">
 <meta name="text:Link 6 Title" content="">
 <meta name="text:Link 6 URL" content="">
-<meta name="text:Link 6 Icon" content="pe-7s-pin">
+<meta name="text:Link 6 Icon" content="link">
 <meta name="text:Link 7 Title" content="">
 <meta name="text:Link 7 URL" content="">
-<meta name="text:Link 7 Icon" content="pe-7s-pin">
+<meta name="text:Link 7 Icon" content="link">
 <meta name="text:Link 8 Title" content="">
 <meta name="text:Link 8 URL" content="">
-<meta name="text:Link 8 Icon" content="pe-7s-pin">
+<meta name="text:Link 8 Icon" content="link">
 <meta name="text:Link 9 Title" content="">
 <meta name="text:Link 9 URL" content="">
-<meta name="text:Link 9 Icon" content="pe-7s-pin">
+<meta name="text:Link 9 Icon" content="link">
 
 
 <title>{Title}{block:PostSummary} - {PostSummary}{/block:PostSummary}</title>
@@ -375,6 +381,11 @@ a { text-decoration: none; }
     line-height: 34px;
     border-radius: 5px;
     cursor: pointer;
+}
+
+.tctrl .feather {
+    width: 15px;
+    height: 15px;
 }
 
 iframe#tumblr_controls, .iframe-controls--desktop {
@@ -1576,7 +1587,7 @@ ol.notes {
 
 
 <!--topmost bar-->
-<div class="tctrl"><span class="pe-7s-config"></span></div>
+<div class="tctrl"><i data-feather="{select:Tumblr Controls Icon}"></i></div>
 <div class="toph">
     <div class="toph-title">
     <div class="toph-icon toph-iconsearch"><i class="pe-7s-search"></i></div>
