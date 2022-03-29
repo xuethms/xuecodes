@@ -11,8 +11,9 @@ theme 03 by xuethms.tumblr.com
 2. Do not claim theme as your own.
 3. Do not remove credit.
 
-version 1.05 - 28.11.21 @ 02:05
-> tumblr text colours
+version 1.06 - 29.03.22 @ 16:44
+> changed from stroke icons to feather icons
+> icon options for default navigation links
 
 -------------------------------------------------->
 
@@ -68,6 +69,35 @@ version 1.05 - 28.11.21 @ 02:05
 <!-- select post size -->
 <meta name="select:Post Size" title="500px" content="500px">
 <meta name="select:Post Size" title="400px" content="400px">
+
+<!-- select nav index icon -->
+<meta name="select:Nav Index Icon" title="home" content="home">
+<meta name="select:Nav Index Icon" title="refresh" content="refresh-cw">
+<meta name="select:Nav Index Icon" title="bookmark" content="bookmark">
+<meta name="select:Nav Index Icon" title="power" content="power">
+
+<!-- select nav message icon -->
+<meta name="select:Nav Message Icon" title="envelope" content="mail">
+<meta name="select:Nav Message Icon" title="circle bubble" content="message-circle">
+<meta name="select:Nav Message Icon" title="square bubble" content="message-square">
+<meta name="select:Nav Message Icon" title="paper plane" content="send">
+<meta name="select:Nav Message Icon" title="at" content="at-sign">
+
+<!-- select nav archive icon -->
+<meta name="select:Nav History Icon" title="calendar" content="calendar">
+<meta name="select:Nav History Icon" title="clock" content="clock">
+<meta name="select:Nav History Icon" title="archive" content="archive">
+<meta name="select:Nav History Icon" title="package" content="package">
+<meta name="select:Nav History Icon" title="folder" content="folder">
+
+<!-- select nav more icon -->
+<meta name="select:Nav More Icon" title="menu" content="menu">
+<meta name="select:Nav More Icon" title="... (horizontal)" content="more-horizontal">
+<meta name="select:Nav More Icon" title="... (vertical)" content="more-vertical">
+<meta name="select:Nav More Icon" title="pop out" content="external-link">
+<meta name="select:Nav More Icon" title="user plus" content="user-plus">
+<meta name="select:Nav More Icon" title="plus" content="plus">
+<meta name="select:Nav More Icon" title="plus circle" content="plus-circle">
 
 <!-- select list style type -->
 <meta name="select:List Style" title="Roman Numerals" content="lower-roman">
@@ -139,8 +169,8 @@ version 1.05 - 28.11.21 @ 02:05
 <!-- custom fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
 
-<!-- pixeden's stroke icons -->
-<link rel="stylesheet" href="https://static.tumblr.com/i5s2zks/6kOohwlux/pe-icon-7-stroke.css">
+<!-- feather icons -->
+<script src="https://unpkg.com/feather-icons"></script>
 
 <!--tooltips-->
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
@@ -244,7 +274,6 @@ function lightbox(elem) {
   Tumblr.Lightbox.init(data, getIndex(elem) + 1);
 }
 </script>
-
  
 <script src="//ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <!--
@@ -498,7 +527,7 @@ iframe#tumblr_controls, .iframe-controls--desktop {
 .navlink {
     width: 30px;
     height: 30px;
-    line-height: 36px;
+    line-height: 35px;
     text-align: center;
     border-radius: 3px;
     transition: 0.2s;
@@ -506,6 +535,11 @@ iframe#tumblr_controls, .iframe-controls--desktop {
     border: 1px solid {color:Accent 1};
     color: {color:Text on Accent 1};
     cursor: pointer;
+}
+
+.navlink .feather {
+    width: 16px;
+    height: 16px;
 }
 
 .navlink:hover {
@@ -1458,7 +1492,7 @@ ol.notes {
     border-radius: 5px;
     font-size: 18px;
     text-align: center;
-    line-height: 37px;
+    line-height: 35px;
     margin-right: 6px;
     border: 1px solid {color:Accent 1};
     background-color: {color:Accent 1};
@@ -1471,18 +1505,28 @@ ol.notes {
     color: {color:Accent 1};
 }
 
+.morelinks-icon .feather {
+    width: 16px;
+    height: 16px;
+}
+
 .btnhide {
     position: absolute;
     background-color: {color:Accent 1};
     color: {color:Text on Accent 1};
     width: 35px;
     height: 35px;
+    line-height: 30px;
     text-align: center;
-    line-height: 45px;
     margin: 30px 630px;
     font-size: 30px;
     border-radius: 5px;
     cursor: pointer;
+}
+
+.btnhide .feather {
+    width: 15px;
+    height: 15px;
 }
  
  
@@ -1505,7 +1549,7 @@ ol.notes {
 {block:ifMorePopup}
 <div class="more">
 <div class="morecontainer">
-<a title="back to blog" id="btn-hidemore"><div class="btnhide"><i class="pe-7s-close"></i></div></a>
+<a title="back to blog" id="btn-hidemore"><div class="btnhide"><i data-feather="x"></i></i></div></a>
 <div class="morepic"></div>
 <div class="moreright"><div class="moreright-center">
 
@@ -1513,15 +1557,15 @@ ol.notes {
     <div class="morebio">{text:Popup Content}</div>
     <div class="morelinks">
         
-        {block:ifLink1URL}<a title="{text:Link 1 Title}" href="{text:Link 1 URL}"><div class="morelinks-icon"><i class="{text:Link 1 Icon}"></i></div></a>{/block:ifLink1URL}
-        {block:ifLink2URL}<a title="{text:Link 2 Title}" href="{text:Link 2 URL}"><div class="morelinks-icon"><i class="{text:Link 2 Icon}"></i></div></a>{/block:ifLink2URL}
-        {block:ifLink3URL}<a title="{text:Link 3 Title}" href="{text:Link 3 URL}"><div class="morelinks-icon"><i class="{text:Link 3 Icon}"></i></div></a>{/block:ifLink3URL}
-        {block:ifLink4URL}<a title="{text:Link 4 Title}" href="{text:Link 4 URL}"><div class="morelinks-icon"><i class="{text:Link 4 Icon}"></i></div></a>{/block:ifLink4URL}
-        {block:ifLink5URL}<a title="{text:Link 5 Title}" href="{text:Link 5 URL}"><div class="morelinks-icon"><i class="{text:Link 5 Icon}"></i></div></a>{/block:ifLink5URL}
-        {block:ifLink6URL}<a title="{text:Link 6 Title}" href="{text:Link 6 URL}"><div class="morelinks-icon"><i class="{text:Link 6 Icon}"></i></div></a>{/block:ifLink6URL}
-        {block:ifLink7URL}<a title="{text:Link 7 Title}" href="{text:Link 7 URL}"><div class="morelinks-icon"><i class="{text:Link 7 Icon}"></i></div></a>{/block:ifLink7URL}
-        {block:ifLink8URL}<a title="{text:Link 8 Title}" href="{text:Link 8 URL}"><div class="morelinks-icon"><i class="{text:Link 8 Icon}"></i></div></a>{/block:ifLink8URL}
-        {block:ifLink9URL}<a title="{text:Link 9 Title}" href="{text:Link 9 URL}"><div class="morelinks-icon"><i class="{text:Link 9 Icon}"></i></div></a>{/block:ifLink9URL}
+        {block:ifLink1URL}<a title="{text:Link 1 Title}" href="{text:Link 1 URL}"><div class="morelinks-icon"><i data-feather="{text:Link 1 Icon}"></i></div></a>{/block:ifLink1URL}
+        {block:ifLink2URL}<a title="{text:Link 2 Title}" href="{text:Link 2 URL}"><div class="morelinks-icon"><i data-feather="{text:Link 2 Icon}"></i></div></a>{/block:ifLink2URL}
+        {block:ifLink3URL}<a title="{text:Link 3 Title}" href="{text:Link 3 URL}"><div class="morelinks-icon"><i data-feather="{text:Link 3 Icon}"></i></div></a>{/block:ifLink3URL}
+        {block:ifLink4URL}<a title="{text:Link 4 Title}" href="{text:Link 4 URL}"><div class="morelinks-icon"><i data-feather="{text:Link 4 Icon}"></i></div></a>{/block:ifLink4URL}
+        {block:ifLink5URL}<a title="{text:Link 5 Title}" href="{text:Link 5 URL}"><div class="morelinks-icon"><i data-feather="{text:Link 5 Icon}"></i></div></a>{/block:ifLink5URL}
+        {block:ifLink6URL}<a title="{text:Link 6 Title}" href="{text:Link 6 URL}"><div class="morelinks-icon"><i data-feather="{text:Link 6 Icon}"></i></div></a>{/block:ifLink6URL}
+        {block:ifLink7URL}<a title="{text:Link 7 Title}" href="{text:Link 7 URL}"><div class="morelinks-icon"><i data-feather="{text:Link 7 Icon}"></i></div></a>{/block:ifLink7URL}
+        {block:ifLink8URL}<a title="{text:Link 8 Title}" href="{text:Link 8 URL}"><div class="morelinks-icon"><i data-feather="{text:Link 8 Icon}"></i></div></a>{/block:ifLink8URL}
+        {block:ifLink9URL}<a title="{text:Link 9 Title}" href="{text:Link 9 URL}"><div class="morelinks-icon"><i data-feather="{text:Link 9 Icon}"></i></div></a>{/block:ifLink9URL}
         
     </div><!--morelinks-->
 
@@ -1572,20 +1616,20 @@ ol.notes {
     
     <div class="nav">
     
-        <a title="index" href="/"><div class="navlink"><i class="pe-7s-ribbon"></i></div></a>
+        <a title="index" href="/"><div class="navlink"><i data-feather="{select:Nav Index Icon}"></i></div></a>
         
-        {block:AskEnabled}<a title="message" href="/ask"><div class="navlink"><i class="pe-7s-comment"></i></div></a>{/block:AskEnabled}
+        {block:AskEnabled}<a title="message" href="/ask"><div class="navlink"><i data-feather="{select:Nav Message Icon}"></i></div></a>{/block:AskEnabled}
         
-        <a title="history" href="/archive"><div class="navlink"><i class="pe-7s-diskette"></i></div></a>
+        <a title="history" href="/archive"><div class="navlink"><i data-feather="{select:Nav History Icon}"></i></div></a>
         
-        {block:ifLink1URL}<a title="{text:Link 1 Title}" href="{text:Link 1 URL}"><div class="navlink"><i class="{text:Link 1 Icon}"></i></div></a>{/block:ifLink1URL}
+        {block:ifLink1URL}<a title="{text:Link 1 Title}" href="{text:Link 1 URL}"><div class="navlink"><i data-feather="{text:Link 1 Icon}"></i></div></a>{/block:ifLink1URL}
         
         {block:ifNotMorePopup}
-        {block:ifLink2URL}<a title="{text:Link 2 Title}" href="{text:Link 2 URL}"><div class="navlink"><i class="{text:Link 2 Icon}"></i></div></a>{/block:ifLink2URL}
+        {block:ifLink2URL}<a title="{text:Link 2 Title}" href="{text:Link 2 URL}"><div class="navlink"><i data-feather="{text:Link 2 Icon}"></i></div></a>{/block:ifLink2URL}
         {/block:ifNotMorePopup}
         
         {block:ifMorePopup}
-        <a title="more" id="btn-showmore"><div class="navlink"><i class="pe-7s-menu"></i></div></a>
+        <a title="more" id="btn-showmore"><div class="navlink"><i data-feather="{select:Nav More Icon}"></i></div></a>
         {/block:ifMorePopup}
     </div><!--nav-->
     
@@ -1814,7 +1858,12 @@ width="{LogoWidth}" height="{LogoHeight}" alt="{SourceTitle}" />
 
 <a title="lithium theme by xuethms" href="https://xuethms.tumblr.com"><div style="position:fixed;bottom:15px;right:15px;font-family:ubuntu,sans-serif;font-size:9px;letter-spacing:1px;background-color:{color:Post BG};color:{color:Accent 1};padding: 5px 8px;border-radius:5px;">XUETHMS</div></a>
 
-
 </body>
+
+
+
+<script>
+  feather.replace()
+</script>
 
 </html>
