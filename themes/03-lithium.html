@@ -11,7 +11,7 @@ theme 03 by xuethms.tumblr.com
 2. Do not claim theme as your own.
 3. Do not remove credit.
 
-version 1.06 - 29.03.22 @ 17:22
+version 1.06 - 29.03.22 @ 16:44
 > changed from stroke icons to feather icons
 > icon options for default navigation links
 
@@ -612,11 +612,16 @@ iframe#tumblr_controls, .iframe-controls--desktop {
 .toph-icon {
     float: left;
     height: 50px;
-    line-height: 56px;
+    line-height: 50px;
     color: {color:Topbar Icon};
     font-size: 20px;
     margin-right: 12px;
     transition: 1s ease-in-out;
+}
+
+.toph-icon .feather {
+    width: 15px;
+    height: 15px;
 }
 
 .toph-iconsearch {
@@ -705,10 +710,15 @@ iframe#tumblr_controls, .iframe-controls--desktop {
     border-radius: 10px;
     color: {color:Text on Accent 1};
     font-size: 18px;
-    line-height: 45px;
+    line-height: 43px;
     text-align: center;
     transition: 1s ease-in-out;
     opacity: 0;
+}
+
+.highresbtn .feather {
+    width: 16px;
+    height: 16px;
 }
 
 .entry:hover .highresbtn {
@@ -1154,7 +1164,14 @@ pre {
 
 .entry-permacookie {
     color: {color:Text on Accent 1};
-    height: 20px;
+}
+
+.entry-permacookie .feather {
+    width: 12px;
+    height: 12px;
+    position: absolute;
+    margin: 4px -18px;
+    
 }
 
 .entry-permacrumb {
@@ -1164,6 +1181,8 @@ pre {
     display: inline-flex;
     transition: 0.8s;
 }
+
+.permarighticon .feather { width: 15px; height: 15px; }
 
 .entry-permacookie i {
     font-size: 16px;
@@ -1590,8 +1609,8 @@ ol.notes {
 <div class="tctrl"><i data-feather="{select:Tumblr Controls Icon}"></i></div>
 <div class="toph">
     <div class="toph-title">
-    <div class="toph-icon toph-iconsearch"><i class="pe-7s-search"></i></div>
-    <div class="toph-icon"><i class="{text:Blog Icon}"></i></div>
+    <div class="toph-icon toph-iconsearch"><i data-feather="search"></i></div>
+    <div class="toph-icon"><i data-feather="{text:Blog Icon}"></i></div>
     <form action="/search" method="get" class="searchbar">
     <input type="text" name="q" value="{SearchQuery}" placeholder="{text:Searchbar Placeholder Text}" id="sf"/>
     </form>
@@ -1693,7 +1712,7 @@ ol.notes {
 <a href="#" onclick="Tumblr.Lightbox.init([{ width: {PhotoWidth-HighRes}, height: {PhotoHeight-HighRes}, low_res: '{PhotoURL-500}', high_res: '{PhotoURL-HighRes}' }]); $('body').toggleClass('tumblr_lightbox_active'); return false">
     <img class="entry-photo" src="{PhotoURL-500}" alt="{PhotoAlt}"/>
 </a>
-{block:HighRes}<a target="_blank" title="View photo in high-res" href="{PhotoURL-HighRes}"><div class="highresbtn"><i class="pe-7s-photo"></i></div></a>{/block:HighRes}
+{block:HighRes}<a target="_blank" title="View photo in high-res" href="{PhotoURL-HighRes}"><div class="highresbtn"><i data-feather="image"></i></div></a>{/block:HighRes}
 {/block:photo}
 
 {block:Chat}
@@ -1800,14 +1819,14 @@ ol.notes {
 {block:Date}{block:IndexPage}
 
 <div class="permaright">
-    <a title="reblog" href="{ReblogURL}" target="_blank"><div class="permarighticon"><i class="pe-7s-repeat"></i></div></a>
-    {block:ifToggleTags}{block:HasTags}<a title="show tags" class="btn-showtags"><div class="permarighticon"><i class="pe-7s-ticket"></i></div></a>
-    <a title="hide tags" class="btn-showtags hidebtn"><div class="permarighticon"><i class="pe-7s-close"></i></div></a>{/block:HasTags}{/block:ifToggleTags}
-    {block:RebloggedFrom}<a title="posted by {ReblogRootName}" href="{ReblogRootURL}"><div class="permarighticon"><i class="pe-7s-share"></i></div></a>{/block:RebloggedFrom}
+    <a title="reblog" href="{ReblogURL}" target="_blank"><div class="permarighticon"><i data-feather="refresh-cw"></i></div></a>
+    {block:ifToggleTags}{block:HasTags}<a title="show tags" class="btn-showtags"><div class="permarighticon"><i data-feather="tag"></i></div></a>
+    <a title="hide tags" class="btn-showtags hidebtn"><div class="permarighticon"><i data-feather="x"></i></div></a>{/block:HasTags}{/block:ifToggleTags}
+    {block:RebloggedFrom}<a title="posted by {ReblogRootName}" href="{ReblogRootURL}"><div class="permarighticon"><i data-feather="user"></i></div></a>{/block:RebloggedFrom}
 </div><!--permaright-->
 
-<a title="{DayOfWeek}, {24Hour}:{Minutes}" href="{Permalink}"><div class="entry-permacrumb crumblei"><div class="entry-permacookie"><i class="pe-7s-like"></i>{NoteCount}n</div></div></a>
-<a title="{DayOfWeek}, {24Hour}:{Minutes}" href="{Permalink}"><div class="entry-permacrumb crumbleii"><div class="entry-permacookie"><i class="pe-7s-clock"></i>{DayOfMonth} {ShortMonth} {Year}</div></div></a>
+<a title="{DayOfWeek}, {24Hour}:{Minutes}" href="{Permalink}"><div class="entry-permacrumb crumblei"><div class="entry-permacookie"><i data-feather="activity"></i>{NoteCount}n</div></div></a>
+<a title="{DayOfWeek}, {24Hour}:{Minutes}" href="{Permalink}"><div class="entry-permacrumb crumbleii"><div class="entry-permacookie"><i data-feather="clock"></i></i>{DayOfMonth} {ShortMonth} {Year}</div></div></a>
 
 {/block:IndexPage}{/block:Date}
 
