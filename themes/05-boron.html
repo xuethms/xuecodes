@@ -12,8 +12,8 @@ theme 05 by xuethms.tumblr.com
 2. Do not claim theme as your own.
 3. Do not remove credit.
 
-version 1.06 - 19.11.21 @ 00:12
-> support for tumblr coloured text
+version 1.07 - 29.03.22 @ 21:06
+> video sizing fix
 
 -------------------------------------------------->
 
@@ -614,6 +614,11 @@ a { text-decoration: none; }
     color: {color:Text on Accent 4}!important;
 }
 
+.tmblr-full img {
+    max-width: 100%!important;
+    height: auto!important;
+}
+
 .tmblr-full, .tmrblr-embed {
     object-fit: cover;
     max-width: 500px;
@@ -631,12 +636,21 @@ a { text-decoration: none; }
     margin: 0!important;
 }
 
-.tmblr-full img {
-    max-width: 100%!important;
-    height: auto!important;
+.tmblr-embed iframe {
+    max-width: 500px;
+    max-height: 275px;
 }
 
 /** photos and photosets **/
+
+.entry-video {
+    display: block;
+    width: 500px!important;
+}
+
+.entry-video iframe {
+    width: 500px;
+}
 
 .entry-photo {
     max-width: 500px;
