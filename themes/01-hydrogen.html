@@ -11,8 +11,8 @@ theme 01 by xuethms.tumblr.com
 2. Do not claim theme as your own.
 3. Do not remove credit.
 
-version 1.02 - 28.11.21
-> tumblr text colours
+version 1.03 - 14.06.22 @ 20:37
+> quality of life updates
 
 -------------------------------------------------->
 
@@ -194,6 +194,9 @@ body {
 }
 
 a { text-decoration:none; }
+
+p:first-child { margin-top: 0; }
+p:last-child { margin-bottom: 0; }
 
 
 /** decorative elements **/
@@ -453,7 +456,7 @@ a { text-decoration:none; }
     padding: 10px;
     width: 500px;
     margin-bottom: 40px;
-    background-color: #fff;
+    background-color: {color:Window Background};
     border: 1px solid {color:Accent};
     font-family: consolas;
     font-size: 11px;
@@ -556,6 +559,23 @@ blockquote, .applepie blockquote {
     display: block;
     margin-left: 0;
     max-width: 100%;
+    height: auto;
+}
+
+.tmblr-full, .tmblr-embed {
+    width: 100%!important;
+    margin: 0!important;
+}
+
+.tmblr-full video {
+    max-width: 100%!important;
+    height: auto!important;
+    overflow: hidden!important;
+}
+
+.tmblr-full img {
+    max-width: 100%!important;
+    height: auto!important;
 }
 
 /** quote posts **/
@@ -601,6 +621,7 @@ blockquote, .applepie blockquote {
 
 .entry-body blockquote img {
     max-width: 100%;
+    height: auto;
 }
 
 .vignette, #vignette {
@@ -616,6 +637,32 @@ blockquote, .applepie blockquote {
     backdrop-filter: blur(5px);
 }
 
+.highresbtn {
+    font-size: 16px;
+    width: 24px;
+    height: 24px;
+    line-height: 24px;
+    border-top: 1px solid {color:Accent};
+    border-right: 1px solid {color:Accent};
+    border-bottom: 1px solid {color:Accent};
+    background-color: {color:Window Background};
+    color: {color:Accent};
+    text-align: center;
+    position: absolute;
+    border-radius: 0 3px 3px 0;
+    margin: -50px 0 0 511px;
+    opacity: 0;
+    transition: 0.4s ease-in-out;
+}
+
+.entry:hover .highresbtn {
+    opacity: 1;
+}
+
+.highresbtn:hover {
+    padding-left: 5px;
+}
+
 /** answer posts **/
 
 .entry-askericontri {
@@ -623,9 +670,9 @@ blockquote, .applepie blockquote {
     height: 15px;
     background-color: {color:Accent};
     position: absolute;
-    z-index: 0;
+    z-index: 1;
     transform: rotate(45deg);
-    margin: 23px 42px;
+    margin: 23px 61px;
 }
 
 .entry-askericon {
@@ -640,6 +687,8 @@ blockquote, .applepie blockquote {
 }
 
 .entry-askerqn {
+    z-index: 2;
+    position: relative;
     background-color: {color:Answer post Question Background};
     border: 1px solid {color:Accent};
     color: {color:Answer post Question text};
@@ -651,6 +700,7 @@ blockquote, .applepie blockquote {
 
 .entry-askersender {
     border-bottom: 1px solid {color:Accent};
+    margin-bottom: 10px;
     padding: 0 0 10px;
 }
 
@@ -699,6 +749,11 @@ blockquote, .applepie blockquote {
     z-index: 1;
     position: relative;
     transition: 0.6s;
+    display: inline-block;
+    max-width: 440px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
 }
 
 .entry-link:hover {
@@ -708,7 +763,7 @@ blockquote, .applepie blockquote {
 }
 
 .entry-linkcont {
-    margin: 20px 10px 20px 10px;
+    margin: 20px 10px 10px 10px;
 }
 
 .entry-linkline {
@@ -716,8 +771,13 @@ blockquote, .applepie blockquote {
     height: 1px;
     background-color: {color:Accent};
     position: absolute;
-    margin: 8px -10px;
+    margin: 10px -10px;
     z-index: 0;
+}
+
+.entry-linkthumb {
+    width: 500px;
+    margin: -10px 0 10px -10px;
 }
 
 /** styling tags at the bottom of each post **/
@@ -845,7 +905,7 @@ blockquote, .applepie blockquote {
     font-size: 11px;
     padding: 10px 0 10px 0;
     margin-bottom: 2px;
-    border-top: 1px solid #bcbcbc;
+    border-top: 1px solid {color:Accent};
     margin-left: -40px;
 }
  
@@ -1002,6 +1062,7 @@ ol.notes {
 <a href="#" onclick="Tumblr.Lightbox.init([{ width: {PhotoWidth-HighRes}, height: {PhotoHeight-HighRes}, low_res: '{PhotoURL-500}', high_res: '{PhotoURL-HighRes}' }]); $('body').toggleClass('tumblr_lightbox_active'); return false">
     <img class="entry-photo entry-gray" src="{PhotoURL-500}">
 </a>
+{block:HighRes}<a target="_blank" title="View photo in high-res" href="{PhotoURL-HighRes}"><div class="highresbtn">+</div></a>{/block:HighRes}
 {block:Caption}<div class="entry-body">{Caption}</div>{/block:Caption}
 {/block:Photo}
 
@@ -1019,10 +1080,10 @@ ol.notes {
 
 {block:Link}
 <div class="entry-linkcont">
-<div class="entry-linkline"></div>
 {block:Thumbnail}<img class="entry-linkthumb" src="{Thumbnail}">{/block:Thumbnail}
+<div class="entry-linkline"></div>
 <a href="{URL}"><span class="entry-link">{Name} →</span></a>
-</div>
+</div><!--entry-linkcont-->
 {block:Description}<div class="entry-body">{Description}</div>{/block:Description}
 {/block:Link}
 
