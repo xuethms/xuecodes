@@ -14,8 +14,8 @@ theme 09 by xuethms.tumblr.com
 3. Do not claim theme as your own.
 4. Do not share paid releases with others.
 
-version 1.00 - 19.06.22 @ 23:39
-- official release
+version 1.01 - 20.06.22 @ 11:46
+> npf text styling support
 
 --------------------------------------------------->
 
@@ -1236,14 +1236,16 @@ input#q-searchbar {
     border-left: 1px solid var(--accent);
 }
 
-.entry-body h2 {
-    font-size: 16px;
+.entry-body h1, .entry-body h2 {
+    font-size: 18px;
     font-weight: 700;
     color: var(--accent);
     margin: 20px 0 0 0;
     padding-bottom: 4px;
     margin-bottom: 10px;
 }
+
+.entry-body h2 { font-size: 14px; }
 
 .entry-body ul { 
     list-style-type: square;
@@ -1271,6 +1273,27 @@ pre {
 .entry-body img {
     height: auto!important;
     max-width: 100%;
+}
+
+/** npf text colours **/
+/** credit to @unwrapping: https://unwrapping.tumblr.com/post/177292830752/fun-with-text-colors-from-tumblrs-web-dashboard **/
+.npf_color_joey {color:#ff492f;}
+.npf_color_monica {color:#ff8a00;}
+.npf_color_chandler {color:#973ff4;}
+.npf_color_phoebe {color:#fcf01d;}
+.npf_color_rachel {color:#00b8ff;}
+.npf_color_ross { color:#00cf35; }
+.npf_color_niles { color:#ff62ce; }
+.npf_color_frasier { color:#001935; }
+.npf_color_mr_big { color:#000c1a; }
+
+.npf_quote {
+    background-color: {color:Accent};
+    padding: 20px 30px;
+    margin: 15px -30px;
+    font-family: {select:Main Font}!important;
+    font-size: 18px;
+    color: {color:Text on Accent};
 }
 
 /** reblog chains **/
