@@ -14,8 +14,9 @@ theme 09 by xuethms.tumblr.com
 3. Do not claim theme as your own.
 4. Do not share paid releases with others.
 
-version 1.02 - 21.06.22 @ 11:59
-> updated terms of use pop-up
+version 1.02 - 05.07.22 @ 10:03
+> npf images fix
+> in-line video sizing fix
 
 --------------------------------------------------->
 
@@ -316,6 +317,14 @@ function lightbox(elem) {
 --->
 <script src="//npf-images-v3.github.io/script.js"></script>
 <link rel="stylesheet" href="//npf-images-v3.github.io/recon.css">
+<style tmblr-npf>
+:root {
+    --NPF-Caption-Spacing: 1em;
+    --NPF-Image-Spacing: {select:Photoset Grid Gap};
+}
+</style>
+
+<link rel="stylesheet" media="screen" href="//assets.tumblr.com/client/prod/standalone/blog-network-npf/index.build.css">
 
 
 <!-- griddery by glenthemes -->
@@ -371,10 +380,6 @@ customAudio({
     /** iconsax defaults **/
     --Iconsax-Size: 20px;
     --Iconsax-Color: #9fb3c7;
-    
-    /** glenthemes npf 3.0 **/
-    --NPF-Caption-Spacing: 1em;
-    --NPF-Image-Spacing: {select:Photoset Grid Gap};
     
     /** glenthemes griddery **/
     --Post-Columns: {select:Post Columns};
@@ -1364,7 +1369,6 @@ pre {
 }
 
 .tmblr-full, .tmblr-embed {
-    object-fit: cover;
     margin: 0!important;
 }
 
@@ -1375,12 +1379,12 @@ pre {
     object-fit: cover;
 }
 
-.entry-250 .tmblr-full video { width: 170px!important; }
-.entry-400 .tmblr-full video { width: 320px!important; }
-.entry-500 .tmblr-full video { width: 420px!important; }
-.entry-700 .tmblr-full video { width: 620px!important; }
+.entry-250 .entry-reblog-txt .tmblr-full video, .entry-250 .entry-reblog-txt .embed_iframe { width: 170px!important; height: 170px; }
+.entry-400 .entry-reblog-txt .tmblr-full video, .entry-400 .entry-reblog-txt .embed_iframe { width: 320px!important; height: 320px; }
+.entry-500 .entry-reblog-txt .tmblr-full video, .entry-500 .entry-reblog-txt .embed_iframe { width: 420px!important; height: 420px; }
+.entry-700 .entry-reblog-txt .tmblr-full video, .entry-700 .entry-reblog-txt .embed_iframe { width: 620px!important; height: 620px; }
 
-.entry figure {margin: 0!important;}
+.entry figure {margin: 0!important; }
 
 .tmblr-full img {
     max-width: 100%!important;
@@ -1639,10 +1643,11 @@ pre {
 /** video posts **/
 
 .entry-vid { display: none; }
-.vid250-250 { width: 250px; display: block; }
-.vid400-400 { width: 400px; display: block; }
-.vid500-500 { width: 500px; display: block; }
-.vid700-700 { width: 700px; display: block; }
+.vid250-250 { width: 250px!important; height: auto!important; display: block; }
+.vid400-400 { width: 400px!important; height: auto!important; display: block; }
+.vid500-500 { width: 500px!important; height: auto!important; display: block; }
+.vid700-700 { width: 700px!important; height: auto!important; display: block; }
+
 
 /** quote posts **/
 
@@ -2004,7 +2009,8 @@ pre {
 </div>
 {/block:TagPage}
 
-{block:Posts}<div class="entry entry-{select:Post Size}" id="{PostID}">
+{block:posts inlineMediaWidth="1280" inlineNestedMediaWidth="1280"}
+<div class="entry entry-{select:Post Size}" id="{PostID}" post-type="{PostType}">
 
 {block:date}
 {block:indexpage}{block:PinnedPostLabel}<div class="entry-pinned">pinned</div>{/block:PinnedPostLabel}{/block:indexpage}
