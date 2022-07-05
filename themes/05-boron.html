@@ -12,8 +12,8 @@ theme 05 by xuethms.tumblr.com
 2. Do not claim theme as your own.
 3. Do not remove credit.
 
-version 1.07 - 29.03.22 @ 21:06
-> video sizing fix
+version 1.08 - 05.07.22 @ 10:49
+> npf images fix
 
 -------------------------------------------------->
 
@@ -290,9 +290,11 @@ function lightbox(elem) {
 <style tmblr-npf>
 :root {
     --NPF-Caption-Spacing:1em;
-    --NPF-Image-Spacing:4px;
+    --NPF-Image-Spacing: {select:Photoset Grid Gap};
 }
 </style>
+
+<link rel="stylesheet" media="screen" href="//assets.tumblr.com/client/prod/standalone/blog-network-npf/index.build.css">
 
 
 <style type="text/css">
