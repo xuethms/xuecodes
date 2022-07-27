@@ -14,9 +14,9 @@ theme 09 by xuethms.tumblr.com
 3. Do not claim theme as your own.
 4. Do not share paid releases with others.
 
-version 1.02 - 05.07.22 @ 10:03
-> npf images fix
-> in-line video sizing fix
+version 1.03 - 27.07.22 @ 23:50
+> quote post source links
+> "truncate tags" option added
 
 --------------------------------------------------->
 
@@ -167,6 +167,7 @@ version 1.02 - 05.07.22 @ 10:03
 <meta name="if:Searchbar" content="1">
 <meta name="if:Post Captions" content="1">
 <meta name="if:Truncate Note Count" content="0">
+<meta name="if:Truncate Tags" content="0">
 
 
 <!--------------------------------- text options -->
@@ -1157,6 +1158,23 @@ input#q-searchbar {
     display: none;
 }
 
+{block:ifnotTruncateTags}
+.entry-tags a {
+    color: {color:Post Tags};
+    font-size: 10px;
+    transition: 0.3s ease-in-out;
+    margin-right: 8px;
+    background-color: {color:Post Tags Background};
+    border-radius: 3px;
+    line-height: 24px;
+    padding: 3px 7px;
+}
+.entry-tags a:hover {
+    background-color: {color:Accent};
+    color: {color:Text on Accent};
+}
+{/block:ifnotTruncateTags}
+
 /** ============ POST STYLING ============== **/
 
 /** photo & photoset posts **/
@@ -1688,7 +1706,7 @@ pre {
 .quotemedium { font-size: 20px; line-height: 26px; }
 .quotelong { font-size: 16px; line-height: 24px; }
 
-.entry-quotesrc a { color: color: {color:Text on Accent}; }
+.entry-quotesrc a { color: {color:Text on Accent}; }
 
 {block:indexpage}
 .entry-250 .entry-quotetxt { font-size: 16px; }
@@ -2261,7 +2279,7 @@ pre {
     <!-- tags -->
     {block:indexpage}{block:HasTags}
     <div class="entry-tags entry-tags{block:Caption}capt{/block:Caption} entry-tags{block:Text}text{/block:Text} entry-tags-{select:Post Tags}">
-        {block:Tags}<a href="{TagURL}"><div class="entry-tag">{Tag}</div></a>{/block:Tags}
+        {block:Tags}<a href="{TagURL}">{block:ifTruncateTags}<div class="entry-tag">{/block:ifTruncateTags}{Tag}{block:ifTruncateTags}</div>{/block:ifTruncateTags}</a>{/block:Tags}
     </div><!--entry-tags-->
     {/block:HasTags}{/block:indexpage}
     
