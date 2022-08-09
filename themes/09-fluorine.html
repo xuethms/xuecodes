@@ -14,9 +14,8 @@ theme 09 by xuethms.tumblr.com
 3. Do not claim theme as your own.
 4. Do not share paid releases with others.
 
-version 1.03 - 27.07.22 @ 23:50
-> quote post source links
-> "truncate tags" option added
+version 1.04 - 09.08.22 @ 15:41
+> video sizing fixes
 
 --------------------------------------------------->
 
@@ -1397,10 +1396,30 @@ pre {
     object-fit: cover;
 }
 
-.entry-250 .entry-reblog-txt .tmblr-full video, .entry-250 .entry-reblog-txt .embed_iframe { width: 170px!important; height: 170px; }
+
+.entry-250 .entry-txt .tmblr-full video, .entry-250 .entry-txt .embed_iframe { width: 190px!important; height: 190px; }
+.entry-400 .entry-txt .tmblr-full video, .entry-400 .entry-txt .embed_iframe { width: 340px!important; height: 340px; }
+.entry-500 .entry-txt .tmblr-full video, .entry-500 .entry-txt .embed_iframe { width: 440px!important; height: 440px; }
+.entry-700 .entry-txt .tmblr-full video, .entry-700 .entry-txt .embed_iframe { width: 640px!important; height: 640px; }
+
+.entry-250 .entry-reblog-txt .tmblr-full video, .entry-250 .entry-reblog-txt .embed_iframe { width: 150px!important; height: 150px; }
 .entry-400 .entry-reblog-txt .tmblr-full video, .entry-400 .entry-reblog-txt .embed_iframe { width: 320px!important; height: 320px; }
 .entry-500 .entry-reblog-txt .tmblr-full video, .entry-500 .entry-reblog-txt .embed_iframe { width: 420px!important; height: 420px; }
 .entry-700 .entry-reblog-txt .tmblr-full video, .entry-700 .entry-reblog-txt .embed_iframe { width: 620px!important; height: 620px; }
+
+{block:permalinkpage}
+
+.entry-250 .entry-txt .tmblr-full video, .entry-250 .entry-txt .embed_iframe { width: 440px!important; height: 440px; }
+.entry-400 .entry-txt .tmblr-full video, .entry-400 .entry-txt .embed_iframe { width: 440px!important; height: 440px; }
+.entry-500 .entry-txt .tmblr-full video, .entry-500 .entry-txt .embed_iframe { width: 440px!important; height: 440px; }
+.entry-700 .entry-txt .tmblr-full video, .entry-700 .entry-txt .embed_iframe { width: 440px!important; height: 440px; }
+
+.entry-250 .entry-reblog-txt .tmblr-full video, .entry-250 .entry-reblog-txt .embed_iframe { width: 420px!important; height: 420px; }
+.entry-400 .entry-reblog-txt .tmblr-full video, .entry-400 .entry-reblog-txt .embed_iframe { width: 420px!important; height: 420px; }
+.entry-500 .entry-reblog-txt .tmblr-full video, .entry-500 .entry-reblog-txt .embed_iframe { width: 420px!important; height: 420px; }
+.entry-700 .entry-reblog-txt .tmblr-full video, .entry-700 .entry-reblog-txt .embed_iframe { width: 420px!important; height: 420px; }
+
+{/block:permalinkpage}
 
 .entry figure {margin: 0!important; }
 
@@ -1665,6 +1684,17 @@ pre {
 .vid400-400 { width: 400px!important; height: auto!important; display: block; }
 .vid500-500 { width: 500px!important; height: auto!important; display: block; }
 .vid700-700 { width: 700px!important; height: auto!important; display: block; }
+
+{block:permalinkpage}
+
+.entry-vid {
+    width: 500px!important; 
+    height: auto!important;
+    display: block;
+}
+
+{/block:permalinkpage}
+
 
 
 /** quote posts **/
@@ -2134,10 +2164,15 @@ pre {
     </div><!--audsize-->{/block:AudioPlayer}{/block:Audio} 
     
     {block:Video}
+    {block:indexpage}
     <div class="entry-vid vid250-{select:Post Size}">{Video-250}</div>
     <div class="entry-vid vid400-{select:Post Size}">{Video-400}</div>
     <div class="entry-vid vid500-{select:Post Size}">{Video-500}</div>
     <div class="entry-vid vid700-{select:Post Size}">{Video-700}</div>
+    {/block:indexpage}
+    {block:permalinkpage}
+    <div class="entry-vid">{Video-500}</div>
+    {/block:permalinkpage}
     {/block:Video}
     
     {block:Photo}
