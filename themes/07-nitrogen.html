@@ -12,9 +12,8 @@ theme 07 by xuethms.tumblr.com
 2. Do not claim theme as your own.
 3. Do not remove credit.
 
-version 1.01 - 28.11.21 @ 00:11
-- added 'show tags' option
-- support for tumblr text colours
+version 1.02 - 09.12.22 @ 10:55
+> "Reduce Header Height for Non Index Pages" option added
 
 --------------------------------------------------->
 
@@ -30,6 +29,7 @@ version 1.01 - 28.11.21 @ 00:11
 
 <meta name="if:Rounded Corners" content="1">
 <meta name="if:Right Sidebar" content="0">
+<meta name="if:Reduce Header Height on Non Index Pages" content="0">
 <meta name="if:Wallpaper Background" content="0">
 <meta name="if:Custom Favicon" content="0">
 <meta name="if:Show Tags" content="0">
@@ -374,6 +374,10 @@ a { text-decoration: none; }
     {block:ifRoundedCorners}
     border-radius: 20px;
     {/block:ifRoundedCorners}
+    {block:ifnotreduceheaderheightonnonindexpages}
+    height: {select:Header Image Height}px;
+    top: calc( -{select:Header Image Height}px + 70px);
+    {/block:ifnotreduceheaderheightonnonindexpages}
 }
 
 .hview1 {
