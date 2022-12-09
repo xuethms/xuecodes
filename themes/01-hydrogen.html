@@ -12,7 +12,7 @@ theme 01 by xuethms.tumblr.com
 3. Do not remove credit.
 
 version 1.04 - 09.12.22 @ 10:00
-> sidebar title overlap fix
+> sidebar title overlap fix & option
 > pagination line break fix
 
 -------------------------------------------------->
@@ -79,6 +79,7 @@ version 1.04 - 09.12.22 @ 10:00
 <meta name="if:File Name Permalink" content="1">
 <meta name="if:Pinned Post" content="0">
 <meta name="if:Grayscale Posts" content="0">
+<meta name="if:Show Sidebar Title Button" content="1">
 
 
 <!-- select options -->
@@ -334,6 +335,11 @@ p:last-child { margin-bottom: 0; }
     font-family: consolas;
     font-size: 11px;
     border-radius: 3px 3px 0 0;
+    
+    {block:ifnotShowSidebarTitleButton}
+    width: 151px;
+    padding: 5px 5px 5px 45px;
+    {/block:ifnotShowSidebarTitleButton}
 }
 
 .sb2desc {
@@ -984,7 +990,7 @@ ol.notes {
     <div class="sbimgkona"></div>
     
     <div id="sb2">
-        <div class="sb2x">x</div>
+        {block:ifShowSidebarTitleButton}<div class="sb2x">x</div>{/block:ifShowSidebarTitleButton}
         <div class="sb2tit"><div class="sb2titb"></div>{Title}</div>
         <div class="sb2quote"><span class="sb2q">{text:Sidebar Quote}</span></div>
         <div class="sb2desc">{Description}</div>
