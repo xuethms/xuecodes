@@ -11,8 +11,9 @@ theme 01 by xuethms.tumblr.com
 2. Do not claim theme as your own.
 3. Do not remove credit.
 
-version 1.03 - 14.06.22 @ 20:37
-> quality of life updates
+version 1.04 - 09.12.22 @ 10:00
+> sidebar title overlap fix
+> pagination line break fix
 
 -------------------------------------------------->
 
@@ -324,7 +325,8 @@ p:last-child { margin-bottom: 0; }
 }
 
 .sb2tit {
-    width: 151px;
+    width: 136px;
+    padding: 5px 20px 5px 45px;
     font-style: italic;
     background-color: {color:Accent};
     margin: -10px 0 0 -10px;
@@ -332,7 +334,6 @@ p:last-child { margin-bottom: 0; }
     font-family: consolas;
     font-size: 11px;
     border-radius: 3px 3px 0 0;
-    padding: 5px 5px 5px 45px;
 }
 
 .sb2desc {
@@ -1006,6 +1007,7 @@ ol.notes {
 <div id="blogpagination">
 {block:NextPage}
 <a href="{NextPage}">forward →</a>
+<br>
 {/block:NextPage}
 {block:PreviousPage}
 <a href="{PreviousPage}">back ←</a>
