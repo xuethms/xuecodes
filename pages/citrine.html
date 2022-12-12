@@ -1,0 +1,1169 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<!-------------------------------------------------
+
+C I T R I N E
+
+about page 03 by xuethms.tumblr.com
+
+1. Do not edit/remove my visual & in-code credits.
+2. Do not reupload/reuse my codes & designs on
+   other websites and platforms.
+3. Do not claim theme as your own.
+4. Do not share paid releases with others.
+
+version 1.00 - 13.12.22 @ 0150
+> official release
+
+----------------------------------------------------
+
+To edit this page, you will have to edit:
+
+    1. CSS - the styling (colours mainly)
+       > Use ctrl+F to search for [HALLABONG]
+         to jump to the section you need to edit.
+    
+    2. HTML - the content
+       > Use ctrl+F to search for [TANGERINE]
+         to jump to the section you need to edit.
+
+Look out for my comments (greyed out text) like this.
+
+VERY IMPORTANT; for your ask box to work, make sure
+you have added your username where instructed. Use
+ctrl+F to search for [CITRUS] to jump there.
+
+--------------------------------------------------->
+
+
+<!-- edit [about] below to change the text on the browser tab -->
+<title>citrine</title>
+
+<!-- replace [{Favicon}] below with an image URL to have a custom favicon 
+     favicon = the small icon on browser tabs; by default it's your pfp. -->
+<link rel="shortcut icon" href="{Favicon}" />
+
+<style type="text/css">
+
+:root {
+    
+/** [HALLABONG] CSS STYLING
+With the use of CSS variables, you don't need to scroll through the whole code to edit the appearance of the page; you can do so in this single block!
+
+    
+****************************************** GLOBAL APPEARANCE OPTIONS **/
+
+    /** font options from google fonts:
+    Karla, Nunito, Open Sans, Poppins, Roboto, Ubuntu **/
+    --mainfont: Karla;
+    
+    --scrollbar: #dadada;
+    --scrollbarBG: #f3f3f3;
+    
+    --text-highlight: #edc291;
+    
+    --BGcolour: #f2edd3; /** only shows up if no bg img below **/
+    --BGimageURL: url("");
+    /** replace the word [XUE] with your own background image URL **/
+    
+    --BGwallpaper: cover; 
+    /**  auto = repeated bg
+         cover = stretched as a wallpaper **/
+    
+    /** tooltips = the small pop-up next to your mouse
+        when you hover over links **/
+    --tooltipBG: 0,0,0; /** RGB colour values **/
+    --tooltipColour: #ffffff; /** text colour **/
+    
+    /** iconsax defaults **/
+    --Iconsax-Size: 20px;
+    --Iconsax-Color: #9fb3c7;
+
+/******************************************************* MAIN CONTENT **/
+    
+    /** the main content window background colour **/ 
+    --contentBG: #ffffff;
+    
+    /** choose an accent colour that will be repeated throughout the code **/
+    --accent: #f78340;
+    
+    /** text colours **/
+    --text-colour: #444444; /** main font colour **/
+    --text-italic: #888888;
+    --text-link: #999999;
+    --text-link-underline: #dadada;
+
+/**************************************************** LEFT SIDEBAR IMAGE **/
+    
+    --left-image: url("https://images.unsplash.com/photo-1660491630578-4299a3c09db0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80");
+    
+    --left-image-overlay: 0,0,0;
+    /** the rgba values for the background colour of the links overlay **/
+    
+    --left-image-links: #ffffff;
+
+/********************************************************* MAIN CONTENT **/
+
+    --profile-icon: url("https://images.unsplash.com/photo-1660491630578-4299a3c09db0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80");
+
+/**************************************************** COLLECTIONS PANEL **/
+    
+    --project-border: #dadada;
+    --progressbarBG: #dadada;
+    --project-links: #777777;
+    --project-linksBG: #eaeaea;
+
+/******************************************************** CONTACT PANEL **/
+    
+    --faq-bigA: #dadada;
+    --guidelinesBG: #f1f1f1;
+    --guidelines-border: #cccccc;
+    
+}
+
+/** ======================================================== THE BASICS **/
+
+body {
+    background-color: var(--BGcolour);
+    background-image: var(--BGimageURL);
+    background-size: var(--BGwallpaper);
+    background-position: center;
+    background-attachment: fixed;
+    font-family: var(--mainfont),sans-serif;
+}
+
+a { text-decoration: none; }
+p:first-child { margin-top: 0; }
+p:last-child { margin-bottom: 0; }
+
+.centrer {
+    position: relative;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+/** tool tips **/
+
+#s-m-t-tooltip {
+    z-index: 1000000000000000000000000000000000000;
+    max-width: 300px;
+    letter-spacing: 1px;
+    font-family: nunito;
+    font-size: 10px;
+    padding: 4px 8px;
+    margin: 20px 0 0 10px;
+    border-radius: 7px;
+    background-color: rgba(var(--tooltipBG),0.8);
+    color: var(--tooltipColour);
+}
+
+/** scrollbar **/
+
+::-webkit-scrollbar { width: 16px; }
+::-webkit-scrollbar-track-piece { 
+    background-color: var(--scrollbarBG);
+    border-left: 10px solid var(--contentBG);
+}  
+
+::-webkit-scrollbar-thumb:vertical {
+    width: 6px;
+    border-left: 10px solid var(--contentBG);
+    background: var(--scrollbar);
+}
+
+
+/** text selection **/
+
+::selection {
+    color: var(--contentBG);
+    background-color: var(--text-highlight);
+}
+
+::-moz-selection {
+    color: var(--contentBG);
+    background-color: var(--text-highlight);
+}
+
+::-webkit-selection {
+    color: var(--contentBG);
+    background-color: var(--text-highlight);
+}
+
+/** tumblr controls **/
+
+iframe#tumblr_controls, .iframe-controls--desktop {
+    position: fixed!important;
+    top: 8px!important;
+    right: 8px!important;
+    transform: scale(0.8);
+    -webkit-transform-origin: top right;
+    -ms-transform-origin: top right;
+    transform-origin: top right;
+    z-index: 1500!important;
+}
+
+/** =============================================== MAIN CONTENT STYLING **/
+
+.content {
+    background-color: var(--contentBG);
+    width: 800px;
+    height: 500px;
+    position: fixed;
+    right: calc( 50% - 400px);
+    color: var(--text-colour);
+    top: 50%;
+    font-size: 12px;
+    
+    -ms-transform: translateY(-50%);
+    -webkit-transform: translate(0,-50%);
+    transform: translate(0,-50%);
+    animation: tb-fadein 2s;
+    
+    -webkit-animation: tb-fadein 2s;
+    -moz-animation: tb-fadein 2s;
+    -o-animation: tb-fadein 2s;
+    -ms-animation: tb-fadein 2s;
+}
+
+@keyframes tb-fadein {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+.content b,strong {
+    font-weight: 400;
+    color: var(--accent);
+}
+
+.content i,em {
+    color: var(--text-italic);
+    font-style: italic;
+}
+
+.profile-bio a, .faq-answer a {
+    color: var(--text-link);
+    border-bottom: 2px solid var(--text-link-underline);
+    transition: 0.3s ease-in-out;
+}
+
+.profile-bio a:hover, .faq-answer a:hover {
+    color: var(--text-link);
+    border-bottom: 2px solid var(--accent);
+}
+
+.content ul {
+    list-style-type: square;
+    margin: 0 0 5px 15px;
+    padding: 0 0 0 10px;
+}
+
+.content blockquote {
+    margin: 0 0 0 15px;
+    padding: 0 0 0 15px;
+    border-left: 2px solid var(--accent);
+}
+
+.panel {
+    width: 400px;
+    height: 500px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    float: left;
+}
+
+.panel-padded {
+    padding: 30px;
+    width: 340px;
+    height: 440px;
+}
+
+.panel-view {
+    width: 400px;
+    height: 500px;
+    overflow: hidden;
+}
+
+.allviews {
+    height: 2000px;
+    width: 400px;
+    float: left;
+    transition: 0.4s ease-in-out;
+    height: 500px;
+    width: 1600px;
+}
+
+
+/** =================================================== LEFT IMG SIDEBAR **/
+
+.side-left {
+    width: 800px;
+}
+
+.left-image {
+    background-image: var(--left-image);
+    background-position: center;
+    background-size: cover;
+}
+
+.img-nav {
+    text-align: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.4s ease-in-out;
+}
+
+.content:hover .img-nav {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.img-nav-container {
+    width: 400px;
+    height: 500px;
+    background-color: rgba(var(--left-image-overlay),0.0);
+    transition: 0.4s ease-in-out;
+}
+
+.content:hover .img-nav-container {
+    backdrop-filter: blur(4px);
+    background-color: rgba(var(--left-image-overlay),0.2);
+}
+
+.img-nav-btn {
+    letter-spacing: -2px;
+    font-weight: 1000;
+    font-style: italic;
+    color: var(--left-image-links);
+    font-size: 48px;
+    line-height: 60px;
+}
+
+.img-nav-btn a {
+    cursor: pointer;
+    color: var(--left-image-links);
+    transition: 0.2s;
+    text-shadow: 2px 2px 0 transparent;
+}
+
+.img-nav-btn a:hover {
+    letter-spacing: 3px;
+}
+
+.btn-active {
+    letter-spacing: 3px;
+    color: var(--accent);
+}
+
+
+/** =================================================== PANEL (1) PROFILE **/
+
+.profile {
+    width: 340px;
+    height: 270px;
+}
+
+.profile-pfp {
+    width: 120px;
+    height: 120px;
+    background-image: var(--profile-icon);
+    background-size: cover;
+    background-position: center;
+    border-radius: 1000px;
+    margin: 0 110px 0 110px;
+}
+
+.profile-name {
+    text-align: center;
+    letter-spacing: -1px;
+    font-size: 18px;
+    font-weight: 1000;
+    color: var(--text-colour);
+    margin: 20px 0 8px 0;
+}
+
+.profile-title {
+    text-align: center;
+    letter-spacing: 2px;
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: var(--text-italic);
+}
+
+.profile-bio {
+    font-size: 14px;
+    line-height: 24px;
+    max-height: 170px;
+    overflow-y: auto;
+}
+
+
+/** =============================================== PANEL (2) NAVIGATION **/
+
+.nav-panel {
+    display: block;
+    height: 400px;
+    padding: 20px 20px 0 20px;
+    width: 320px;
+}
+
+.nav-section {
+    width: 140px;
+    float: left;
+    margin: 0 20px 30px 0;
+}
+
+.nav-section-name {
+    font-size: 16px;
+    font-weight: 1000;
+    color: var(--accent);
+    font-style: italic;
+}
+
+.nav-link {
+    color: var(--text-colour);
+    margin: 5px 0 0 0;
+    font-size: 12px;
+    padding-left: 25px;
+}
+
+.nav-link:before {
+    display: block;
+    content: "";
+    background-color: var(--text-link-underline);
+    width: 15px;
+    height: 2px;
+    float: left;
+    margin: 8px 10px 0 -25px;
+    transition: 0.3s ease-in-out;
+}
+
+.nav-link:hover::before {
+    background-color: var(--accent);
+}
+
+
+/** ============================================== PANEL (3) COLLECTIONS **/
+
+.project {
+    margin-bottom: 30px;
+    border-left: 6px solid var(--project-border);
+    margin-left: 29px;
+    padding-left: 39px;
+}
+
+.project-intro {
+    margin-top: -64px;
+    height: 59px;
+}
+
+.project-name {
+    font-size: 18px;
+    font-weight: 1000;
+    font-style: italic;
+    color: var(--accent);
+    margin-bottom: 4px;
+}
+
+.project-subtitle {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--text-italic);
+}
+
+.project-icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 100px;
+    margin-left: -74px;
+}
+
+.project-description {
+    font-size: 12px;
+    line-height: 18px;
+    color: var(--text-colour);
+    margin-bottom: 15px;
+}
+
+.project-description a {
+    transition: 0.3s ease-in-out;
+    color: var(--text-link);
+    border-bottom: 1px solid var(--text-link-underline);
+}
+
+.project-description a:hover {
+    color: var(--text-link);
+    border-bottom: 1px solid var(--accent);
+}
+
+.project-stats {
+    margin-bottom: 20px;
+}
+
+.project-progress, .project-rating {
+    margin: 5px 0;
+}
+
+.progressbar {
+    width: 100px;
+    height: 4px;
+    background-color: var(--progressbarBG);
+    float: left;
+    margin: 4px 0 0 0;
+}
+
+.progressbar-fill {
+    height: 4px;
+    float: left;
+    background-color: var(--accent);
+}
+
+.progressbar-label, .rating-label {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin: 0 0 0 110px;
+}
+
+.rating {
+    width: 105px;
+    height: 4px;
+    background-color: transparent;
+    float: left;
+    margin: 4px 0 0 0;
+}
+
+.rating-x, .rating-o {
+    width: 16px;
+    height: 3px;
+    float: left;
+    background-color: var(--progressbarBG);
+    margin-right: 5px;
+}
+
+.rating-o { background-color: var(--progressbarBG); }
+.rating-x { background-color: var(--accent); }
+
+
+.project-links {
+    font-size: 10px;
+    letter-spacing: 0.5px;
+    line-height: 26px;
+}
+
+.project-links a {
+    white-space: nowrap;
+    background-color: var(--project-linksBG);
+    color: var(--project-links);
+    padding: 4px 8px 4px 5px;
+    border-radius: 5px;
+    text-transform: uppercase;
+    margin-right: 4px;
+}
+
+.project-links  .iconsax {
+    --Iconsax-Size: 14px;
+    --Iconsax-Color: var(--project-links);
+    margin: -2px 4px 0 0;
+}
+
+
+/** ============================================== PANEL (4) CONTACT **/
+
+.faq-question {
+    font-size: 16px;
+    font-weight: 1000;
+    font-style: italic;
+    color: var(--accent);
+    margin: 0 0 15px 35px;
+    line-height: 24px;
+}
+
+.faq-question:before {
+    content: "Q";
+    font-size: 30px;
+    color: var(--accent);
+    font-weight: 800;
+    float: left;
+    margin: -3px 10px 0 -35px;
+    font-style: normal;
+}
+
+.faq-answer {
+    font-size: 12px;
+    line-height: 20px;
+    padding-left: 35px;
+    margin-bottom: 30px;
+}
+
+.faq-answer:before {
+    content: "A";
+    font-size: 34px;
+    color: var(--faq-bigA);
+    font-weight: 800;
+    float: left;
+    margin: 0 10px 0 -35px;
+    font-style: normal;
+}
+
+.guidelines {
+    background-color: var(--guidelinesBG);
+    border-radius: 10px;
+    margin-bottom: 30px;
+    border: 1px solid var(--guidelines-border);
+}
+
+.guidelines-title {
+    padding: 10px 15px;
+    border-bottom: 1px solid var(--guidelines-border);
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: 1000;
+    font-style: italic;
+    color: var(--text-colour);
+}
+
+.guidelines-title .iconsax {
+    --Iconsax-Size: 16px;
+    --Iconsax-Color: var(--text-colour);
+    float: right;
+    margin: -3px -6px 0 -5px;
+}
+
+.guidelines-text {
+    font-size: 12px;
+    color: var(--text-colour);
+    padding: 20px;
+}
+
+
+</style>
+</head>
+<body>
+
+<!--------------------------------------------------------------------------
+
+[TANGERINE] HTML CONTENT EDITING 
+You will need to edit certain text from this point on to personalise this page as your own. Look out for the GREYED OUT TEXT which are comments in the code. Ignore those that look like <!-- // end ... -- >, do not remove these!
+
+---------------------------------------------------------------------------->
+
+<div class="content">
+<div class="side-left">
+
+<div class="panel left-image">
+<div class="img-nav-container"><div class="img-nav centrer">
+    
+    <!-- [ SECTION NAVIGATION LINKS ]
+    You can edit each link name below. 
+    If you want to remove that section, remove the entire line.
+    The last link is the link back to your blog posts. -->
+    <div class="img-nav-btn"><a class="btn-one btn-active">profile</a></div>
+    <div class="img-nav-btn"><a class="btn-two">navigation</a></div>
+    <div class="img-nav-btn"><a class="btn-three">projects</a></div>
+    <div class="img-nav-btn"><a class="btn-four">contact</a></div>
+    <div class="img-nav-btn"><a href="/">blog</a></div>
+    
+</div><!--// end img-nav--></div><!--// end img-nav-container-->
+</div><!--// end left-image-->
+
+<div class="panel-view">
+<div class="allviews">
+
+
+
+
+<!-------------------------------------------------- PANEL 1: PROFILE/BIO -->
+
+<div class="panel panel-padded">
+
+<div class="profile"><div class="centrer">
+    
+    <div class="profile-pfp"></div>
+    
+    <!-- replace [name] with your name or username -->
+    <div class="profile-name">name</div>
+    
+    <!-- replace [subtitle] with your nickname, pronouns, basic info, etc -->
+    <div class="profile-title">subtitle</div>
+    
+</div></div><!--// end leftinfo-profile-->
+
+<div class="profile-bio">
+<!-- type your profile bio here. normal html coding applies. -->
+
+<p>This is where your biography goes. Write something about yourself.</p>
+<blockquote>The default gradient image used is by <a href="https://unsplash.com/photos/8uDropEfy48">Fruit Basket Agency</a> (unsplash).</blockquote>
+<p>This is how you <b>bold</b> text. Add in some <i>italics</i> for some pizazz. And of course, a <a href="URL" title="hover title">link</a> to your favourite pages. A scrollbar automatically appears if your bio gets too long. </p>
+    
+</div><!--// end leftinfo-bio-->
+</div><!--// end profile panel-->
+
+
+
+<!--------------------------------------------------- PANEL 2: NAVIGATION -->
+<div class="panel panel-padded">
+<div class="nav-panel">
+
+<!-- [HOW TO CREATE TAG BLOCKS]
+
+Each block of tags, including category name and the tags/links underneath, use the following template block. Copy, paste, and edit as much of these as you would like to add.
+
+== TEMPLATE START ==
+
+<div class="nav-section">
+    <div class="nav-section-name">category name</div>
+    <a href="/tagged/tag one"><div class="nav-link">tag one</div></a>
+    <a href="/tagged/tag two"><div class="nav-link">tag two</div></a>
+    <a href="/tagged/tag three"><div class="nav-link">tag three</div></a>
+    <a href="/tagged/tag four"><div class="nav-link">tag four</div></a>
+</div>
+
+== TEMPLATE END == 
+
+-->
+
+<!--blank template to copy & paste-->
+<div class="nav-section">
+    <div class="nav-section-name">category</div>
+    <a href="/tagged/"><div class="nav-link"></div></a>
+    <a href="/tagged/"><div class="nav-link"></div></a>
+    <a href="/tagged/"><div class="nav-link"></div></a>
+    <a href="/tagged/"><div class="nav-link"></div></a>
+    <a href="/tagged/"><div class="nav-link"></div></a>
+</div>
+
+
+</div><!--nav panel-->
+
+</div><!--end tags panel-->
+
+
+<!----------------- PANEL 3: PROJECTS / COLLECTIONS / BLOGS / MUSES / ETC -->
+<div class="panel panel-padded">
+
+<!-- [HOW TO CREATE PROJECT BLOCKS]
+
+The template code for one project code can be found below, and examples for each block type have been created further below. Copy and paste as many project blocks as you would like, making sure to edit the items in [square brackets] to your own needs.
+
+
+== TEMPLATE START ==
+
+<div class="project">
+
+    <img class="project-icon" src="[IMAGE SOURCE URL]">
+    
+    <div class="project-intro"><div class="centrer">
+        <div class="project-name">[PROJECT TITLE]</div>
+        <div class="project-subtitle">
+        [PROJECT SUBTITLE]
+        </div>
+    </div></div>
+    
+    <div class="project-description">
+        [PROJECT DESCRIPTION]
+    </div>
+    
+    <div class="project-stats">
+    
+        <div class="project-progress">
+        <div class="progressbar">
+            <div class="progressbar-fill" style="width: [COMPLETION]%"></div>
+        </div>
+        <div class="progressbar-label">[PROGRESS BAR LABEL]</div>
+        </div>
+        
+        <div class="project-rating">
+        <div class="rating">
+            <div class="rating-x"></div>
+            <div class="rating-x"></div>
+            <div class="rating-x"></div>
+            <div class="rating-x"></div>
+            <div class="rating-o"></div>
+        </div>
+        <div class="rating-label">[RATING LABEL]</div>
+        </div>
+        
+    </div>
+    
+    <div class="project-links">
+        <a href="[URL]"><i class="iconsax" icon-name="link-3"></i>[LINK NAME]</a>
+    </div>
+    
+</div>
+
+== TEMPLATE END == 
+
+
+Note that for traits, you have to "shade in" 5 boxes by changing the name of the element. o=unshaded, x=shaded. For example:
+
+<div class="rating-x"></div>
+<div class="rating-x"></div>
+<div class="rating-x"></div>
+<div class="rating-x"></div>
+<div class="rating-o"></div>
+
+The above has rating-x 4x, then rating-o 1x. This means it'll be 4/5 shaded.
+
+
+-->
+
+
+
+<!-- general example -->
+<div class="project">
+
+    <img class="project-icon" src="https://images.unsplash.com/photo-1660491630578-4299a3c09db0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80">
+    
+    <div class="project-intro"><div class="centrer">
+        <div class="project-name">general example</div>
+        <div class="project-subtitle">
+        subtitle / title / short descriptor
+        </div><!--// end project-subtitle-->
+    </div></div><!--// end project-intro-->
+    
+    <div class="project-description">
+        A description about the item listed. HTML styling applies: <b>bold</b>, <i>italics</i>, <a href="/" title="tooltips too!">links</a>.
+    </div>
+    
+    <div class="project-stats">
+    
+        <div class="project-progress">
+        <div class="progressbar">
+            <div class="progressbar-fill" style="width: 50%"></div>
+        </div><!--// end progressbar-->
+        <div class="progressbar-label">50% progress</div>
+        </div><!--// end project-progress-->
+        
+        <div class="project-rating">
+        <div class="rating">
+            <div class="rating-x"></div>
+            <div class="rating-o"></div>
+            <div class="rating-o"></div>
+            <div class="rating-o"></div>
+            <div class="rating-o"></div>
+        </div>
+        <div class="rating-label">1/5 rating</div>
+        </div><!--// end project-rating-->
+        
+    </div><!--// end project-stats-->
+    
+    <div class="project-links">
+        <a href="[URL]"><i class="iconsax" icon-name="link-3"></i>link</a>
+    </div><!--// end project-links-->
+
+</div><!--// end project-->
+
+
+<!-- project example -->
+<div class="project">
+
+    <img class="project-icon" src="https://images.unsplash.com/photo-1660491630578-4299a3c09db0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80">
+    
+    <div class="project-intro"><div class="centrer">
+        <div class="project-name">project example</div>
+        <div class="project-subtitle">
+        subtitle / title / short descriptor
+        </div><!--// end project-subtitle-->
+    </div></div><!--// end project-intro-->
+    
+    <div class="project-description">
+        Write something about an ongoing project you're working on -- zine, fic, art, anything!
+    </div>
+    
+    <div class="project-stats">
+    
+        <div class="project-progress">
+        <div class="progressbar">
+            <div class="progressbar-fill" style="width: 70%"></div>
+        </div><!--// end progressbar-->
+        <div class="progressbar-label">70% progress</div>
+        </div><!--// end project-progress-->
+        
+    </div><!--// end project-stats-->
+    
+    <div class="project-links">
+        <a href="URL"><i class="iconsax" icon-name="link-3"></i>link</a>
+    </div><!--// end project-links-->
+
+</div><!--// end project-->
+
+
+
+<!-- media rec example -->
+<div class="project">
+
+    <img class="project-icon" src="https://images.unsplash.com/photo-1660491630578-4299a3c09db0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80">
+    
+    <div class="project-intro"><div class="centrer">
+        <div class="project-name">media review example</div>
+        <div class="project-subtitle">
+        subtitle / title / short descriptor
+        </div><!--// end project-subtitle-->
+    </div></div><!--// end project-intro-->
+    
+    <div class="project-description">
+        Write your review here.
+    </div>
+    
+    <div class="project-stats">
+        
+        <div class="project-rating">
+        <div class="rating">
+            <div class="rating-x"></div>
+            <div class="rating-x"></div>
+            <div class="rating-x"></div>
+            <div class="rating-x"></div>
+            <div class="rating-o"></div>
+        </div>
+        <div class="rating-label">4/5 rating</div>
+        </div><!--// end project-rating-->
+        
+    </div><!--// end project-stats-->
+
+</div><!--// end project-->
+
+
+<!-- character example -->
+<div class="project">
+
+    <img class="project-icon" src="https://images.unsplash.com/photo-1660491630578-4299a3c09db0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80">
+    
+    <div class="project-intro"><div class="centrer">
+        <div class="project-name">character example</div>
+        <div class="project-subtitle">
+        subtitle / title / short descriptor
+        </div><!--// end project-subtitle-->
+    </div></div><!--// end project-intro-->
+    
+    <div class="project-description">
+        Introduce your character/muse here.
+    </div>
+    
+    <div class="project-stats">
+        
+        <div class="project-rating">
+        <div class="rating">
+            <div class="rating-x"></div>
+            <div class="rating-x"></div>
+            <div class="rating-x"></div>
+            <div class="rating-x"></div>
+            <div class="rating-o"></div>
+        </div>
+        <div class="rating-label">trait 1</div>
+        </div><!--// end project-rating-->
+        
+        <div class="project-rating">
+        <div class="rating">
+            <div class="rating-x"></div>
+            <div class="rating-x"></div>
+            <div class="rating-o"></div>
+            <div class="rating-o"></div>
+            <div class="rating-o"></div>
+        </div>
+        <div class="rating-label">trait 2</div>
+        </div><!--// end project-rating-->
+        
+        <div class="project-rating">
+        <div class="rating">
+            <div class="rating-x"></div>
+            <div class="rating-x"></div>
+            <div class="rating-x"></div>
+            <div class="rating-x"></div>
+            <div class="rating-x"></div>
+        </div>
+        <div class="rating-label">trait 3</div>
+        </div><!--// end project-rating-->
+        
+    </div><!--// end project-stats-->
+    
+    <div class="project-links">
+        <a href="[URL]"><i class="iconsax" icon-name="link-3"></i>link</a>
+    </div><!--// end project-links-->
+
+</div><!--// end project-->
+
+
+</div><!--end projects panel-->
+
+
+
+<!---------------------------------------- PANEL 4: CONTACT (FAQ, ASKBOX) -->
+<div class="panel panel-padded">
+    
+<div class="faq-section">
+
+<!-- [HOW TO ADD FAQ]
+The FAQ consists of two elements, .faq-question and .faq-answer. Copy and paste as many of these as you would like to add.
+
+== TEMPLATE START ==
+
+    <div class="faq-question">
+        [YOUR QUESTION]
+    </div>
+    <div class="faq-answer">
+        <p>[YOUR ANSWER]</p>
+    </div>
+    
+== TEMPLATE END ==
+
+-->
+
+    <div class="faq-question">
+        <!-- your question here -->
+        Your question?
+    </div>
+    <div class="faq-answer">
+        <!-- your answer here -->
+        <p>My answer.</p>
+    </div>
+    
+
+    <div class="faq-question">
+        <!-- your question here -->
+        Your question?
+    </div>
+    <div class="faq-answer">
+        <!-- your answer here -->
+        <p>My answer.</p>
+    </div>
+    
+
+    <div class="faq-question">
+        <!-- your question here -->
+        Your question?
+    </div>
+    <div class="faq-answer">
+        <!-- your answer here -->
+        <p>My answer.</p>
+    </div>
+    
+    
+</div><!-- // end faq-section-->
+
+<div class="guidelines">
+    <div class="guidelines-title">
+        <i class="iconsax" icon-name="info-circle"></i>
+        <!-- title for the guidelines section -->
+        Before you ask...
+    </div><!-- // end guidelines-title-->
+    <div class="guidelines-text">
+    
+    <!-- ensure your points are surrounded by <li> and </li> to keep it in point-form. you can also just write in prose if you wish. -->
+    <p>Please adhere to the following:</p>
+        <ul>
+            <li>You can list points for potential askers to note</li>
+            <li>Maybe about your active/hiatus status</li>
+            <li>Or rules like not sending weird stuff</li>
+        </ul>
+        
+    </div>
+</div><!-- // end ask-guidelines-->
+
+
+<!-- [CITRUS] [GETTING YOUR ASKBOX TO WORK]
+Replace [USERNAME] below with your username. -->
+<iframe frameborder="0" scrolling="no" width="100%" height="190" src="https://www.tumblr.com/ask_form/[USERNAME].tumblr.com" style="background-color:transparent; overflow:hidden;" id="ask_form"></iframe>
+    
+</div><!--// end contact panel-->
+</div><!--// panel-set-->
+</div><!--// panel-view-->
+</div><!--// side-left-->
+</div><!--// content-->
+
+<a title="citrine page by xuethms" href="https://xuethms.tumblr.com"><div style="position:fixed;bottom:12px;right:12px;font-size:10px;background-color:#fff;color:#000;padding: 4px 7px;border-radius:5px;cursor:pointer;font-weight:600;font-style:italic;font-family:karla;">xue</div></a>
+
+</body>
+
+
+<!-- scripts and stuff ----------------------------------------------------->
+<!-- do not touch :) ------------------------------------------------------->
+
+<!-- iconsax -->
+<!-- https://github.com/glenthemes/iconsax#readme -->
+<script src="//glenthemes.github.io/iconsax/geticons.js"></script>
+<link href="//glenthemes.github.io/iconsax/style.css" rel="stylesheet">
+
+<!-- google fonts -->
+<!-- google fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,400;0,700;0,800;1,400&family=Nunito:ital,wght@0,400;0,700;0,800;1,400&family=Open+Sans:ital,wght@0,400;0,700;0,800;1,400&family=Poppins:ital,wght@0,400;0,700;0,800;1,400&family=Roboto:wght@400;700&family=Ubuntu:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+
+<!--tooltips-->
+<!--https://manos.malihu.gr/style-my-tooltips-jquery-plugin/-->
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+<script src="https://static.tumblr.com/iuw14ew/VSQma1786/jquery.style-my-tooltips.js"></script>
+<script>
+(function($){
+$(document).ready(function(){
+$("a[title]").style_my_tooltips({
+tip_follows_cursor:true,
+tip_delay_time:0,
+tip_fade_speed:300,
+attribute:"title"
+});
+});
+})(jQuery);
+</script>
+
+<script src="//code.jquery.com/jquery-2.2.4.min.js"></script>
+<script>
+$(document).ready(function(){
+    
+$(".btn-one").click(function(){
+    $(".btn-one").addClass("btn-active");
+    $(".btn-two").removeClass("btn-active");
+    $(".btn-three").removeClass("btn-active");
+    $(".btn-four").removeClass("btn-active");
+    $(".allviews").css("margin-left", "0");
+});
+    
+$(".btn-two").click(function(){
+    $(".btn-one").removeClass("btn-active");
+    $(".btn-two").addClass("btn-active");
+    $(".btn-three").removeClass("btn-active");
+    $(".btn-four").removeClass("btn-active");
+    $(".allviews").css("margin-left", "-400px");
+});
+    
+$(".btn-three").click(function(){
+    $(".btn-one").removeClass("btn-active");
+    $(".btn-two").removeClass("btn-active");
+    $(".btn-three").addClass("btn-active");
+    $(".btn-four").removeClass("btn-active");
+    $(".allviews").css("margin-left", "-800px");
+});
+    
+$(".btn-four").click(function(){
+    $(".btn-one").removeClass("btn-active");
+    $(".btn-two").removeClass("btn-active");
+    $(".btn-three").removeClass("btn-active");
+    $(".btn-four").addClass("btn-active");
+    $(".allviews").css("margin-left", "-1200px");
+});
+
+}); /** jquery the end **/
+</script>
+
+<!-- masonry -->
+<!-- https://masonry.desandro.com/ -->
+<script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+<script src="/path/to/masonry.pkgd.min.js"></script>
+<script type="text/javascript">
+$(window).load(function () {
+$('.nav-panel').masonry({
+  // options
+  itemSelector: '.nav-section'
+});
+});
+</script>
+
+</html>
