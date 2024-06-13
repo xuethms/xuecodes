@@ -11,8 +11,8 @@ theme 02 by xuethms.tumblr.com
 2. Do not claim theme as your own.
 3. Do not remove credit.
 
-version 1.04 - 28.11.21
-> tumblr text colours
+version 1.05 - 13.06.24 @ 21:45
+> npf fixes
 
 -------------------------------------------------->
 
@@ -223,13 +223,6 @@ $(function(){  $('.entry').unnest({
   }); });
 </script>
 
-<!--
-       NPF IMAGES READJUSTMENT | @glenthemes
-       v2.0 [last updated: 2021-06-03]
--->
-<link href="//dl.dropbox.com/s/bnoj86mka0bkplb/npf-override.css" rel="stylesheet">
-<script src="//dl.dropbox.com/s/vwrm94pcg4c9e71/npf-evenize.js"></script>
-
 <!--JAVA-->
 <script src="//code.jquery.com/jquery-2.2.4.min.js"></script>
 <script src="https://static.tumblr.com/wgg6svp/OoTofxa0c/unnest.min.js"></script>
@@ -284,6 +277,86 @@ $(".btn-tags-hide").click(function(){
 
 });
 </script>
+
+<!-- npf v3.0 fix -->
+<link rel="stylesheet" media="screen" href="//assets.tumblr.com/client/prod/standalone/blog-network-npf/index.build.css">
+
+<!--
+        NPF images fix v3.0 by @glenthemes [2021]
+        💌 git.io/JRBt7
+--->
+<script src="//npf-images-v3.github.io/script.js"></script>
+<link rel="stylesheet" href="//npf-images-v3.github.io/recon.css">
+<style tmblr-npf>
+:root {
+    --NPF-Caption-Spacing:10px;
+    --NPF-Image-Spacing:5px;
+}
+</style>
+
+
+<!--✻✻✻✻✻✻  npf audio player by @glenthemes  ✻✻✻✻✻✻-->
+<script src="//tmblr-npf-audio.gitlab.io/s/init.js"></script>
+<link href="//tmblr-npf-audio.gitlab.io/s/base.css" rel="stylesheet">
+<script>
+tumblr_npf_audio({
+    emptyTitleText: "Untitled track",
+    emptyArtistText: "Untitled artist",
+    emptyAlbumText: "Untitled album",
+    
+    titleLabel: "Track:",
+    artistLabel: "Artist:",
+    albumLabel: "Album:"
+});
+</script>
+<style edit-npf-audio-player>
+.npf-audio-wrapper {
+    --NPF-Audio-Buttons-Size: 1.4rem;
+    --NPF-Audio-Buttons-Color: #555555; /* color of play & pause buttons */
+    --NPF-Audio-Buttons-Spacing: 1.3rem; /* space between buttons and song info */
+    
+    --NPF-Audio-Image-Size: 85px;
+    --NPF-Audio-Image-Spacing: 0px; /* gap between player info and cover image */
+}
+
+.npf-audio-background {
+    background-color: #f2f2f2; /* background color of player (optional) */
+    padding: 1.5rem;
+}
+
+.npf-audio-title-label,
+.npf-audio-artist-label,
+.npf-audio-album-label {
+    font-weight: bold;
+}
+
+.npf-audio-title,
+.npf-audio-artist,
+.npf-audio-album {
+    color: #333333; /* color of audio text (optional) */
+}
+</style>
+
+
+<!--✻✻✻✻✻✻  UN-BLUE POLLS by @glenthemes  ✻✻✻✻✻✻--> 
+<link href="//static.tumblr.com/gtjt4bo/mXBrpdj0n/unblue-polls.css" rel="stylesheet">
+<style>
+.poll-post {     
+    --Poll-Question-Font-Size: 16px;          
+    --Poll-Option-Background-Color: #fcfcfc;     
+    --Poll-Option-Corner-Rounding: 18px;     
+    --Poll-Option-Border-Size: 2px;     
+    --Poll-Option-Border-Color: #efefef;     
+    --Poll-Option-Padding: 15px;     
+    --Poll-Option-Font-Size: 13px;     
+    --Poll-Option-Spacing: 10px;     
+    --Poll-Option-Text-Color: #666666;          
+    --Poll-Option-HOVER-Border-Color: #cfdae4;     
+    --Poll-Option-HOVER-Background-Color: #ebf0f4;     
+    --Poll-Option-HOVER-Text-Color: #1a1b1d;     
+    --Poll-Option-HOVER-Speed: 0.4s;
+} 
+</style> 
 
  
 <style type="text/css">
@@ -1631,7 +1704,7 @@ ol.notes {
 <center>
 <div id="content">
 
-{block:Posts}
+{block:posts inlineMediaWidth="1280" inlineNestedMediaWidth="1280"}
 
 <div class="entry" post-type="{PostType}">
 
