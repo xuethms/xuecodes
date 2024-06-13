@@ -14,8 +14,9 @@ theme 10 by xuethms.tumblr.com
 3. Do not claim theme as your own.
 4. Do not share paid releases with others.
 
-version 1.02 - 13.06.24 @ 14:25
+version 1.02 - 13.06.24 @ 14:50
 > fixed user profile appearance logic
+> added option to 'show full user profile'
 
 --------------------------------------------------->
 
@@ -148,6 +149,7 @@ version 1.02 - 13.06.24 @ 14:25
 <!------------------------------- toggle options -->
 <meta name="if:Wallpaper Background" content="0">
 <meta name="if:Custom Favicon" content="0">
+<meta name="if:Show Full User Profile" content="1">
 <meta name="if:Show Status Icon" content="0">
 <meta name="if:Show Follow Button" content="1">
 <meta name="if:Show Message Button" content="1">
@@ -2522,7 +2524,7 @@ pre {
 <div class="wind-blog">
 
 <!-- minified profile -->
-<div class="wind-miniprof {block:HomePage}w-miniprof-pg{block:Pagination}{CurrentPage}{/block:Pagination}{/block:HomePage} {block:AskPage}w-miniprof-pgask{/block:AskPage} {block:SubmitPage}w-miniprof-pgsubmit{/block:SubmitPage}">
+<div class="wind-miniprof {block:ifShowFullUserProfile}{block:HomePage}w-miniprof-pg{block:Pagination}{CurrentPage}{/block:Pagination}{/block:HomePage} {block:AskPage}w-miniprof-pgask{/block:AskPage} {block:SubmitPage}w-miniprof-pgsubmit{/block:SubmitPage}{/block:ifShowFullUserProfile}">
     <div class="wimp-name">@{Name}</div>
     {block:HasPages}<div class="wimp-links">
     <div class="wimp-icon"><i class="cp cp-{select:Custom Links Icon}"></i></div>
@@ -2531,7 +2533,7 @@ pre {
 </div><!--wind-miniprof-->
     
 <!-- full profile -->
-<div class="wind-profile {block:HomePage}w-fullprof-pg{block:Pagination}{CurrentPage}{/block:Pagination}{/block:HomePage} {block:AskPage}w-fullprof-pgask{/block:AskPage} {block:SubmitPage}w-fullprof-pgsubmit{/block:SubmitPage}">
+<div class="wind-profile {block:ifShowFullUserProfile}{block:HomePage}w-fullprof-pg{block:Pagination}{CurrentPage}{/block:Pagination}{/block:HomePage} {block:AskPage}w-fullprof-pgask{/block:AskPage} {block:SubmitPage}w-fullprof-pgsubmit{/block:SubmitPage}{/block:ifShowFullUserProfile}">
     {block:ifShowStatusIcon}<a title="{text:Status Message}"><div class="winp-status"><i class="cp cp-{select:Status Icon}"></i></div></a>{/block:ifShowStatusIcon}
     <div class="winp-basics">
     <div class="winp-basictxt"><div class="centrer">
@@ -2956,5 +2958,4 @@ width="{LogoWidth}" height="{LogoHeight}" alt="{SourceTitle}" />
     
 </body>
 </html>
-
 
