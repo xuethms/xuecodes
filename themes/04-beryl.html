@@ -11,8 +11,8 @@ theme 04 by xuethms.tumblr.com
 2. Do not claim theme as your own.
 3. Do not remove credit.
 
-version 1.02 - 28.11.21 @ 02:06
-> tumblr text colours
+version 1.03 - 13.06.24 @ 20:50
+> updated npf v3.0 (glenthemes)
 
 -------------------------------------------------->
 
@@ -176,12 +176,21 @@ function lightbox(elem) {
 }
 </script>
 
+<script src="//cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script>
+<link rel="stylesheet" media="screen" href="//assets.tumblr.com/client/prod/standalone/blog-network-npf/index.build.css">
+
 <!--
-       NPF IMAGES READJUSTMENT | @glenthemes
-       v2.0 [last updated: 2021-06-03]
--->
-<link href="//dl.dropbox.com/s/bnoj86mka0bkplb/npf-override.css" rel="stylesheet">
-<script src="//dl.dropbox.com/s/vwrm94pcg4c9e71/npf-evenize.js"></script>
+        NPF images fix v3.0 by @glenthemes [2021]
+        💌 git.io/JRBt7
+--->
+<script src="//npf-images-v3.github.io/script.js"></script>
+<link rel="stylesheet" href="//npf-images-v3.github.io/recon.css">
+<style tmblr-npf>
+:root {
+    --NPF-Caption-Spacing:1em;
+    --NPF-Image-Spacing: {select:Photoset grid gap};
+}
+</style>
 
 
 <style type="text/css">
@@ -200,10 +209,6 @@ a { text-decoration: none; }
     
     /** theme options **/
     --tmblr-ctrl: {select:Tumblr Controls};
-    
-    /** npf stuff **/
-    --NPF-Image-Spacing: 4px;
-    --NPF-Bottom-Gap-From-Captions: 1em;
     
     /** colours**/
     --accent1: {color:Accent 1};
@@ -1121,20 +1126,22 @@ blockquote, .applepie blockquote {
 }
 
 .entry-body img {
+    display: block;
     {block:permalinkpage}
     max-width: 700px;
     margin-left: auto;
     margin-right: auto;
-    display: block;
     margin: 30px auto 30px auto;
     padding: 0;
     border: 10px solid {color:Header Portrait Border};
     {/block:permalinkpage}
-    {block:date}
-    all: revert;
-    max-width: 100%;
-    {/block:date}
     height: auto!important;
+}
+
+.etc .entry-body img {
+    border: 0px solid {color:Header Portrait Border};
+    margin: 0px auto 0px auto;
+    max-width: 100%;
 }
 
 /** reblog chains **/
@@ -1688,11 +1695,10 @@ blockquote, .applepie blockquote {
 
 <div id="content">
 
-{block:posts}
+{block:posts inlineMediaWidth="1280" inlineNestedMediaWidth="1280"}
 
 <div class="entry 
-{block:ifEnlargedPosts}{block:Post1}etb{/block:Post1} {block:Post6}etb etbr{/block:Post6} {block:Post11}etb{/block:Post11}{/block:ifEnlargedPosts}
-{block:permalinkpage}et{block:date}c{/block:date}{/block:permalinkpage}">
+{block:ifEnlargedPosts}{block:Post1}etb{/block:Post1} {block:Post6}etb etbr{/block:Post6} {block:Post11}etb{/block:Post11}{/block:ifEnlargedPosts}{block:permalinkpage}et{block:date}c{/block:date}{/block:permalinkpage}"post-type="{PostType}">
 
 {block:date}{block:indexpage}
 <div class="permalay">
@@ -1748,7 +1754,7 @@ blockquote, .applepie blockquote {
 <div style="margin-top: 30px;">
 {block:RebloggedFrom}{block:Reblogs}
 <div class="reblog-block">
-<div class="reblogger">
+<div class="reblogger source-head">
 {block:HasPermalink}<a href="{Permalink}">{/block:HasPermalink}<span class="reblogger-username">{Username}</span>{block:IsDeactivated}<span class="reblogger-deactiv">deactivated</span>{/block:IsDeactivated}{block:HasPermalink}</a>{/block:HasPermalink}
 </div><!--reblogger-->
 <div class="reblog-txt"><div class="entry-body">{Body}</div></div><!--reblog-txt-->
@@ -1821,7 +1827,7 @@ blockquote, .applepie blockquote {
 {block:NotReblog}{block:Description}<div class="entry-body">{Description}</div>{/block:Description}{/block:NotReblog}
 {block:RebloggedFrom}{block:Reblogs}
 <div class="reblog-block">
-<div class="reblogger">
+<div class="reblogger source-head">
 {block:HasPermalink}<a href="{Permalink}">{/block:HasPermalink}<span class="reblogger-username">{Username}</span>{block:IsDeactivated}<span class="reblogger-deactiv">deactivated</span>{/block:IsDeactivated}{block:HasPermalink}</a>{/block:HasPermalink}
 </div><!--reblogger-->
 <div class="reblog-txt"><div class="entry-body">{Body}</div></div><!--reblog-txt-->
@@ -1878,7 +1884,7 @@ blockquote, .applepie blockquote {
 {block:NotReblog}<div class="entry-body">{Caption}</div>{/block:NotReblog}
 {block:RebloggedFrom}{block:Reblogs}
 <div class="reblog-block">
-<div class="reblogger">
+<div class="reblogger source-head">
 {block:HasPermalink}<a href="{Permalink}">{/block:HasPermalink}<span class="reblogger-username">{Username}</span>{block:IsDeactivated}<span class="reblogger-deactiv">deactivated</span>{/block:IsDeactivated}{block:HasPermalink}</a>{/block:HasPermalink}
 </div><!--reblogger-->
 <div class="reblog-txt"><div class="entry-body">{Body}</div></div><!--reblog-txt-->
