@@ -11,9 +11,8 @@ theme 01 by xuethms.tumblr.com
 2. Do not claim theme as your own.
 3. Do not remove credit.
 
-version 1.04 - 09.12.22 @ 10:00
-> sidebar title overlap fix & option
-> pagination line break fix
+version 1.05 - 13.06.24 @ 13:47
+> added [truncate tags] option
 
 -------------------------------------------------->
 
@@ -80,6 +79,7 @@ version 1.04 - 09.12.22 @ 10:00
 <meta name="if:Pinned Post" content="0">
 <meta name="if:Grayscale Posts" content="0">
 <meta name="if:Show Sidebar Title Button" content="1">
+<meta name="if:Truncate Tags" content="1">
 
 
 <!-- select options -->
@@ -808,13 +808,20 @@ blockquote, .applepie blockquote {
     margin: 0 3px;
     border-radius: 100px;
     padding: 0px 6px;
-    height: 20px;
-    transition: 0.2s;
     display: inline-block;
+    transition: 0.2s;
+    
+    {block:ifTruncateTags}
+    height: 20px;
     max-width: 140px;
     text-overflow: ellipsis;
     white-space: nowrap;
-    overflow: hidden;
+    overflow: hidden;**/
+    {/block:ifTruncateTags}
+    
+    {block:ifnotTruncateTags}
+    margin: 2.5px 3px 2.5px 3px;
+    {/block:ifnotTruncateTags}
 }
 
 .entry-tags-tag:hover {
