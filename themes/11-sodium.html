@@ -16,6 +16,7 @@ theme 11 by xuethms.tumblr.com
 version 1.01 - 22.07.24 @ 21:06
 > added 12px and 14px font size options
 > Fixed asker link colour for answer post
+> Added nav section username display options
 
 --------------------------------------------------->
 
@@ -145,6 +146,10 @@ version 1.01 - 22.07.24 @ 21:06
 <meta name="select:Status toggle 2" title="off" content="off">
 <meta name="select:Status toggle 3" title="on" content="on">
 <meta name="select:Status toggle 3" title="off" content="off">
+
+<!-- select navigation section username -->
+<meta name="select:Navigation section username" content="" title="show">
+<meta name="select:Navigation section username" content="-hide" title="hide">
 
 <!-- select post size -->
 <meta name="select:Post size" title="500px" content="500">
@@ -2128,11 +2133,18 @@ pre {
     color: {color:body text};
 }
 
-.nav-profile-txt b {
+.nav-profile-un {
     color: {color:Body bold};
+    font-weight: 800;
     display: block;
     margin: 0 0 4px 0;
+    overflow: hidden;
+    max-width: 100px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
+
+.nav-profile-un-hide { display: none; }
 
 </style></head><body>
 
@@ -2673,7 +2685,8 @@ width="{LogoWidth}" height="{LogoHeight}" alt="{SourceTitle}" />
         <div class="nav-profile">
             <img class="nav-profile-pfp" src="{PortraitURL-64}">
             <div class="centrer"><div class="nav-profile-txt">
-            <b>@{Name}</b>{text:Navigation section profile text}
+            <div class="nav-profile-un{select:Navigation section username}">@{Name}</div>
+            {text:Navigation section profile text}
             </div></div>
         </div><!--nav-profile-->
         
