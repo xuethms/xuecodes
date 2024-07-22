@@ -14,8 +14,8 @@ theme 09 by xuethms.tumblr.com
 3. Do not claim theme as your own.
 4. Do not share paid releases with others.
 
-version 1.04 - 09.08.22 @ 15:41
-> video sizing fixes
+version 1.05 - 23.07.24 @ 02:24
+> npf polls fix
 
 --------------------------------------------------->
 
@@ -1090,6 +1090,34 @@ input#q-searchbar {
 }
 
 .captno { display: none; }
+
+/** npf polls **/
+
+.poll-question {
+    font-family: var(--MFONT)!important;
+    text-align: center!important;
+    font-size: 16px!important;
+}
+
+.poll-row {
+    background-color: {color:Accent}!important;
+    color: {color:Text on accent}!important;
+    border: 0px solid transparent!important;
+    font-weight: 100!important!;
+    font-size: 12px!important;
+    border-radius: 0px!important;
+    cursor: pointer!important;
+    margin: 4px 0!important;
+    width: calc( var(--post-width) - 80px)!important;
+    padding: 10px!important;
+    transition: 0.3s!important;
+    display: block!important;
+}
+
+.poll-row:hover {
+    background-color: rgba({RGBcolor:Accent},0.8)!important;
+    color: {color:Text on accent}!important;
+}
 
 /** date style **/
 
