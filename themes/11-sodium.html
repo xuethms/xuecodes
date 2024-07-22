@@ -13,10 +13,11 @@ theme 11 by xuethms.tumblr.com
 3. Do not claim theme as your own.
 4. Do not share paid releases with others.
 
-version 1.01 - 22.07.24 @ 21:06
+version 1.01 - 22.07.24 @ 21:58
 > added 12px and 14px font size options
 > Fixed asker link colour for answer post
 > Added nav section username display options
+> fixed npf polls
 
 --------------------------------------------------->
 
@@ -413,30 +414,6 @@ customAudio({
 });
 
 </script>
-
-
-<!--✻✻✻✻✻✻  UN-BLUE POLLS by @glenthemes  ✻✻✻✻✻✻-->
-<link href="//static.tumblr.com/gtjt4bo/mXBrpdj0n/unblue-polls.css" rel="stylesheet">
-<style>
-.poll-post {
-    --Poll-Question-Font-Size: 16px;
-    
-    --Poll-Option-Background-Color: #fcfcfc;
-    --Poll-Option-Corner-Rounding: 18px;
-    --Poll-Option-Border-Size: 2px;
-    --Poll-Option-Border-Color: #efefef;
-    --Poll-Option-Padding: 15px;
-    --Poll-Option-Font-Size: 13px;
-    --Poll-Option-Spacing: 10px;
-    --Poll-Option-Text-Color: #666666;
-    
-    --Poll-Option-HOVER-Border-Color: #cfdae4;
-    --Poll-Option-HOVER-Background-Color: #ebf0f4;
-    --Poll-Option-HOVER-Text-Color: #1a1b1d;
-    --Poll-Option-HOVER-Speed: 0.4s;
-}
-</style>
-
 
 <!--✻✻✻✻✻✻  npf audio player by @glenthemes  ✻✻✻✻✻✻-->
 <script src="//tmblr-npf-audio.gitlab.io/s/init.js"></script>
@@ -1504,6 +1481,35 @@ pre {
 .npf_chat:nth-child(odd) {
     background-color: {color:Chat post bubble background};
     color: {color:Chat post bubble text};
+}
+
+/** npf polls **/
+
+.poll-question {
+    font-family: var(--mfont)!important;
+    text-align: center!important;
+    font-size: 16px!important;
+}
+
+.poll-row {
+    background-color: {color:Sidebar navigation links background}!important;
+    color: {color:Sidebar navigation links text}!important;
+    border: 0px solid transparent!important;
+    font-family: var(--mfont)!important;
+    font-weight: 100!important!;
+    font-size: 12px!important;
+    border-radius: 0px!important;
+    cursor: pointer!important;
+    margin: 4px 0!important;
+    width: calc( var(--post-width) - 30px)!important;
+    padding: 10px!important;
+    transition: 0.3s!important;
+    display: block!important;
+}
+
+.poll-row:hover {
+    background-color: var(--accent)!important;
+    color: {color:Text on Accent}!important;
 }
 
 /** reblog chains **/
