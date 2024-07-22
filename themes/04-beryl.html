@@ -11,8 +11,8 @@ theme 04 by xuethms.tumblr.com
 2. Do not claim theme as your own.
 3. Do not remove credit.
 
-version 1.03 - 13.06.24 @ 20:50
-> updated npf v3.0 (glenthemes)
+version 1.04 - 23.07.24 @ 01:00
+> npf polls fix
 
 -------------------------------------------------->
 
@@ -1657,6 +1657,34 @@ blockquote, .applepie blockquote {
 }
 
 .applepie blockquote a { color: {color:Body Text}; }
+
+/** npf polls **/
+
+.poll-question {
+    font-family: var(--font)!important;
+    text-align: center!important;
+    font-size: 16px!important;
+}
+
+.poll-row {
+    background-color: {color:Accent 1}!important;
+    color: {color:Text on Accent 1}!important;
+    border: 0px solid transparent!important;
+    font-weight: 100!important!;
+    font-size: 12px!important;
+    border-radius: 5px!important;
+    cursor: pointer!important;
+    margin: 4px 0!important;
+    width: calc( var(--post-width) - 20px)!important;
+    padding: 10px!important;
+    transition: 0.3s!important;
+    display: block!important;
+}
+
+.poll-row:hover {
+    background-color: {color:Accent 2}!important;
+    color: {color:Text on Accent 2}!important;
+}
 
 </style>
 </head>
