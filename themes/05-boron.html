@@ -12,8 +12,8 @@ theme 05 by xuethms.tumblr.com
 2. Do not claim theme as your own.
 3. Do not remove credit.
 
-version 1.08 - 05.07.22 @ 10:49
-> npf images fix
+version 1.09 - 22.07.24 @ 22:37
+> npf polls fix, tag colours fix
 
 -------------------------------------------------->
 
@@ -520,10 +520,25 @@ a { text-decoration: none; }
 
 .entry-tags .cp { font-size: 8px; margin: 3px 4px 0 0; }
 
-.entry-tags a:nth-child(4n-3):hover {background-color: var(--a2);color: {color:Text on Accent 1};}
-.entry-tags a:nth-child(4n-2):hover {background-color: var(--a3);color: {color:Text on Accent 2};}
-.entry-tags a:nth-child(4n-1):hover {background-color: var(--a4);color: {color:Text on Accent 3};}
-.entry-tags a:nth-child(4n-0):hover {background-color: var(--a1);color: {color:Text on Accent 4};}
+.entry-tags a:nth-child(4n-3):hover {
+    background-color: var(--a1);
+    color: {color:Text on Accent 1};
+}
+
+.entry-tags a:nth-child(4n-2):hover {
+    background-color: var(--a2);
+    color: {color:Text on Accent 2};
+}
+
+.entry-tags a:nth-child(4n-1):hover {
+    background-color: var(--a3);
+    color: {color:Text on Accent 3};
+}
+
+.entry-tags a:nth-child(4n-0):hover {
+    background-color: var(--a4);
+    color: {color:Text on Accent 4};
+}
 
 .pinnedpost {
     margin-bottom: 6px;
@@ -540,6 +555,34 @@ a { text-decoration: none; }
     {block:ifTruncateTags}
     margin-bottom: 0;
     {/block:ifTruncateTags}
+}
+
+/** npf polls **/
+
+.poll-question {
+    font-family: var(--mfont)!important;
+    text-align: center!important;
+    font-size: 16px!important;
+}
+
+.poll-row {
+    background-color: var(--a1)!important;
+    color: {color:Text on accent 1}!important;
+    font-family: var(--mfont)!important;
+    font-weight: 100!important!;
+    font-size: 12px!important;
+    border-radius: 0px!important;
+    cursor: pointer!important;
+    margin: 4px 0!important;
+    width: calc( var(--post-width) - 20px)!important;
+    padding: 10px!important;
+    transition: 0.3s!important;
+    display: block!important;
+}
+
+.poll-row:hover {
+    background-color: var(--a2)!important;
+    color: {color:Text on accent 2}!important;
 }
 
 /** reblog chains **/
@@ -1324,7 +1367,7 @@ pre {
     outline: 0;
     border: 0px solid transparent;
     background-color: {color:Searchbar Background};
-    color: {color:Searchbar Text};
+    color: {Searchbar Text};
     width: 102px;
     float: left;
     height: 10px;
@@ -1334,6 +1377,13 @@ pre {
     font-size: 9px;
     letter-spacing: 1px;
 }
+
+.searchb::placeholder {
+    color: rgba({RGBcolor:Searchbar text},0.7);
+    text-transform: uppercase;
+    font-size: 9px;
+}
+
 
 .sbtop-ext {
     width: 600px;
