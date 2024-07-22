@@ -13,8 +13,9 @@ theme 11 by xuethms.tumblr.com
 3. Do not claim theme as your own.
 4. Do not share paid releases with others.
 
-version 1.00 - 11.06.24 @ 20:35
-> original release
+version 1.01 - 22.07.24 @ 21:06
+> added 12px and 14px font size options
+> Fixed asker link colour for answer post
 
 --------------------------------------------------->
 
@@ -92,6 +93,9 @@ version 1.00 - 11.06.24 @ 20:35
 <meta name="select:Main Font" title="Poppins" content="Poppins">
 <meta name="select:Main Font" title="Open Sans" content="Open Sans">
 <meta name="select:Main Font" title="Roboto" content="Roboto">
+
+<meta name="select:Main font size" title="12px" content="12">
+<meta name="select:Main font size" title="14px" content="14">
 
 <!-- select header title icon -->
 <meta name="select:Header title icon" title="none" content="none">
@@ -486,6 +490,7 @@ tumblr_npf_audio({
     /** other variables **/
     --post-width: {select:Post Size}px;
     --accent: {color:Accent};
+    --mfontsize: {select:Main font size}px;
 }
 
 
@@ -566,7 +571,7 @@ body {
     background-position: center;
     {/block:ifWallpaperBackground}
     font-family: {select:Main Font};
-    font-size: 12px;
+    font-size: var(--mfontsize);
     overflow-x: none;
 }
 
@@ -825,7 +830,7 @@ background: linear-gradient(90deg, rgba({RGBcolor:Content background},1) 0%, rgb
 .sidebar-txt {
     padding: 20px;
     line-height: 20px;
-    font-size: 12px;
+    font-size: var(--mfontsize);
     color: {color:Body text};
 }
 
@@ -856,7 +861,7 @@ background: linear-gradient(90deg, rgba({RGBcolor:Content background},1) 0%, rgb
     border: 0;
     border-right: 36.5px solid var(--accent);
     font-family: var(--mfont);
-    font-size: 12px;
+    font-size: var(--mfontsize);
 }
 
 #sb {
@@ -1055,7 +1060,7 @@ background: linear-gradient(90deg, rgba({RGBcolor:Content background},1) 0%, rgb
     margin: 10px 0 0 0;
     padding: 10px 15px;
     border-radius: 5px;
-    font-size: 10px;
+    font-size: calc(var(--mfontsize) - 2px);
     line-height: 16px;
     background-color: {color:Status update background};
     color: {color:Status update text};
@@ -1316,7 +1321,7 @@ background: linear-gradient(90deg, rgba({RGBcolor:Content background},1) 0%, rgb
     max-width: 200px;
     text-overflow: ellipsis;
     white-space: nowrap;
-    font-size: 10px;
+    font-size: calc(var(--mfontsize) - 2px);
     margin: 4px 6px 0 0;
     padding: 2px 3px;
     border-radius: 3px;
@@ -1365,7 +1370,7 @@ background: linear-gradient(90deg, rgba({RGBcolor:Content background},1) 0%, rgb
     color: {color:Header title};
     margin: 0 0 15px 0;
     padding: 0 0 15px 30px;
-    font-size: 14px;
+    font-size: calc(var(--mfontsize) + 2px);
     text-transform: uppercase;
     border-bottom: 1px solid {color:Post dividers};
 }
@@ -1378,13 +1383,13 @@ background: linear-gradient(90deg, rgba({RGBcolor:Content background},1) 0%, rgb
 }
 
 .entry-body {
-    line-height: 20px;
-    font-size: 14px;
+    line-height: calc( var(--mfontsize) + 8px);
+    font-size: var(--mfontsize);
 }
 
 .entry-txt {
-    line-height: 20px;
-    font-size: 12px;
+    line-height: calc( var(--mfontsize) + 10px);
+    font-size: var(--mfontsize);
     color: {color:Body text};
 }
 
@@ -1696,11 +1701,11 @@ pre {
 }
 
 .entry-chatline {
-    font-size: 12px;
+    font-size: var(--mfontsize);
     display: table;
     width: 100%;
     margin: 10px 0;
-    line-height: 18px;
+    line-height: calc( var(--mfontsize) + 10px );
 }
 
 .entry-chatline:first-child { margin-top: 0; }
@@ -1742,7 +1747,7 @@ pre {
     letter-spacing: 1px;
     display: inline;
     float: left;
-    line-height: 18px;
+    line-height: calc( var(--mfontsize) + 10px );
 }
 
 /** audio posts **/
@@ -1931,7 +1936,7 @@ pre {
     color: {color:Chat post bubble text};
 }
 
-.answer-asker-txt b {
+.answer-asker-txt b, .answer-asker-txt a {
     color: {color:Body links};
     border-bottom: 2px solid {color:Body links underline};
 }
@@ -1946,6 +1951,8 @@ pre {
     padding: 15px 15px 15px 15px;
     margin: 0 0 15px 0;
     color: {color:Chat post bubble text};
+    line-height: calc( var(--mfontsize) + 8px);
+    font-size: var(--mfontsize);
 }
 
 .answer-qn-tri {
@@ -2116,7 +2123,7 @@ pre {
 
 .nav-profile-txt {
     margin: 0 10px 0 0px;
-    font-size: 10px;
+    font-size: calc( var(--mfontsize) - 2px);
     text-transform: uppercase;
     color: {color:body text};
 }
