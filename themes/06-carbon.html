@@ -12,8 +12,8 @@ theme 06 by xuethms.tumblr.com
 2. Do not claim theme as your own.
 3. Do not remove credit.
 
-version 1.03 - 31.01.22 @ 1803
-> navi page tags cut-off
+version 1.04 - 23.07.24 @ 01:25
+> npf polls fix
 
 ---------------------------------------------------
 
@@ -340,8 +340,6 @@ function lightbox(elem) {
     --mfont: {select:Main Font};
     --NPF-Caption-Spacing:1em;
     --NPF-Image-Spacing:4px;
-    
-    /** more colours **/
 }
 
 /** tumblr controls **/
@@ -1927,6 +1925,34 @@ pre {
 .npf_color_niles { color:#ff62ce; }
 .npf_color_frasier { color:#001935; }
 .npf_color_mr_big { color:#000c1a; }
+
+/** npf polls **/
+
+.poll-question {
+    font-family: var(--mfont)!important;
+    text-align: center!important;
+    font-size: 16px!important;
+}
+
+.poll-row {
+    background-color: {color:Accent}!important;
+    color: {color:Text on Accent}!important;
+    border: 0px solid transparent!important;
+    font-weight: 100!important!;
+    font-size: 12px!important;
+    border-radius: 5px!important;
+    cursor: pointer!important;
+    margin: 4px 0!important;
+    width: 405px!important;
+    padding: 10px!important;
+    transition: 0.3s!important;
+    display: block!important;
+}
+
+.poll-row:hover {
+    background-color: rgba({RGBcolor:Accent},0.8)!important;
+    color: {color:Window title}!important;
+}
 
 </style>
 </head>
