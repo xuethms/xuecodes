@@ -13,11 +13,9 @@ theme 11 by xuethms.tumblr.com
 3. Do not claim theme as your own.
 4. Do not share paid releases with others.
 
-version 1.01 - 22.07.24 @ 21:58
-> added 12px and 14px font size options
-> Fixed asker link colour for answer post
-> Added nav section username display options
-> fixed npf polls
+version 1.02 - 25.07.24 @ 15:43
+> original post user icon options
+> adjusted width for npf polls
 
 --------------------------------------------------->
 
@@ -160,6 +158,10 @@ version 1.01 - 22.07.24 @ 21:58
 <!-- select entry info style -->
 <meta name="select:Entry permalink style" title="float" content="float">
 <meta name="select:Entry permalink style" title="top of the post" content="top">
+
+<!-- select permalink user icon -->
+<meta name="select:Permalink user icon style" title="avatar" content="a">
+<meta name="select:Permalink user icon style" title="line icon" content="b">
 
 <!-- select photo lightbox -->
 <meta name="select:Photo lightbox" title="Light" content="245,245,245">
@@ -1122,6 +1124,9 @@ background: linear-gradient(90deg, rgba({RGBcolor:Content background},1) 0%, rgb
 
 /** entry permalink **/
 
+.permaicon-ab, .permaicon-ba { display: none; }
+.permaicon-aa, .permaicon-bb { display: block; }
+
 /** entry peramlink style float **/
 
 .einfo-float .entry-info {
@@ -1501,7 +1506,7 @@ pre {
     border-radius: 0px!important;
     cursor: pointer!important;
     margin: 4px 0!important;
-    width: calc( var(--post-width) - 30px)!important;
+    width: calc( var(--post-width) - 0px)!important;
     padding: 10px!important;
     transition: 0.3s!important;
     display: block!important;
@@ -2221,12 +2226,16 @@ pre {
     
     <div class="entry-poster">
         <div class="entry-poster-msgtri"></div>
+        
         {block:RebloggedFrom}
         <a href="{ReblogRootURL}" title="Posted by {ReblogRootName}"><img class="entry-poster-pfp" src="{ReblogRootPortraitURL-40}"></a>
         {block:RebloggedFrom}
         {block:NotReblog}
-        <a title="Original post"><div class="entry-poster-org"><i data-feather="user"></i></div></a>
+        <a class="permaicon-a{select:Permalink user icon style}" title="Original post"><img class="entry-poster-pfp" src="{PortraitURL-40}"></a>
+        <a class="permaicon-b{select:Permalink user icon style}"  title="Original post"><div class="entry-poster-org"><i data-feather="user"></i></div></a>
         {/block:NotReblog}
+        
+        
     </div><!--entry-poster-->
     
     <div class="entry-infotext">
