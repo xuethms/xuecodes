@@ -14,8 +14,8 @@ theme 10 by xuethms.tumblr.com
 3. Do not claim theme as your own.
 4. Do not share paid releases with others.
 
-version 1.04 - 23.07.24 @ 02:29
-> npf polls fix
+version 1.05 - 03.11.24 @ 21:09
+> removed inherited link styling on imgs
 
 --------------------------------------------------->
 
@@ -1759,6 +1759,11 @@ pre {
 }
 
 .tmblr-embed iframe { width: 100%; }
+
+.post_media_photo_anchor { 
+    /** remove link styling from npf items **/
+    border-bottom: 0px solid transparent!important;
+}
 
 .read_more, .tmblr-truncated-link {
     padding: 5px 8px 5px 8px!important;
