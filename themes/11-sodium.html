@@ -13,9 +13,8 @@ theme 11 by xuethms.tumblr.com
 3. Do not claim theme as your own.
 4. Do not share paid releases with others.
 
-version 1.02 - 25.07.24 @ 15:43
-> original post user icon options
-> adjusted width for npf polls
+version 1.03 - 03.11.24 @ 21:09
+> removed inherited link styling on imgs
 
 --------------------------------------------------->
 
@@ -1503,7 +1502,7 @@ pre {
     font-family: var(--mfont)!important;
     font-weight: 100!important!;
     font-size: 12px!important;
-    border-radius: 0px!important;
+    border-radius: 3px!important;
     cursor: pointer!important;
     margin: 4px 0!important;
     width: calc( var(--post-width) - 0px)!important;
@@ -1574,6 +1573,11 @@ pre {
 }
 
 .tmblr-embed iframe { width: 100%; }
+
+.post_media_photo_anchor { 
+    /** remove link styling from npf items **/
+    border-bottom: 0px solid transparent!important;
+}
 
 .read_more, .tmblr-truncated-link {
     padding: 5px 8px 5px 8px!important;
