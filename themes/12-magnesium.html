@@ -14,8 +14,11 @@ theme 12 by xuethms.tumblr.com
 3. Do not claim theme as your own.
 4. Do not share paid releases with others.
 
-version 1.00 - 16.07.24 @ 22:57
-> original release
+version 1.01 - 05.11.24 @ 22:41
+> added main font size options
+> added sidebar height text option
+> fixed npf polls width
+> changed custom link button width
 
 --------------------------------------------------->
 
@@ -61,6 +64,7 @@ version 1.00 - 16.07.24 @ 22:57
 <meta name="text:Browser tab title" content="magnesium">
 <meta name="text:Sidebar image text" content="life-os://">
 <meta name="text:Sidebar sticker icon name" content="fire-o">
+<meta name="text:Sidebar height" content="74px">
 <meta name="text:Custom links section title" content="NAVIGATE">
 <meta name="text:Custom note counter" content=" %">
 
@@ -82,6 +86,10 @@ version 1.00 - 16.07.24 @ 22:57
 <meta name="select:Main font" title="Poppins" content="Poppins">
 <meta name="select:Main font" title="Open Sans" content="Open Sans">
 <meta name="select:Main font" title="Roboto" content="Roboto">
+
+<!-- select main font -->
+<meta name="select:Main font size" title="12px (default)" content="12px">
+<meta name="select:Main font size" title="14px" content="14px">
 
 <!-- select: post size -->
 <meta name="select:Post Size" content="500" title="500px">
@@ -309,6 +317,8 @@ $container.find('.notecount').each(function(){
     --accent2-txt: {color:Text on Accent 2};
     --post-width: {select:Post Size}px;
     --mfont: {select:Main font};
+    --mfont-size: {select:Main font size};
+    --sb-height: {text:Sidebar height};
 }
 
 /** ======================================================= THE BASICS == **/
@@ -385,7 +395,7 @@ body {
     background-position: center;
     {/block:ifWallpaperBackground}
     font-family: var(--mfont);
-    font-size: 12px;
+    font-size: var(--mfont-size);
     overflow-x: none;
 }
 
@@ -474,15 +484,15 @@ p:last-child {margin-bottom: 0; }
 .pgh-icon .feather { width: 30px; height: 30px; }
 
 .pgh-txt {
-    font-size: 11px;
+    font-size: var(--mfont-size);
 }
 
 .pgh-txt b {
     background-color: var(--accent2);
     color: var(--accent2-txt);
-    font-size: 10px;
     text-transform: uppercase;
     padding: 3px 6px;
+    font-size: calc( var(--mfont-size) - 2px);
 }
 
 .squeryyes, .squeryno-no {display: block;}
@@ -509,7 +519,7 @@ p:last-child {margin-bottom: 0; }
 /** text posts **/
 
 .entry-title {
-    font-size: 18px;
+    font-size: calc( var(--mfont-size) + 6px);
     font-weight: 600;
     padding: 0 0 10px 0;
     border-left: 1px solid var(--accent);
@@ -523,7 +533,7 @@ p:last-child {margin-bottom: 0; }
 
 .entry-txt {
     font-family: var(--main-font);
-    font-size: 12px;
+    font-size: var(--mfont-size);
     color: {color:Body text};
     line-height: 18px;
 }
@@ -557,14 +567,14 @@ p:last-child {margin-bottom: 0; }
 }
 
 .entry-txt h1, .entry-txt h2 {
-    font-size: 16px;
+    font-size: calc( var(--mfont-size) + 4px);
     font-weight: 800;
     color: var(--accent2);
     margin: 20px 0 10px 0;
 }
 
 .entry-txt h3, .entry-txt h4 { 
-    font-size: 14px;
+    font-size: calc( var(--mfont-size) + 2px);
     font-weight: 800;
     color: var(--accent2);
     margin: 20px 0 10px 0;
@@ -627,7 +637,7 @@ figure.tmblr-embed.tmblr-full iframe, figure.tmblr-embed.tmblr-full, figure, vid
 
 .npf_quote {
     font-family: var(--mfont)important;
-    font-size: 18px!important;
+    font-size: calc( var(--mfont-size) + 6px)!important;
     line-height: 22px;
     text-align: center;
     background-color: var(--accent2);
@@ -637,7 +647,7 @@ figure.tmblr-embed.tmblr-full iframe, figure.tmblr-embed.tmblr-full, figure, vid
 
 .npf_chat {
     font-family: var(--mfont)important;
-    font-size: 12px!important;
+    font-size: var(--mfont-size)!important;
     margin: 0;
     padding: 10px;
     border-bottom: 1px solid var(--accent2);
@@ -656,7 +666,7 @@ figure.tmblr-embed.tmblr-full iframe, figure.tmblr-embed.tmblr-full, figure, vid
 .poll-question {
     font-family: var(--mfont)!important;
     text-align: center!important;
-    font-size: 16px!important;
+    font-size: calc( var(--mfont-size) + 4px)!important;
 }
 
 .poll-row {
@@ -664,11 +674,11 @@ figure.tmblr-embed.tmblr-full iframe, figure.tmblr-embed.tmblr-full, figure, vid
     color: var(--accent2-txt)!important;
     font-family: var(--mfont)!important;
     font-weight: 100!important!;
-    font-size: 12px!important;
+    font-size: var(--mfont-size)!important;
     border-radius: 0px!important;
     cursor: pointer!important;
     margin: 4px 0!important;
-    width: calc( var(--post-width) - 20px)!important;
+    width: var(--post-width)!important;
     padding: 10px!important;
     transition: 0.3s!important;
     display: block!important;
@@ -730,7 +740,7 @@ figure.tmblr-embed.tmblr-full iframe, figure.tmblr-embed.tmblr-full, figure, vid
     width: 100%;
     margin: 0 0 10px 0;
     height: 16px;
-    font-size: 10px;
+    font-size: calc( var(--mfont-size) - 2px);
     font-weight: 600;
     line-height: 16px;
 }
@@ -754,7 +764,7 @@ figure.tmblr-embed.tmblr-full iframe, figure.tmblr-embed.tmblr-full, figure, vid
 .reblog-inactive {
     color: rgba({RGBcolor:Body text},0.5);
     margin: 0 0 0 10px;
-    font-size: 10px;
+    font-size: calc( var(--mfont-size) - 2px);
 }
 
 /** quote posts **/
@@ -772,7 +782,7 @@ figure.tmblr-embed.tmblr-full iframe, figure.tmblr-embed.tmblr-full, figure, vid
 }
 
 .entry-quotesource {
-    font-size: 10px;
+    font-size: calc( var(--mfont-size) - 2px);
     text-transform: uppercase;
 }
 
@@ -809,7 +819,7 @@ figure.tmblr-embed.tmblr-full iframe, figure.tmblr-embed.tmblr-full, figure, vid
 .entry-ask-username {
     text-transform: uppercase;
     letter-spacing: 1px;
-    font-size: 10px;
+    font-size: calc( var(--mfont-size) - 2px);
     font-weight: 600;
     padding: 2px 4px;
     background-color: var(--accent2);
@@ -885,12 +895,12 @@ figure.tmblr-embed.tmblr-full iframe, figure.tmblr-embed.tmblr-full, figure, vid
     white-space: nowrap;
     overflow: hidden;
     margin: 0 25px;
-    font-size: 14px;
+    font-size: calc( var(--mfont-size) + 2px);
     font-weight: 600;
 }
 
 .entry-link-excerpt {
-    font-size: 10px;
+    font-size: calc( var(--mfont-size) - 2px);
     display: block;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -910,7 +920,7 @@ figure.tmblr-embed.tmblr-full iframe, figure.tmblr-embed.tmblr-full, figure, vid
     letter-spacing: 1px;
     padding: 2px 4px;
     border-radius: 3px;
-    font-size: 8px;
+    font-size: calc( var(--mfont-size) - 4px);
     background-color: var(--accent2);
     color: var(--accent2-txt);
 }
@@ -960,11 +970,11 @@ figure.tmblr-embed.tmblr-full iframe, figure.tmblr-embed.tmblr-full, figure, vid
     width: 340px;
     padding: 20px;
     margin: 0 0 0 120px;
-    font-size: 14px;
+    font-size: calc( var(--mfont-size) + 2px);
 }
 
 .audio-track {
-    font-size: 16px;
+    font-size: calc( var(--mfont-size) + 4px);
     color: {color:Body bold};
     margin-bottom: 8px;
     font-weight: 800;
@@ -975,7 +985,7 @@ figure.tmblr-embed.tmblr-full iframe, figure.tmblr-embed.tmblr-full, figure, vid
 }
 
 .audio-artist {
-    font-size: 10px;
+    font-size: calc( var(--mfont-size) - 2px);
     text-transform: uppercase;
     padding-bottom: 20px;
     max-width: 400px;
@@ -1196,7 +1206,7 @@ figure.tmblr-embed.tmblr-full iframe, figure.tmblr-embed.tmblr-full, figure, vid
     padding: 4px 6px;
     background-color: var(--accent2);
     color: var(--accent2-txt);
-    font-size: 11px;
+    font-size: calc( var(--mfont-size) - 1px);
 }
 
 .info-time {
@@ -1243,7 +1253,7 @@ figure.tmblr-embed.tmblr-full iframe, figure.tmblr-embed.tmblr-full, figure, vid
     padding: 4px 6px;
     background-color: var(--accent2);
     color: var(--accent2-txt);
-    font-size: 11px;
+    font-size: calc( var(--mfont-size) - 1px);
 }
 
 .entry-permalink a {
@@ -1272,7 +1282,7 @@ figure.tmblr-embed.tmblr-full iframe, figure.tmblr-embed.tmblr-full, figure, vid
     padding: 4px 6px;
     background-color: var(--accent);
     color: var(--accent-txt);
-    font-size: 11px;
+    font-size: calc( var(--mfont-size) - 1px);
 }
 
 .applepie {
@@ -1311,7 +1321,7 @@ figure.tmblr-embed.tmblr-full iframe, figure.tmblr-embed.tmblr-full, figure, vid
     word-wrap: break-word;
     display: block;
     white-space: normal;
-    font-size: 10px;
+    font-size: calc( var(--mfont-size) - 2px);
     color: {color:Body Text};
     margin: 10px 0 0 6px;
 }
@@ -1433,12 +1443,13 @@ figure.tmblr-embed.tmblr-full iframe, figure.tmblr-embed.tmblr-full, figure, vid
     width: 172px;
     border: 1px solid var(--accent2);
     padding: 20px;
-    height: 74px;
     overflow-y: none;
     overflow-x: none;
+    height: calc( var(--sb-height) );
 }
 
 .notepad-title {
+    font-size: 12px;
     background-color: var(--accent2);
     color: var(--accent2-txt);
     padding: 0 2px;
@@ -1450,7 +1461,8 @@ figure.tmblr-embed.tmblr-full iframe, figure.tmblr-embed.tmblr-full, figure, vid
 }
 
 .notepad-desc {
-    height: 55px;
+    font-size: 12px;
+    height: calc( var(--sb-height) - 19px );
     overflow-y: auto;
     overflow-x: none;
 }
@@ -1474,7 +1486,9 @@ figure.tmblr-embed.tmblr-full iframe, figure.tmblr-embed.tmblr-full, figure, vid
     height: 35px;
     position: absolute;
     transform: rotate(45deg);
-    margin: 92px 0 0 200px;
+    margin: calc( var(--sb-height) + 18px ) 0 0 200px;
+    
+    margin: -20px 0 0 198px;
 }
 
 .notepad-corner-2 {
@@ -1484,7 +1498,9 @@ figure.tmblr-embed.tmblr-full iframe, figure.tmblr-embed.tmblr-full, figure, vid
     height: 32px;
     position: absolute;
     transform: rotate(45deg);
-    margin: 87px 0 0 202px;
+    margin: calc( var(--sb-height) + 13px ) 0 0 202px;
+    
+    margin: -27px 0 0 201px;
 }
 
 /** search bar **/
@@ -1510,7 +1526,7 @@ figure.tmblr-embed.tmblr-full iframe, figure.tmblr-embed.tmblr-full, figure, vid
 .searchb::placeholder {
     color: rgba({RGBcolor:Body text},0.6);
     text-transform: uppercase;
-    font-size: 9px;
+    font-size: 10px;
     letter-spacing: 2px;
 }
 
@@ -1536,7 +1552,7 @@ figure.tmblr-embed.tmblr-full iframe, figure.tmblr-embed.tmblr-full, figure, vid
     color: var(--accent2);
 }
 
-/** custom links **/
+/** custom page links **/
 
 .userlinks {
     position: absolute;
@@ -1549,7 +1565,7 @@ figure.tmblr-embed.tmblr-full iframe, figure.tmblr-embed.tmblr-full, figure, vid
 
 .userlink {
     margin: 0 0 3px 0;
-    width: 100px;
+    width: 99px;
     padding: 5px 5px;
     text-transform: uppercase;
     font-size: 9px;
@@ -1626,7 +1642,7 @@ figure.tmblr-embed.tmblr-full iframe, figure.tmblr-embed.tmblr-full, figure, vid
 }
 
 .pgl {
-    font-size: 10px;
+    font-size: calc( var(--mfont-size) - 2px);
     background-color: var(--accent);
     color: var(--accent-txt);
     padding: 5px 6px;
@@ -1634,7 +1650,7 @@ figure.tmblr-embed.tmblr-full iframe, figure.tmblr-embed.tmblr-full, figure, vid
 }
 
 .pgl .cp {
-    font-size: 8px;
+    font-size: calc( var(--mfont-size) - 4px);
 }
 
 .pgl:hover {
@@ -1755,13 +1771,13 @@ figure.tmblr-embed.tmblr-full iframe, figure.tmblr-embed.tmblr-full, figure, vid
     </div><!--userlinks-->
     {/block:HasPages}
     
-    <div class="notepad-corner-1"></div>
-    <div class="notepad-corner-2"></div>
-    
     <div class="notepad">
         <div class="notepad-title">{Title}</div>
         <div class="notepad-desc entry-txt">{Description}</div>
     </div><!--notepad-->
+    
+    <div class="notepad-corner-1"></div>
+    <div class="notepad-corner-2"></div>
     
     <div class="notepad-search">
     <div class="searchb">
