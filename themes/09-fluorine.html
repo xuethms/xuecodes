@@ -14,8 +14,8 @@ theme 09 by xuethms.tumblr.com
 3. Do not claim theme as your own.
 4. Do not share paid releases with others.
 
-version 1.05 - 23.07.24 @ 02:24
-> npf polls fix
+version 1.06 - 10.11.24 @ 18:24
+> removed inherited link styling on imgs
 
 --------------------------------------------------->
 
@@ -1424,6 +1424,10 @@ pre {
     object-fit: cover;
 }
 
+.post_media_photo_anchor { 
+    /** remove link styling from npf items **/
+    border-bottom: 0px solid transparent!important;
+}
 
 .entry-250 .entry-txt .tmblr-full video, .entry-250 .entry-txt .embed_iframe { width: 190px!important; height: 190px; }
 .entry-400 .entry-txt .tmblr-full video, .entry-400 .entry-txt .embed_iframe { width: 340px!important; height: 340px; }
