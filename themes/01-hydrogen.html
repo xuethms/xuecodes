@@ -14,8 +14,8 @@ theme 01 by xuethms.tumblr.com
 3. Do not claim theme as your own.
 4. Do not share paid releases with others.
 
-version 2.01 - 03.11.24 @ 21:09
-> removed inherited link styling on imgs
+version 2.02 - 10.11.24 @ 18:38
+> fixed unstyled text on search/tag pages
 
 --------------------------------------------------->
 
@@ -2199,7 +2199,7 @@ a.xuethms:hover { color: var(--accent); }
     </div><!--entry-header-controls-->
 <div class="entry-header-txt"><i data-feather="search"></i>My Documents</div>
 </div>
-<div class="entry-content" style="border-bottom: 1px solid var(--accent);border-radius:0 0 5px 5px;">Showing page {CurrentPage} of {TotalPages} page(s) tagged #{Tag}.</div>
+<div class="entry-content entry-txt" style="border-bottom: 1px solid var(--accent);border-radius:0 0 5px 5px;">Showing page {CurrentPage} of {TotalPages} page(s) tagged #{Tag}.</div>
 </div><!--entry-->
 {/block:TagPage}
 
