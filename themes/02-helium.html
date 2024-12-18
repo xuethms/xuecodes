@@ -14,14 +14,14 @@ theme 02 by xuethms.tumblr.com
 3. Do not claim theme as your own.
 4. Do not share paid releases with others.
 
-version 2.00 - 12.12.24 @ 13:15
-> official revamp!
+version 2.00 - 18.12.24 @ 11:31
+> background image fix
 
 --------------------------------------------------->
 
 <!--------------------------------------------------------- THEME OPTIONS -->
 
-<meta name="image:Background" content="">
+<meta name="image:Background image" content="">
 <meta name="image:Sidebar" content="">
 <meta name="image:Custom favicon image" content="">
 
@@ -110,6 +110,7 @@ version 2.00 - 12.12.24 @ 13:15
 <!-- on/off toggles -->
 <meta name="if:Custom favicon" content="0">
 <meta name="if:Truncate note count" content="1">
+<meta name="if:Wallpaper Background" content="0">
 
 <!-- select tumblr controls colour -->
 <meta name="select:Tumblr controls colour" title="black" content="100">
@@ -468,6 +469,10 @@ iframe#tumblr_controls, .iframe-controls--desktop {
 body {
     background-color: {color:Background};
     background-image: url({image:Background Image});
+    {block:ifWallpaperBackground}
+    background-size: cover;
+    background-position: center;
+    {/block:ifWallpaperBackground}
     background-attachment: fixed;
     font-family: var(--mfont);
     font-size: var(--mfont-size);
