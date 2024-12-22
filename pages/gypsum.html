@@ -57,8 +57,8 @@ Look out for my comments (greyed out text like this).
     /** [HERON]: CSS STYLING **/
     
     /** text inputs ----------------------------------------------------- **/
-    --title-text: '2025 bucketlist';
-    --subtitle-text: 'I like dreams of the future better than history of the past.';
+    --title-text: "bucketlist";
+    --subtitle-text: "I like dreams of the future better than history of the past.";
     
     
     /** font family for entire page, options: -------------------------------
@@ -229,6 +229,16 @@ iframe#tumblr_controls, .iframe-controls--desktop {
     margin: 0 0 15px 0;
     cursor: default;
     min-height: 24px;
+}
+
+.item a { 
+    border-bottom: 2px solid var(--list-item-text); 
+    color: var(--list-item-text); 
+}
+
+.item a:hover {
+    border-bottom: 2px solid var(--done-item-tick); 
+    color: var(--done-item-tick); 
 }
 
 .checkbox {
