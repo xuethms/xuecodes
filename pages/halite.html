@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta name="color:Tester" content="#ffffff">
+
+<!-------------------------------------------------
+
+H A L I T E
+list 02 by xuethms.tumblr.com
+
+1. Do not edit/remove my visual & in-code credits.
+2. Do not reupload/reuse my codes & designs on
+   other websites and platforms.
+3. Do not claim code as your own.
+4. Do not share paid releases with others.
+
+version 1.00 - 26.12.24 @ 23:23
+> official release
+
+----------------------------------------------------
+
+To edit this page, you will have to edit:
+
+    1. CSS - the styling (colours mainly)
+       > Use ctrl+F to search for [HERON]
+         to jump to the section you need to edit.
+    
+    2. HTML - the content
+       > Use ctrl+F to search for [EGRET].
+         to jump to the section you need to edit.
+
+Look out for my comments (greyed out text like this).
+
+--------------------------------------------------->
+
+<!-- edit [about me] below to change the text on the browser tab -->
+<title>about me</title>
+
+<!-- replace [{Favicon}] below with an image URL to have a custom favicon 
+     favicon = the small icon on browser tabs; by default it's your pfp. -->
+<link rel="shortcut icon" href="{Favicon}" />
+
+<!--------------------------------------------------------------- SCRIPTS -->
+
+<!-- google fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,400;0,700;0,800;1,400&family=Nunito:ital,wght@0,400;0,700;0,800;1,400&family=Open+Sans:ital,wght@0,400;0,700;0,800;1,400&family=Poppins:ital,wght@0,400;0,700;0,800;1,400&family=Roboto:wght@400;700&family=Ubuntu:ital,wght@0,400;0,700;1,400&display=swap&family=Host+Grotesk:ital,wght@0,300..800;1,300..800&family=Karla:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+
+<!-- feather icons: https://feathericons.com/ -->
+<script src="https://unpkg.com/feather-icons"></script>
+
+<style type="text/css">
+
+/** ======================================================== VARIABLES == **/
+
+:root { 
+    
+    /** [HERON]: CSS STYLING **/
+    
+    
+    /** font family for entire page, options: -------------------------------
+    karla, nunito, open sans, poppins, roboto, ubuntu, host grotesk       **/
+    --font: host grotesk;
+    
+    
+    /** text inputs ----------------------------------------------------- **/
+    --title-text: "About Me";
+    --subtitle-text: "A nice quote or short intro";
+    --footer-title: "Footer title";
+    --footer-subtitle: "Footer subtitle";
+    --footer-description: "Footer description";
+    --section-1-title: "biography";
+    --section-2-title: "bucketlist";
+    --section-3-title: "tags";
+    
+    
+    /** background ------------------------------------------------------ **/
+    --background-colour: #e8e4df;
+    --background-image-url: url(" "); /** paste the image link between the quotes **/
+    --background-size: cover; /** "cover" for wallpaper background, "auto" for repeated pattern backgrounds **/
+    
+    
+    /** section banners ---------------------------------------- **/
+    --section-1-banner-image-url: url("https://64.media.tumblr.com/cc05c5eea419d84511e6a1e59699e887/731df9ac6830516d-bd/s250x400/1124fe3b6f8d1b7c12f68e832a3e4fcd4c0aa3fe.pnj");
+    --section-2-banner-image-url: url("https://64.media.tumblr.com/89a904718e16e6a11a392264bdaba2d0/731df9ac6830516d-2f/s250x400/e80548784acbc8f1330946a1055d43bbf48abc68.pnj");
+    --section-3-banner-image-url: url("https://64.media.tumblr.com/bd906189b133b42b8ae05866095a36bf/731df9ac6830516d-b5/s250x400/9f0ee985122f917915c14edc1146a3106999af1c.pnj");
+    
+    --section-1-banner-image-height: 90px; /** 0px for no image **/
+    --section-2-banner-image-height: 90px; /** 0px for no image **/
+    --section-3-banner-image-height: 90px; /** 0px for no image **/
+    
+    
+    /** colours --------------------------------------------------------- **/
+    /** all colours in hex code (e.g, #ffffff) unless otherwise stated    **/
+    
+    --scrollbar: #bbbbbb;
+    --text-highlight: #444444;
+    
+    --content-block-background: #ffffff;
+    --rgb-translucent-content-background: 255,255,255; /** rgb values pls **/
+    --translucent-content-background-border: #ffffff; /** "transparent" for no border **/ 
+    
+    --header-and-footer-background: #fff9d6;
+    --header-and-footer-background: #fffaef;
+    --header-and-footer-title: #000000;
+    --header-and-footer-subtitle: #555555;
+    
+    --navigation-links: #000000;
+    --navigation-links-hover: #eaeaea;
+    
+    --section-background: #ffffff;
+    --section-1-accent: #fff48e;
+    --section-2-accent: #ffb37b;
+    --section-3-accent: #9fcddc;
+    
+    --section-title: #000000;
+    --section-text: #333333;
+    --content-links: #aaaaaa;
+    --content-links-hover: #000000;
+    
+    --checkbox-empty: #f1f1f1;
+    --done-text: #bbbbbb;
+    --done-tick: #333333; /** "transparent" for no tick **/
+    --done-text-style: line-through; /** "none" for no strikethrough, "line-through" for completed items to be struck through **/
+}
+
+/** ======================================================= THE BASICS == **/
+
+body {
+    background-color: var(--background-colour);
+    background-image: var(--background-image-url);
+    background-size: var(--background-size);
+    background-attachment: fixed;
+    background-position: center;
+    font-family: var(--font);
+    overflow-x: none;
+}
+
+a { 
+    text-decoration: none;
+    transition: 0.3s all ease-in-out;
+    color: var(--content-links);
+}
+
+a:hover { color: var(--content-links-hover); }
+
+/** text selection **/
+
+::selection { color: #ffffff; background-color: var(--text-highlight); }
+::-moz-selection { color: #ffffff; background-color: var(--text-highlight); }
+::-webkit-selection {color: #ffffff; background-color: var(--text-highlight);}
+
+/** scrollbar **/
+
+::-webkit-scrollbar { width: 14px; }
+::-webkit-scrollbar-track-piece { background-color: var(--background-colour); }
+
+::-webkit-scrollbar-thumb:vertical {
+    width: 6px;
+    border: 4px solid var(--background-colour);
+    background: var(--scrollbar);
+    border-radius: 100px;
+}
+
+.block::-webkit-scrollbar { width: 14px; }
+.block::-webkit-scrollbar-track-piece { background-color: transparent; }
+
+.block::-webkit-scrollbar-thumb:vertical {
+    width: 6px;
+    border: 4px solid var(--content-block-background);
+    background: var(--scrollbar);
+    border-radius: 100px;
+}
+
+/** tumblr controls **/
+iframe#tumblr_controls, .iframe-controls--desktop {
+    display: none!important;
+}
+
+/** positioning **/
+.centrer {
+    position: relative;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+/** ========================================================== STYLING == **/
+
+/** overall content block **/
+.content {
+    width: 780px;
+    height: 620px;
+    margin: 0 auto;
+    background-color: rgba(var(--rgb-translucent-content-background),0.3);
+    backdrop-filter: blur(6px);
+    border: 1px solid var(--translucent-content-background-border);
+    border-radius: 10px;
+    padding: 15px;
+    position: fixed;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    -webkit-transform: translate(0,-50%);
+    transform: translate(0,-50%);
+    right: calc( 50% - 397.5px );
+    z-index: 10000;
+}
+
+/** header = page title + blog nav **/
+.header {
+    margin: 0 auto 0 auto;
+    width: 765px;
+    height: 74px;
+}
+
+.header-left, .header-right, .footer-left, .footer-right {
+    background-color: var(--header-and-footer-background);
+    height: 44px;
+    padding: 15px 0;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+.header-left {
+    width: 515px;
+    position: absolute;
+    margin: 0 0 0 -8px;
+}
+
+.user-icon {
+    display: block;
+    border-radius: 5px;
+    position: absolute;
+    height: 48px;
+    width: 48px;
+    margin: 0 0 0 15px;
+}
+
+.user-info {
+    min-height: 44px;
+    margin: 0 0 0 63px;
+    padding: 4px 0 0 15px;
+}
+
+.title {
+    font-size: 16px;
+    letter-spacing: 1px;
+    font-weight: 1000;
+    color: var(--header-and-footer-title);
+}
+
+.subtitle {
+    font-size: 12px;
+    margin: 2px 0 0 0;
+    line-height: 16px;
+    color: var(--header-and-footer-subtitle);
+}
+
+.header .title:before { content: var(--title-text); }
+.header .subtitle:before { content: var(--subtitle-text); }
+
+.header-right {
+    width: 230px;
+    height: 24px;
+    padding: 25px 10px;
+    font-size: 12px;
+    letter-spacing: 1px;
+    font-weight: 1000;
+    margin: 0 0 0 523px;
+    display: flex;
+    justify-content: space-evenly;
+    line-height: 24px;
+}
+
+.header-right a { color: var(--navigation-links); }
+.header-right a:nth-child(1), .header-right a:nth-child(4) { 
+    background: linear-gradient(transparent 55%, var(--section-1-accent) 0); 
+}
+.header-right a:nth-child(2), .header-right a:nth-child(5) { 
+    background: linear-gradient(transparent 55%, var(--section-2-accent) 0); 
+}
+.header-right a:nth-child(3), .header-right a:nth-child(6) { 
+    background: linear-gradient(transparent 55%, var(--section-3-accent) 0); 
+}
+
+.header-right a:hover {
+    background: linear-gradient(transparent 55%, var(--navigation-links-hover) 0); 
+}
+
+/** footer content **/
+
+.footer-left .title:before { content: var(--footer-title); }
+.footer-left .subtitle:before { content: var(--footer-subtitle); }
+.footer-right-txt:before { content: var(--footer-description); }
+
+.footer-left {
+    width: 220px;
+    padding: 15px 15px 15px 15px;
+    position: absolute;
+}
+
+.footer-right {
+    width: 480px;
+    padding: 10px 20px 10px 15px;
+    height: 54px;
+    margin: 0 0 0 265px;
+    font-size: 12px;
+    text-align: right;
+}
+
+
+/** bucketlist content **/
+.main {
+    width: 795px;
+    margin: 15px auto 15px auto;
+    font-size: 14px;
+}
+
+.block {
+    width: 250px;
+    height: 400px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    background-color: var(--section-background);
+    border-radius: 5px;
+    padding: 15px 0 15px 0;
+    margin: 0 15px 15px 0;
+    float: left;
+}
+
+.block:nth-child(1) { border-bottom: 10px solid var(--section-1-accent); }
+.block:nth-child(2) { border-bottom: 10px solid var(--section-2-accent); }
+.block:nth-child(3) { border-bottom: 10px solid var(--section-3-accent); }
+
+.section-banner {
+    width: 250px;
+    background-position: center;
+    background-size: cover;
+    border-radius: 5px 5px 0 0;
+    overflow: hidden;
+    margin: -15px 0 10px 0px;
+}
+
+.block:nth-child(1) .section-banner { 
+    height: var(--section-1-banner-image-height);
+    background-image: var(--section-1-banner-image-url); 
+}
+
+.block:nth-child(2) .section-banner { 
+    height: var(--section-2-banner-image-height);
+    background-image: var(--section-2-banner-image-url); 
+}
+
+.block:nth-child(3) .section-banner { 
+    height: var(--section-3-banner-image-height);
+    background-image: var(--section-3-banner-image-url); 
+}
+
+.section-name {
+    padding: 5px 15px 0 15px;
+    font-size: 12px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-weight: 1000;
+    margin: 0 0 5px 0;
+    color: var(--section-title);
+}
+
+.block:nth-child(1) .section-name:before { content: var(--section-1-title); }
+.block:nth-child(2) .section-name:before { content: var(--section-2-title); }
+.block:nth-child(3) .section-name:before { content: var(--section-3-title); }
+
+.item {
+    padding: 10px 15px 0 37px;
+    color: var(--section-text);
+}
+
+.item a {
+    text-decoration: underline;
+    color: var(--content-links);
+}
+
+.item a:hover { color: var(--content-links-hover); }
+
+.checkbox {
+    position: relative;
+    border-radius: 4px;
+    margin: 0 0 -17px -22px;
+    width: 14px;
+    height: 14px;
+    background-color: var(--checkbox-empty);
+}
+
+
+/** bucketlist **/
+
+.done {
+    text-decoration: var(--done-text-style);
+    color: var(--done-text);
+}
+
+.done .checkbox:before, .done .checkbox:after {
+    content: ' ';
+    background-color: var(--done-tick);
+    height: 2px;
+    border-radius: 100px;
+    position: absolute;
+}
+
+.done .checkbox:before {
+    width: 7px;
+    transform: rotate(45deg);
+    margin: 9px 0 0 1px;
+}
+
+.done .checkbox:after {
+    width: 15px;
+    transform: rotate(-45deg);
+    margin: 6px 0 0 3px;
+}
+
+.block:nth-child(1) .done .checkbox { background-color: var(--section-1-accent); border: 0px; }
+.block:nth-child(2) .done .checkbox { background-color: var(--section-2-accent); border: 0px; }
+.block:nth-child(3) .done .checkbox { background-color: var(--section-3-accent); border: 0px; }
+
+
+/** taglists **/
+
+.tag {
+    padding: 5px 15px 0 37px;
+}
+
+.tag .checkbox:before {
+    content: "#";
+    margin: 0 0 0 0;
+    font-weight: 1000;
+    color: var(--section-text);
+    position: absolute;
+}
+
+.tag .checkbox {
+    line-height: 20px;
+    border: 2px solid transparent;
+    background-color: transparent;
+}
+
+.block:nth-child(1) .tag .checkbox:before{ color: var(--section-1-accent); }
+.block:nth-child(2) .tag .checkbox:before{ color: var(--section-2-accent); }
+.block:nth-child(3) .tag .checkbox:before{ color: var(--section-3-accent); }
+
+.tag a { color: var(--section-text); text-decoration: none; }
+
+.block:nth-child(1) .tag a:hover { color: var(--section-1-accent); }
+.block:nth-child(2) .tag a:hover { color: var(--section-2-accent); }
+.block:nth-child(3) .tag a:hover { color: var(--section-3-accent); }
+
+
+/** about/bio **/
+
+.bio-txt {
+    padding: 0 15px;
+    font-size: 14px;
+    line-height: 20px;
+    color: var(--section-text);
+}
+
+.bio-txt i { opacity: 0.7; }
+
+.block:nth-child(1) .bio-txt b { background: linear-gradient(transparent 55%, var(--section-1-accent) 0); }
+.block:nth-child(1) .bio-txt a { text-decoration: underline; }
+.block:nth-child(1) .bio-txt blockquote {
+    border-left: 3px solid var(--section-1-accent);
+    margin: 10px 0 10px 10px;
+    padding: 0 0 0 15px;
+    font-size: 12px;
+    line-height: 18px;
+}
+
+.block:nth-child(2) .bio-txt b { background: linear-gradient(transparent 55%, var(--section-2-accent) 0); }
+.block:nth-child(2) .bio-txt a { text-decoration: underline; }
+.block:nth-child(2) .bio-txt blockquote {
+    border-left: 3px solid var(--section-2-accent);
+    margin: 10px 0 10px 10px;
+    padding: 0 0 0 15px;
+    font-size: 12px;
+    line-height: 18px;
+}
+
+
+.block:nth-child(3) .bio-txt b { background: linear-gradient(transparent 55%, var(--section-3-accent) 0); }
+.block:nth-child(3) .bio-txt a { text-decoration: underline; }
+.block:nth-child(3) .bio-txt blockquote {
+    border-left: 3px solid var(--section-3-accent);
+    margin: 10px 0 10px 10px;
+    padding: 0 0 0 15px;
+    font-size: 12px;
+    line-height: 18px;
+}
+
+/** pls do not edit! **/
+
+.xue {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    background-color: var(--section-background);
+    color: var(--section-text);
+    font-size: 8px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 1000;
+    padding: 3px 6px;
+    border-radius: 4px;
+}
+
+
+</style>
+</head>
+<body>
+
+<div class="content">
+
+<div class="header">
+
+<!---------------------------------------------------------------- HEADER --
+
+[EGRET]: Header customisation
+
+There are 2 things you can edit in this section:
+
+[1] Change your profile picture to a different image. Replace "{PortraitURL-48}" with your own image. Must be cropped to a square aspect ratio.
+
+[2] Change the links. You can change the link names or add more, up to 6.
+
+--------------------------------------------------------------------------->
+    <div class="header-left">
+        <!-- replace {PortraitURL-48} with your own image link if you want to use a different icon image -->
+        <img class="user-icon" src="{PortraitURL-48}">
+        <div class="user-info">
+            <div class="title"></div>
+            <div class="subtitle"></div>
+        </div><!--user-info-->
+    </div><!--header-left-->
+    
+    <div class="header-right">
+        <!-- feel free to change link names or add more, up to 6 total -->
+        <a href="/">index</a>
+        <a href="/ask">contact</a>
+        <a href="https://tumblr.com">dash</a>
+    </div><!--header-right-->
+    
+</div><!--header-->
+
+
+<div class="main">
+
+
+<!-------------------------------------------------------------- SECTIONS --
+
+[EGRET]: Sections/Content
+
+There are three different types of sections you can add:
+[1] About/Biography: Write about yourself. Basic styling (bold, italic, links, blockquote) available.
+[2] Bucketlist: Write some goals or a list of movies you're watching next!
+[3] Tags: A list of frequent tags on your blog.
+
+You can mix and match the sections as you please. E.g, 2 About + 1 Tags; or all 3 Bucketlists; in any order. If you add too much text or content, a scrollbar will appear.
+
+The default code blocks for each type of section are shown below.
+
+----------------------------------------------------------------------------
+
+[1] ABOUT/BIOGRAPHY
+
+<div class="block">
+    <div class="section-banner"></div>
+    <div class="section-name"></div>
+    
+    <div class="bio-txt">
+        Your biography here. Use <b>bold</b> text, <i>italic</i> text, or <a href="/">linked</a> text.
+        <blockquote>You can also use blockquotes.</blockquote>
+        A scrollbar appears if any section's contents get too long.
+    </div>
+</div>
+
+----------------------------------------------------------------------------
+
+[2] BUCKETLIST
+
+<div class="block">
+    <div class="section-banner"></div>
+    <div class="section-name"></div>
+
+    <div class="item not-done"><div class="checkbox"></div>
+        this goal is not complete
+    </div>
+    
+    <div class="item not-done"><div class="checkbox"></div>
+        change the class from 'not-done' to 'done' for completed items
+    </div>
+
+    <div class="item not-done"><div class="checkbox"></div>
+        Add as many goals as you would like!
+    </div>
+        
+</div>
+
+----------------------------------------------------------------------------
+
+[3] TAGS
+
+<div class="block">
+    <div class="section-banner"></div>
+    <div class="section-name"></div>
+
+    <div class="item tag"><div class="checkbox"></div>
+        <a href="/tagged/example">example</a>
+    </div>
+
+    <div class="item tag"><div class="checkbox"></div>
+        <a href="/tagged/example%20tag">example tag</a>
+    </div>
+    
+</div>
+
+------------------------------------------------------ SECTION 01 (left) -->
+    
+<div class="block">
+    <div class="section-banner"></div>
+    <div class="section-name"></div>
+    
+    <div class="bio-txt">
+        Your biography here. Use <b>bold</b> text, <i>italic</i> text, or <a href="/">linked</a> text.
+        <blockquote>You can also use blockquotes.</blockquote>
+        A scrollbar appears if any section's contents get too long.
+    </div>
+        
+</div><!--block-->
+    
+    
+<!-------------------------------------------------- SECTION 02 (middle) -->
+    
+<div class="block">
+    <div class="section-banner"></div>
+    <div class="section-name"></div>
+
+    <div class="item not-done"><div class="checkbox"></div>
+        this goal isn't complete, so its class is "not-done"
+    </div>
+
+    <div class="item done"><div class="checkbox"></div>
+        this goal is done, so its class is "done"!
+    </div>
+        
+</div><!--block-->
+
+
+<!--------------------------------------------------- SECTION 03 (right) -->
+
+<div class="block">
+    <div class="section-banner"></div>
+    <div class="section-name"></div>
+
+    <div class="item tag"><div class="checkbox"></div>
+        <a href="/tagged/red">red</a>
+    </div>
+    
+    <div class="item tag"><div class="checkbox"></div>
+        <a href="/tagged/yellow">yellow</a>
+    </div>
+    
+    <div class="item tag"><div class="checkbox"></div>
+        <a href="/tagged/blue">blue</a>
+    </div>
+    
+</div><!--block-->
+
+<!----------------------------------------------- END OF SECTIONS TO EDIT -->
+    
+</div><!--main-->
+
+<div class="footer">
+    <div class="footer-left">
+        <div class="title"></div>
+        <div class="subtitle"></div>
+    </div><!--footer-left-->
+    <div class="footer-right"><div class="centrer"><div class="footer-right-txt"></div></div></div>
+</div><!--footer-->
+
+</div><!--content-->
+
+<!-- pls do not edit or remove the credit! thanks!!  -->
+<a title="halite page by xuethms" href="https://xuethms.tumblr.com"><div class="xue">xue</div></a>
+
+</body>
+
+</html>
