@@ -94,10 +94,9 @@ Look out for my comments (greyed out text like this).
     --text-highlight: #444444;
     
     --content-block-background: #ffffff;
-    --rgb-translucent-content-background: 255,255,255; /** rgb values pls **/
+    --rgb-translucent-content-background: 255,255,255; /** rgb values pls, or type "transparent" for no bg **/
     --translucent-content-background-border: #ffffff; /** "transparent" for no border **/ 
     
-    --header-and-footer-background: #fff9d6;
     --header-and-footer-background: #fffaef;
     --header-and-footer-title: #000000;
     --header-and-footer-subtitle: #555555;
@@ -271,19 +270,7 @@ iframe#tumblr_controls, .iframe-controls--desktop {
 }
 
 .header-right a { color: var(--navigation-links); }
-.header-right a:nth-child(1), .header-right a:nth-child(4) { 
-    background: linear-gradient(transparent 55%, var(--section-1-accent) 0); 
-}
-.header-right a:nth-child(2), .header-right a:nth-child(5) { 
-    background: linear-gradient(transparent 55%, var(--section-2-accent) 0); 
-}
-.header-right a:nth-child(3), .header-right a:nth-child(6) { 
-    background: linear-gradient(transparent 55%, var(--section-3-accent) 0); 
-}
-
-.header-right a:hover {
-    background: linear-gradient(transparent 55%, var(--navigation-links-hover) 0); 
-}
+.header-right a:hover { color: var(--navigation-links-hover); }
 
 /** footer content **/
 
@@ -298,6 +285,7 @@ iframe#tumblr_controls, .iframe-controls--desktop {
 }
 
 .footer-right {
+    color: var(--header-and-footer-subtitle);
     width: 480px;
     padding: 10px 20px 10px 15px;
     height: 54px;
