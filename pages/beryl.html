@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<!-------------------------------------------------
+
+B E R Y L
+
+collection page 01 by xuethms.tumblr.com
+
+1. Do not edit/remove my visual & in-code credits.
+2. Do not reupload/reuse my codes & designs on
+   other websites and platforms.
+3. Do not claim code as your own.
+4. Do not share paid releases with others.
+
+version 1.00 - 26.04.25 @ 22:53
+> official release
+
+----------------------------------------------------
+
+To edit this page, you will have to edit:
+
+    1. CSS - the styling (colours mainly)
+       > Use ctrl+F to search for [EMERALD]
+         to jump to the section you need to edit.
+    
+    2. HTML - the content
+       > Use ctrl+F to search for [AQUAMARINE]
+         to jump to the section you need to edit.
+
+Look out for my comments (greyed out text) like this.
+
+--------------------------------------------------->
+
+
+<!-- edit [collection] below to change the text on the browser tab -->
+<title>collection</title>
+
+<!-- replace [{Favicon}] below with an image URL to have a custom favicon 
+     favicon = the small icon on browser tabs; by default it's your pfp. -->
+<link rel="shortcut icon" href="{Favicon}" />
+
+
+<style type="text/css">
+
+:root {
+    
+/** [EMERALD] CSS STYLING
+With the use of CSS variables, you don't need to scroll through the whole code to edit the appearance of the page; you can do so in this single block!
+
+/** global appearance options *********************************************/
+
+    /** font options from google fonts:
+    Karla, Nunito, Open Sans, Poppins, Roboto, Ubuntu, Host Grotesk **/
+    --font: karla;
+    
+    /** accent colour shows up all over the page! **/
+    --accent: #9aab71; 
+    
+    --background-colour: #fafafa;
+    --scrollbar: #9aab71;
+    --text-highlight-background: #cccccc;
+
+
+/** header customisation *************************************************/
+    
+    /** replace link below with link to your own header image **/
+    /** default pic is by yamasa-n on unsplash: 
+        https://unsplash.com/photos/white-and-green-plant-leaves-qRokyCK5-rI
+    **/
+    --header-img-url: url("https://images.unsplash.com/photo-1624184880069-45eb52dd9f39?q=80&w=3174&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+    
+    /** header img size is 660px width by 200px height (changeable below).
+        any image you upload will be auto-cropped to these dimensions! **/
+    --header-img-height: 200px;
+    
+    --navigation-bar-title: 'bookmarked'; 
+    --navigation-bar-title-colour: #ffffff;
+    --bookmark-icon: #ffffff;
+    --navigation-bar-links: #ffffff;
+    --navigation-bar-links-underline: #ffffff; /* colour when hovered */
+
+
+/** collection items / content *******************************************/
+    
+    --section-title-letter-spacing: -3px;
+    --item-title-colour: #000000;
+    --item-subtitle-text: #ffffff;
+    --item-subtitle-highlight: #9aab71; /* same as accent colour is nice */
+    --item-description: #000000;
+    --item-description-bold: #9aab71;
+    --item-description-italic: #aaaaaa;
+    --item-description-links: #888888;
+    --item-description-links-hover: #9aab71;
+    --item-quote-text: #444444;
+    
+    /** some suggestions below for you to copy & paste:
+    ★
+    ☆
+    ✦
+    ✱
+    ❤
+    ♥
+    ✿
+    ❀
+    ☻
+    ☺
+    you can also search online for other symbols. don't use emojis! **/
+    --item-rating-symbol: '✦';
+    --item-rating-symbol-size: 36px;
+    --item-rating-not-filled: #eaeaea; /* grey colour is good */
+    
+    
+/** =========================================================================
+THERE IS NO NEED TO EDIT THE CSS BEYOND THIS POINT UNLESS YOU WANT TO MAKE 
+MORE SPECIFIC CUSTOMISATIONS! PLEASE SEARCH FOR [AQUAMARINE] TO START FILLING 
+IN YOUR COLLECTION ITEM CONTENTS :-)
+========================================================================= **/
+}
+
+
+/** ======================================================= THE BASICS == **/
+
+/** tumblr controls **/
+
+iframe#tumblr_controls, .iframe-controls--desktop {
+    position: fixed!important;
+    top: 13px!important;
+    right: 12px!important;
+    transform: scale(0.6);
+    -webkit-transform-origin: top right;
+    -ms-transform-origin: top right;
+    transform-origin: top right;
+    z-index: 150000!important;
+    display: none!important;
+}
+
+.tmblr-iframe-overlay {margin: 0;}
+
+
+/** scrollbar **/
+
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track-piece { 
+    background-color: var(--background-colour);
+}  
+
+::-webkit-scrollbar-thumb:vertical {
+    width: 8px;
+    background: var(--scrollbar);
+}
+
+
+/** text selection **/
+
+::selection {
+    color: #ffffff;
+    background-color: var(--text-highlight-background);
+}
+
+::-moz-selection {
+    color: #ffffff;
+    background-color: var(--text-highlight-background);
+}
+
+::-webkit-selection {
+    color: #ffffff;
+    background-color: var(--text-highlight-background);
+}
+
+
+/** body & basic css set-ups **/
+
+body {
+    background-color: var(--background-colour);
+    font-family: var(--font);
+    font-size: 12px;
+    overflow-x: none;
+}
+
+a {
+    text-decoration: none;
+    transition: 0.3s all ease-in-out;
+}
+
+img {
+    margin: 0px;
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+p:first-child { margin-top: 0; }
+p:last-child {margin-bottom: 0; }
+
+.centrer {
+    position: relative;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+
+/** ============================================================= HEADER **/
+
+.header-img {
+    width: 660px;
+    height: var(--header-img-height);
+    background-image: var(--header-img-url);
+    background-size: cover;
+    background-position: center;
+    border-radius: 20px 20px 0 0;
+}
+
+.bkmk-icon { /** bookmark icon in nav bar **/
+    position: absolute;
+    width: 25px;
+    height: 55px;
+    background-color: var(--bookmark-icon);
+    margin: -10px 20px 0 20px;
+    border-radius: 5px 5px 0 0;
+}
+
+.bkmk-icon:before { /** bookmark icon in nav bar **/
+    background-color: var(--accent);
+    width: 22px;
+    height: 22px;
+    margin: 45px 0 0 -24px;
+    border-radius: 0 0 50px 0;
+    content: ' ';
+    position: absolute;
+    transform: rotate(45deg);
+}
+
+.navbar {
+    top: 0;
+    font-family: var(--font);
+    left: calc( 50% - 330px);
+    background-color: var(--accent);
+    position: fixed;
+    z-index: 100;
+    width: 630px;
+    padding: 0 30px 0 0;
+    height: 60px;
+    border-radius: 0 0 5px 5px;
+    line-height: 60px;
+    text-align: right;
+    
+    position: sticky;
+    border-radius: 0 0 20px 20px;
+    top: 0;
+}
+
+.navbar a {
+    font-style: italic;
+    color: var(--navigation-bar-links);
+    margin: 0 0 0 10px;
+    border-bottom: 2px solid transparent;
+    padding: 0 0 4px 0;
+}
+
+.navbar a:hover {
+    border-bottom: 2px solid var(--navigation-bar-links-underline);
+}
+
+.nav-title {
+    position: absolute;
+    text-align: left;
+    width: 500px;
+    pointer-events: none;
+    margin: 0 0 0 60px;
+    font-weight: 1000;
+    letter-spacing: -1.5px;
+}
+
+.nav-title:before {
+    content: var(--navigation-bar-title);
+    position: absolute;
+    font-size: 20px;
+    color: var(--navigation-bar-title-colour);
+}
+
+
+/** ============================================== MAIN CONTENT STRUCTURE **/
+
+.main {
+    width: 660px;
+    border-radius: 20px;
+    padding: 0 0px 0 0px;
+    margin: 120px auto 0 auto;
+    font-family: var(--font);
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.section {
+    width: 660px;
+    border-bottom: 1px solid var(--accent);
+    display: table;
+    margin-top: -1px;
+}
+
+.section-header {
+    display: table-cell;
+    max-width: 60px!important;
+    vertical-align: top;
+    border-right: 1px solid var(--accent);
+}
+
+.section-header-title {
+    position: sticky;
+    top: 310px;
+    width: 500px;
+    height: 60px;
+    line-height: 50px;
+    transform: rotate(-90deg);
+    margin: 250px 0 100px -215px;
+    
+    text-align: right;
+    font-size: 40px;
+    font-weight: 1000;
+    letter-spacing: var(--section-title-letter-spacing);
+    color: var(--accent);
+}
+
+.section-content {
+    display: table-cell;
+    width: 600px;
+}
+
+
+/** ==================================================== INDIVIDUAL ITEMS **/
+
+.item {
+    width: 560px;
+    padding: 40px 0 40px 40px;
+    border-bottom: 1px solid var(--accent);
+}
+
+.item:last-child { border-bottom: 0px solid transparent!important; }
+
+.item-left {
+    width: 200px!important;
+    display: table-cell;
+    vertical-align: top;
+}
+
+.left-sticky {
+    position: sticky;
+    top: 90px;
+}
+
+.item-img {
+    width: 200px!important;
+    border-radius: 5px;
+}
+
+.item-right {
+    width: 300px; /**actly 320px but i don't want it to extend to the edge**/
+    display: table-cell;
+    vertical-align: middle;
+    padding-left: 40px;
+}
+
+.item-title {
+    color: var(--item-title-colour);
+    font-weight: 1000;
+    font-size: 20px;
+    margin: 0 0 10px 0;
+    line-height: 24px;
+}
+
+.item-subtitle {
+    margin: 0 0 10px 0;
+}
+
+.subtitle-hl {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--item-subtitle-text);
+    background-color: var(--item-subtitle-highlight);
+    padding: 3px 5px;
+    border-radius: 3px;
+}
+
+.item-description {
+    font-size: 14px;
+    margin: 20px 0 0 0;
+    color: var(--item-description);
+}
+
+.item-description b {
+    font-weight: 600;
+    color: var(--item-description-bold);
+}
+
+.item-description i { color: var(--item-description-italic); }
+
+.item-description a {
+    border-bottom: 1px solid var(--item-description-links);
+    padding-bottom: 2px;
+    color: var(--item-description-links);
+}
+
+.item-description a:hover {
+    border-bottom: 1px solid var(--item-description-links-hover);
+    color: var(--item-description-links-hover);
+}
+
+.item-description blockquote {
+    font-size: 16px;
+    line-height: 24px;
+    font-style: italic;
+    margin: 10px 0 10px 10px;
+    padding: 0 0 0 20px;
+    border-left: 2px solid var(--accent);
+    color: var(--item-quote-text);
+}
+
+.item-description blockquote:before {
+    content: '❝';
+    font-style: normal;
+    position: absolute;
+    font-size: 32px;
+    float: left;
+    margin: 0px 0 0 -28px;
+    z-index: 1;
+    color: var(--accent);
+    padding-top: 0px;
+    background: linear-gradient(var(--background-colour) 70%, transparent 0);
+    line-height: 40px;
+}
+
+.item-rating {
+    margin: 20px 0 0 0;
+    width: 290px;
+    height: 26px;
+    line-height: 26px;
+}
+
+.star-1:before, .star-2:before, .star-3:before, .star-4:before, .star-5:before {
+    content: var(--item-rating-symbol);
+    color: var(--item-rating-not-filled);
+    font-size: var(--item-rating-symbol-size);
+    float: left;
+    margin: 0 10px 0 0;
+}
+
+.rating-1 .star-1:before, .rating-2 .star-1:before, .rating-3 .star-1:before, .rating-4 .star-1:before, .rating-5 .star-1:before, .rating-2 .star-2:before, .rating-3 .star-2:before, .rating-4 .star-2:before, .rating-5 .star-2:before, .rating-3 .star-3:before, .rating-4 .star-3:before, .rating-5 .star-3:before, .rating-4 .star-4:before, .rating-5 .star-4:before, .rating-5 .star-5:before {
+    color: var(--accent);
+}
+
+/** ============================================================ FOOTER **/
+
+.footer {
+    background-color: var(--background-colour);
+    color: var(--item-description);
+    border-top: 1px solid var(--accent);
+    text-align: center;
+    margin: -1px 0 30px 0;
+    padding: 30px 0 120px 0;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+.footer a {
+    color: var(--accent);
+}
+
+</style>
+</head>
+<body>
+
+<!------------------------------------------------------------- HEADER --
+
+[AQUAMARINE]: Header Customisation
+
+[1] Navigation Bar Title ("bookmarked" by default)
+    You should have been able to change this under the [EMERALD] CSS section.
+    
+[2] Navigation Bar Links ("index, message, archive, dashboard" by default)
+    You can add or remove as many links as you like. 
+    Here's the template for each link:
+    <a href="URL">LINK NAME</a>
+
+------------------------------------------------------------------------>
+
+<div class="main">
+<div class="header-img"></div>
+<div class="navbar">
+    <div class="bkmk-icon"></div>
+    <div class="nav-title"></div>
+    
+    <!-- add/remove links below -->
+    <a href="/">index</a>
+    <a href="/ask">message</a>
+    <a href="/archive">archive</a>
+    <a href="https://tumblr.com/dashboard">dashboard</a>
+</div><!--navbar--> 
+
+
+<!------------------------------------------------- COLLECTIONS CONTENT --
+
+[AQUAMARINE]: Items in your Collection
+
+[1] Sections
+    You can add as many sections as you want.
+    Each section has its own title which is sideways and sticks as you scroll.
+    
+[2] Items
+    You can add as many items as you want under each section.
+    You can use this page to list fic recs, book reviews, your rp muses,
+    projects, portfolio works, anything you want!
+
+TEMPLATE BELOW, PLEASE LOOK OUT FOR THINGS YOU NEED TO EDIT IN UPPERCASE:
+=====
+
+<div class="section">
+<div class="section-header"><div class="section-header-title">
+SECTION 1 TITLE
+</div></div>
+
+    <div class="item">
+        <div class="item-left"><div class="left-sticky">
+        <img class="item-img" src="IMAGE LINK">
+        </div></div>
+        <div class="item-right">
+        <div class="item-title">ITEM TITLE</div>
+        <div class="item-subtitle"><span class="subtitle-hl">
+        ITEM SUBTITLE
+        </span></div>
+        <div class="item-description">
+            <p>ITEM DESCRIPTION. WRITE WHATEVER YOU WANT. <b>BOLD</b>, <i>ITALIC</i>, <a href="URL">LINKS</a></p>
+            <p>MAKE A NEW PARAGRAPH.</p>
+            <blockquote>ADD A COOL QUOTE.</blockquote>
+        </div>
+        
+        <div class="item-rating rating-1">
+        <div class="star-1"></div><div class="star-2"></div><div class="star-3"></div><div class="star-4"></div><div class="star-5"></div>
+        </div>
+        
+        </div>
+    </div>
+    
+</div>
+    
+
+------------------------------------------------------------------------>
+
+
+<div class="section">
+<div class="section-header"><div class="section-header-title">
+Section 1 Title
+</div></div>
+
+    <div class="item">
+        <div class="item-left"><div class="left-sticky">
+        <img class="item-img" src="https://64.media.tumblr.com/1855f9577077cbb6a4aa8ec48163f71d/b37be29b50e6fc79-de/s500x750/382fac8c4febbaa8ab393dd829ed754c0f09eae1.pnj">
+        </div></div><!--item-left end-->
+        
+        <div class="item-right">
+        <div class="item-title">Item 1 Title</div>
+        <div class="item-subtitle"><span class="subtitle-hl">
+        Item 1 Subtitle
+        </span></div>
+        
+        <div class="item-description">
+            <p>Item description. <b>BOLD</b>, <i>ITALIC</i>, <a href="URL">LINKS</a>.</p>
+            <p>Make a new paragraph. Write as much as you want.</p>
+            <blockquote>Add a cool quote.</blockquote>
+        </div><!--item-description end-->
+        
+        <!--change 'rating-2' to 'rating-5' in the line below for a 5-star rating!-->
+        <div class="item-rating rating-2">
+        <div class="star-1"></div><div class="star-2"></div><div class="star-3"></div><div class="star-4"></div><div class="star-5"></div>
+        </div><!--item-rating end-->
+        
+        </div><!--item-right end-->
+    </div><!--item end-->
+
+    <div class="item">
+        <div class="item-left"><div class="left-sticky">
+        <img class="item-img" src="https://64.media.tumblr.com/1855f9577077cbb6a4aa8ec48163f71d/b37be29b50e6fc79-de/s500x750/382fac8c4febbaa8ab393dd829ed754c0f09eae1.pnj">
+        </div></div><!--item-left end-->
+        
+        <div class="item-right">
+        <div class="item-title">Item 2 Title</div>
+        <div class="item-subtitle"><span class="subtitle-hl">
+        Item 2 Subtitle
+        </span></div>
+        
+        <div class="item-description">
+            <p>Item description. <b>BOLD</b>, <i>ITALIC</i>, <a href="URL">LINKS</a>.</p>
+            <p>Make a new paragraph. Write as much as you want.</p>
+            <blockquote>Add a cool quote.</blockquote>
+        </div><!--item-description end-->
+        
+        <!--change 'rating-4' to 'rating-5' in the line below for a 5-star rating!-->
+        <div class="item-rating rating-4">
+        <div class="star-1"></div><div class="star-2"></div><div class="star-3"></div><div class="star-4"></div><div class="star-5"></div>
+        </div><!--item-rating end-->
+        
+        </div><!--item-right end-->
+    </div><!--item end-->
+    
+</div><!--section 2 end-->
+
+
+<div class="section">
+<div class="section-header"><div class="section-header-title">
+Section 2 Title
+</div></div>
+
+    <div class="item">
+        <div class="item-left"><div class="left-sticky">
+        <img class="item-img" src="https://64.media.tumblr.com/1855f9577077cbb6a4aa8ec48163f71d/b37be29b50e6fc79-de/s500x750/382fac8c4febbaa8ab393dd829ed754c0f09eae1.pnj">
+        </div></div><!--item-left end-->
+        
+        <div class="item-right">
+        <div class="item-title">Item 3 Title</div>
+        <div class="item-subtitle"><span class="subtitle-hl">
+        Item 3 Subtitle
+        </span></div>
+        
+        <div class="item-description">
+            <p>Item description. <b>BOLD</b>, <i>ITALIC</i>, <a href="URL">LINKS</a>.</p>
+            <p>Make a new paragraph. Write as much as you want.</p>
+            <blockquote>Add a cool quote.</blockquote>
+        </div><!--item-description end-->
+        
+        <!--change 'rating-3' to 'rating-5' in the line below for a 5-star rating!-->
+        <div class="item-rating rating-3">
+        <div class="star-1"></div><div class="star-2"></div><div class="star-3"></div><div class="star-4"></div><div class="star-5"></div>
+        </div><!--item-rating end-->
+        
+        </div><!--item-right end-->
+    </div><!--item end-->
+
+    <div class="item">
+        <div class="item-left"><div class="left-sticky">
+        <img class="item-img" src="https://64.media.tumblr.com/1855f9577077cbb6a4aa8ec48163f71d/b37be29b50e6fc79-de/s500x750/382fac8c4febbaa8ab393dd829ed754c0f09eae1.pnj">
+        </div></div><!--item-left end-->
+        
+        <div class="item-right">
+        <div class="item-title">Item 4 Title</div>
+        <div class="item-subtitle"><span class="subtitle-hl">
+        Item 4 Subtitle
+        </span></div>
+        
+        <div class="item-description">
+            <p>Item description. <b>BOLD</b>, <i>ITALIC</i>, <a href="URL">LINKS</a>.</p>
+            <p>Make a new paragraph. Write as much as you want.</p>
+            <blockquote>Add a cool quote.</blockquote>
+        </div><!--item-description end-->
+        
+        <!--change 'rating-1' to 'rating-5' in the line below for a 5-star rating!-->
+        <div class="item-rating rating-1">
+        <div class="star-1"></div><div class="star-2"></div><div class="star-3"></div><div class="star-4"></div><div class="star-5"></div>
+        </div><!--item-rating end-->
+        
+        </div><!--item-right end-->
+    </div><!--item end-->
+    
+</div><!--section 1 end-->
+    
+
+
+<!-- FOOTER CREDITS BELOW, PLEASE DO NOT EDIT, THANK YOU! --------------->
+<div class="footer">
+    <a href="">beryl</a> collections page by <a href="https://xuethms.tumblr.com">xuethms</a>
+</div><!--footer-->
+
+</div><!--main-->
+
+</body>
+
+<!-- google fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,400;0,700;0,800;1,400&family=Nunito:ital,wght@0,400;0,700;0,800;1,400&family=Open+Sans:ital,wght@0,400;0,700;0,800;1,400&family=Poppins:ital,wght@0,400;0,700;0,800;1,400&family=Roboto:wght@400;700&family=Ubuntu:ital,wght@0,400;0,700;1,400&display=swap&family=Host+Grotesk:ital,wght@0,300..800;1,300..800&family=Karla:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+
+</html>
