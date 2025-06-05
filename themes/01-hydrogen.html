@@ -14,8 +14,8 @@ theme 01 by xuethms.tumblr.com
 3. Do not claim theme as your own.
 4. Do not share paid releases with others.
 
-version 2.02 - 10.11.24 @ 18:38
-> fixed unstyled text on search/tag pages
+version 2.03 - 05.06.25 @ 12:12
+> sidebar pfp size options
 
 --------------------------------------------------->
 
@@ -107,6 +107,12 @@ version 2.02 - 10.11.24 @ 18:38
 <!-- select: sidebar links style -->
 <meta name="select:Sidebar links style" content="a" title="grid bg">
 <meta name="select:Sidebar links style" content="b" title="no bg">
+
+<!-- select: sidebar pfp size -->
+<meta name="select:Sidebar PFP size" content="30px" title="30px">
+<meta name="select:Sidebar PFP size" content="40px" title="40px">
+<meta name="select:Sidebar PFP size" content="50px" title="50px">
+<meta name="select:Sidebar PFP size" content="60px" title="60px">
 
 <!-- select: grip gap size -->
 <meta name="select:Photoset grid gap" title="0px" content="0px">
@@ -400,6 +406,7 @@ $(".tctrl-upd").click(function(){
     --contentbg: {color:Content background};
     --grid: {color:Content grid};
     --content-width: calc( var(--col-no) * ( var(--post-width) + 92px ) + 50px );
+    --navipfp-size: {select:Sidebar PFP Size};
 }
 
 /** content positioning **/
@@ -1359,8 +1366,6 @@ a.poll-see-results:hover { color: var(--accent-txt)!important; }
 }
 
 .navisq {
-    width: 30px;
-    height: 30px;
     padding: 5px;
     background-color: var(--contentbg);
     border: 1px solid var(--accent);
@@ -1370,6 +1375,10 @@ a.poll-see-results:hover { color: var(--accent-txt)!important; }
     text-align: center;
     line-height: 40px;
     transition: 0.2s ease-in-out;
+    
+    width: var(--navipfp-size);
+    height: var(--navipfp-size);
+    margin: 0 0 0 calc( 88px - var(--navipfp-size) );
 }
 
 .navisq .feather { width: 20px; height: 20px; }
@@ -1384,6 +1393,9 @@ a.poll-see-results:hover { color: var(--accent-txt)!important; }
     height: 30px;
     display: block;
     border-radius: 7px;
+    
+    width: var(--navipfp-size);
+    height: var(--navipfp-size);
 }
 
 .navi-links {
@@ -2129,7 +2141,7 @@ a.xuethms:hover { color: var(--accent); }
 
     <div class="navitype navitype-a{select:Navigation type}">
         <div class="navisq" style="background-color: var(--accent);">
-            <img class="navi-pfpimg" src="{PortraitURL-30}">
+            <img class="navi-pfpimg" src="{PortraitURL-64}">
         </div><!--navisq navi-pfpimg-->
         <div class="navi-links">
             <a href="/">index</a><br>
