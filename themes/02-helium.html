@@ -14,8 +14,8 @@ theme 02 by xuethms.tumblr.com
 3. Do not claim theme as your own.
 4. Do not share paid releases with others.
 
-version 2.00 - 18.12.24 @ 11:31
-> background image fix
+version 2.01 - 07.06.25 @ 11:48
+> fixed ask post image sizing issue
 
 --------------------------------------------------->
 
@@ -1045,6 +1045,10 @@ figure.tmblr-embed.tmblr-full iframe, figure.tmblr-embed.tmblr-full, figure, vid
 }
 
 .entry-ask-username a { color: {color:Body text}; }
+
+.entry-ask-bubble .post_media_photo_anchor, .entry-ask-bubble figure.tmblr-embed.tmblr-full iframe, .entry-ask-bubble figure.tmblr-embed.tmblr-full, .entry-ask-bubble figure {
+    width: calc( var(--post-width) - 100px )!important;
+}
 
 /** quote posts **/
 
